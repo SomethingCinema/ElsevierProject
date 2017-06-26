@@ -48,7 +48,7 @@
       
       <%
          Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
-        // TODO: Display all books onto the page
+          
       %>
       
       
