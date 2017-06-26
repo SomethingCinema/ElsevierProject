@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.qa.models.Book;
-import com.qa.repositories.BookRepository;
+import com.qa.services.BookService;
 
 @Controller
 @SessionAttributes(names={"books","cart_items","book_counts","filtered_books"})
 public class BookController {
 
 	@Autowired
-	BookRepository bookService;
+	BookService bookService;
 	
 	@RequestMapping("/bookDetails")
 	public ModelAndView bookDetails(@ModelAttribute("books") Iterable<Book> books,@RequestParam("bookId") int bookId)
