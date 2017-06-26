@@ -1,15 +1,11 @@
 package com.qa.controllers;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.qa.models.Book;
 import com.qa.models.Customer;
-import com.qa.models.Shipping;
 import com.qa.services.BookService;
 import com.qa.services.CustomerService;
 
@@ -52,7 +47,7 @@ public class HomeController {
 		}
 		
 	
-		Iterable<Book> books = bookService.findAll();
+		Iterable<Book> books = bookService.getAllBooks();
 		
 		ModelAndView modelAndView = new ModelAndView("index","books",books);
 		
@@ -78,21 +73,7 @@ public class HomeController {
 	    return modelAndView;
 	}
 	
-	@RequestMapping("/about_us")
-	public ModelAndView aboutUs()
-	{
-		ModelAndView modelAndView = new ModelAndView("about_us");
-		
-		return modelAndView;
-	}
 	
-	@RequestMapping("/contact")
-	public ModelAndView contact()
-	{
-		ModelAndView modelAndView = new ModelAndView("contact");
-	
-	    return modelAndView;
-	}
 	
 
 	@RequestMapping("/registerProcess")
@@ -105,8 +86,9 @@ public class HomeController {
 		
 		
 		System.out.println("Customer Password is "+customer.getPassword());
+
 		
-		Customer c = customerService.save(customer);
+		Customer c = customerService.add(customer);
 	  
 		if(c!=null)
 		{
