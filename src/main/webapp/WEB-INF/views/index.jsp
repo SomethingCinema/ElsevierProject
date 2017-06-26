@@ -17,7 +17,7 @@
       <div class="top-bar-left">
         <ul class="menu">
           <li class="menu-text" style="color:red">Online Shopping</li>
-          <li><a href="#">Home</a></li>
+          <li><a href="/">Home</a></li>
           
         </ul>
       </div>
@@ -29,7 +29,7 @@
               <a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/></a>
               <ul class="submenu menu vertical" data-submenu>
                 <li><a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/></a></li>
-                <li><a href="/login">Register | Login</a></li>
+                <tr><a href="/register">Register</a><a href="/login">Login</a></tr>
               </ul>
             </li>
             <li><a href="#">About Us</a></li>
