@@ -73,6 +73,13 @@ public class HomeController {
 	    return modelAndView;
 	}
 	
+	@RequestMapping("/about_us")
+	public ModelAndView aboutUs()
+	{
+		ModelAndView modelAndView = new ModelAndView("about_us");
+		
+		return modelAndView;
+	}
 	
 	
 
