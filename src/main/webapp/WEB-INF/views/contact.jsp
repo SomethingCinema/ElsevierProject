@@ -8,17 +8,22 @@
 </head>
 <body>
 	
-	
-	
-	
-	
-	
+<h1>Contact Something Books</h1>
+
+<div id="contact-info">
+	<b>Phone:</b> 215-200-5000 <br>
+	<b>Email:</b> samantha@elsevier.com <br>
+	<b>Address:</b>	1600 John F. Kennedy Boulevard <br>
+	Philadelphia PA <br>
+	19103 <br>
+</div>
+		
 	
 	<iframe
-  	width="600"
-  	height="450"
-  	frameborder="0" style="border:0"
-  	src="https://www.google.com/maps/embed/v1/place?key=AIzaSyACjIrMt05daQAw5oEbeEYQUaDF-Jy2pEc&origin=place_id:ChIJ__iV6THGxokReKIPhqDrGDg">
+  		width="600"
+	  	height="450"
+	  	frameborder="0" style="border:0"
+	  	src="https://www.google.com/maps/embed/v1/place?key=AIzaSyACjIrMt05daQAw5oEbeEYQUaDF-Jy2pEc&q=1600+John+F+Kennedy+Boulevard,Philadelphia,Pennsylvania">
 	</iframe>
 	
 

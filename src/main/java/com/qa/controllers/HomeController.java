@@ -79,6 +79,13 @@ public class HomeController {
 	}
 	
 	
+	@RequestMapping("/contact")
+	public ModelAndView contact()
+	{
+		ModelAndView modelAndView = new ModelAndView("contact");
+	
+	    return modelAndView;
+	}
 	
 
 	@RequestMapping("/registerProcess")
