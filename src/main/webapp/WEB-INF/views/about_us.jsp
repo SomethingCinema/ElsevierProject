@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+ 	<jsp:include page="nav_bar_loggedout.jsp" />
 	<h1>About US Page :)</h1>
 	<p>  </p>
 	

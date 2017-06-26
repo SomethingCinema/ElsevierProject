@@ -9,6 +9,7 @@
   <body>
     
     <!-- Start Top Bar -->
+    <!--  
     <div class="top-bar">
       <div class="top-bar-left">
         <ul class="menu">
@@ -33,8 +34,10 @@
           </ul>
           
       </div>
-    </div>
+    </div> -->
     <!-- End Top Bar -->
+    
+    <jsp:include page="nav_bar_loggedout.jsp" />
 
     <div class="callout large">
       <div class="row column text-center">

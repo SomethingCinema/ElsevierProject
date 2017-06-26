@@ -7,6 +7,8 @@
 <title>Contact</title>
 </head>
 <body>
+
+<jsp:include page="nav_bar_loggedout.jsp" />
 	
 <h1>Contact Something Books</h1>
 
