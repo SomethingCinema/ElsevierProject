@@ -1,29 +1,58 @@
 package com.qa.services;
 
-import javax.transaction.Transactional;
-
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.qa.models.Customer;
+import com.qa.repositories.CustomerRepository;
 
-@Repository
-public interface CustomerService extends CrudRepository<Customer, Integer>{
-	@Query("select c from Customer c where c.email = :email and c.password = :password")
-	public Customer loginProcess(@Param("email") String email,@Param("password") String password);
-
-	@Modifying
-	@Transactional
-	@Query("UPDATE Customer c set c.firstName = :firstName, c.lastName = :lastName, c.email = :email WHERE c.customerId = :customerId")
-	public int updateCustomer(@Param("firstName") String firstName,
-			@Param("lastName") String lastName,
-			@Param("email") String email,
-			@Param("customerId") int customerId);
+@Service
+public class CustomerService {
+	
+	@Autowired
+	private CustomerRepository customerRepository;
+	
+	public Customer add(Customer c){
+		return customerRepository.save(c);
+//		return null;
+	}
+	
+	public Customer loginProcess(String email,String password) {
+		Iterable<Customer> allCustomers = customerRepository.findAll();
+		
+		for(Customer c: allCustomers){
+			if(c.getEmail().equalsIgnoreCase(email) && c.getPassword().equals(password)){
+				return c;
+			}
+		}
+		return null;
+	}
+	
+	public int updateCustomer(String firstName,
+			String lastName,
+			String email,
+			 int customerId){
+		
+		Customer c = customerRepository.findOne(customerId);
+		
+		c.setFirstName(firstName);
+		c.setLastName(lastName);
+		c.setEmail(email);
+		
+		if(customerRepository.save(c) != null){ 
+			return 1;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public Customer findOne(int customerId){
+		return customerRepository.findOne(customerId);
+	}
 	
 
-}
 
+
+
+}

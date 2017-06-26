@@ -1,30 +1,56 @@
 package com.qa.services;
 
-import javax.transaction.Transactional;
-
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Service;
 
 import com.qa.models.Address;
+import com.qa.models.Customer;
+import com.qa.repositories.AddressRepository;
 
-public interface AddressService extends CrudRepository<Address,Integer>
-{
-	@Modifying
-	@Transactional
-	@Query("UPDATE Address a set a.addressLine1 = :addressLine1,a.addressLine2 = :addressLine2,a.city = :city,a.postcode = :postcode,a.state= :state,a.country = :country,a.phoneNumber = :phoneNumber WHERE a.customerId = :customerId and a.addressType = :addressType")
-	public int updateBillingAddress(@Param("addressLine1") String addressLine1,
-			@Param("addressLine2") String addressLine2,
-			@Param("city") String city,
-			@Param("postcode") String postcode,
-			@Param("state") String state,
-			@Param("country") String country,
-			@Param("phoneNumber") String phoneNumber,
-			@Param("customerId") int customerId,
-			@Param("addressType") String addressType
-			);
+@Service
+public class AddressService {
+
+	@Autowired
+	private AddressRepository addressRepository;
+
+	public Address findAddressByType(int customerId, String addressType) {
+		Iterable<Address> allAddresses = addressRepository.findAll();
+		for(Address a: allAddresses){
+			if(a.getCustomerId() == customerId && a.getAddressType().equals(addressType)){
+				return a;
+			}
+		}
+		return null;
+	}
+
+	public int updateBillingAddress(
+	String addressLine1, String addressLine2,
+	String city, String postcode,
+	String state, String country,
+	String phoneNumber, int customerId, String addressType){
+		Iterable<Address> allAddresses = addressRepository.findAll();
+		
+		for(Address a: allAddresses){
+			if(a.getCustomerId() == customerId && a.getAddressType().equals(addressType)){
+				a.setAddressLine1(addressLine1);
+				a.setAddressLine2(addressLine2);
+				a.setCity(city);
+				a.setPostcode(postcode);
+				a.setState(state);
+				a.setCountry(country);
+				a.setPhoneNumber(phoneNumber);
+				if(addressRepository.save(a) != null){
+					return 1;
+				}
+			}
+		}
+		return 0;
+	}
 	
-	@Query("SELECT a from Address a WHERE a.customerId = :customerId and a.addressType = :addressType")
-	public Address findAddressByType(@Param("customerId") int customerId,@Param("addressType") String addressType);
+	public Address add(Address a){
+		return addressRepository.save(a);
+//		return null;
+	}
+
 }
