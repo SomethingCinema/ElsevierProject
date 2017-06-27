@@ -36,6 +36,7 @@
    
 
 <!-- Start Top Bar -->
+<!-- 
     <div class="top-bar">
       <div class="top-bar-left">
         <ul class="menu">
@@ -61,7 +62,11 @@
           
       </div>
     </div>
+     -->
     <!-- End Top Bar -->
+    
+    <jsp:include page="nav_bar_loggedout.jsp" />
+    
     <br>
     <!-- You can now combine a row and column if you just need a 12 column row -->
     <div class="row columns">

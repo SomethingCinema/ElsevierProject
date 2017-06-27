@@ -21,6 +21,7 @@
   %>
     
     <!-- Start Top Bar -->
+    <!--  
     <div class="top-bar">
       <div class="top-bar-left">
         <ul class="menu">
@@ -50,8 +51,10 @@
           </ul>
           
       </div>
-    </div>
+    </div>  -->
     <!-- End Top Bar -->
+    
+    <jsp:include page="nav_bar_loggedin.jsp" />
     
        
        <div class="row">

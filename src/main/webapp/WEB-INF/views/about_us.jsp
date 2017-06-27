@@ -10,6 +10,8 @@
 <title>About Us</title>
 </head>
 <body>
+ 	<jsp:include page="nav_bar_loggedout.jsp" />
+
  <h2 class="intro">Meet our highly talented team of developers who bring their unique skills 
 		to allow us to meet the needs of our customers while staying ahead of our Competitors!!!</h3>
 	<div class="team-content">
@@ -38,6 +40,5 @@
 	  <a href="mailto:s.rogers.1@elsevier.com">s.rogers.1@elsevier.com</a>
 	 </div>
 	</div>	
-
 </body>
 </html>
