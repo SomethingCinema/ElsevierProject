@@ -232,5 +232,12 @@ public class HomeController {
 
 		return modelAndView;
 	}
+	
+	@RequestMapping("/updatePassword")
+	public ModelAndView updatePassword(@ModelAttribute("logged_in_customer") Customer loggedInCustomer){
+		ModelAndView modelAndView = new ModelAndView("password_change", "logged_in_customer", loggedInCustomer);
+		
+		return modelAndView;
+	}
 
 }
