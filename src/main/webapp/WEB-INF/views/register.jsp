@@ -54,7 +54,7 @@
                <label>Email ID * </label>
                 <input type="text" placeholder="Enter Email" name="email" id="email"/> 
                 <label>Password * </label>
-				 <input type="password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="Enter Password" name="password" id="password"/>
+				 <input type="password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="Enter Password (must have uppercase, lowercase, and number)" name="password" id="password"/>
             	
             </div>
             
