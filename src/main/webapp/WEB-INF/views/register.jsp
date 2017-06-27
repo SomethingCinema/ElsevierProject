@@ -43,7 +43,7 @@
     <div class="callout large">
       <div class="row column">
         
-        <form action="/registerProcess" method="post" class="register">
+        <form action="/registerProcess" method="post" class="val">
         <div class="medium-6">
            <h3> Create an account  </h3>
                 
@@ -53,7 +53,7 @@
                <label>Last Name * </label>
                <input type="text" required pattern="[a-zA-Z]+" placeholder="Enter Last Name" name="lastName" id="lastName"/> 
                <label>Email ID * </label>
-                <input type="text" placeholder="Enter Email" name="email" id="email"/> 
+                <input type="text" placeholder="Enter Email" name="email" id="email" required="required"/> 
                 <label>Password * </label>
 				 <input type="password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="Enter Password (must have uppercase, lowercase, and number)" name="password" id="password"/>
             	
