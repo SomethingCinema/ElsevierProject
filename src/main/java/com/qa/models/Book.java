@@ -4,11 +4,9 @@ package com.qa.models;
 
 import java.util.List;
 
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Book {
@@ -32,8 +30,7 @@ public class Book {
 		return authors;
 	}
 
-	@Autowired
-	@ElementCollection
+	@OneToMany
 	private List<Author> authors;
 	
 	public void setAuthors(List<Author> authors) {
