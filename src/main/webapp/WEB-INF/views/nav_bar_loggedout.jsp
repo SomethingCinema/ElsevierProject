@@ -6,8 +6,7 @@
     <div class="top-bar">
       <div class="top-bar-left">
         <ul class="menu">
-          <li class="menu-text" style="color:red">Online Shopping</li>
-          <li><a href="/">Home</a></li>
+          <li class="menu-text" style="color:black"><a href="/">Something Books</a></li>
           
         </ul>
       </div>
@@ -16,9 +15,9 @@
              <ul class="dropdown menu" data-dropdown-menu>
             
             <li class="has-submenu">
-              <a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/></a>
+              <a href="/viewCart"><img src="images/cart.png" width="50" height="50"/></a>
               <ul class="submenu menu vertical" data-submenu>
-                <li><a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/></a></li>
+                <li><a href="/viewCart"><img src="images/cart.png" width="50" height="50"/></a></li>
                 <tr><a href="/register">Register</a><a href="/login">Login</a></tr>
               </ul>
             </li>
