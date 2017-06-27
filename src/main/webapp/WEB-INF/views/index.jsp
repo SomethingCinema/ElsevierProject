@@ -67,7 +67,7 @@
       
    
     %>
-      <div class="column" style="height: 500px; overflow: hidden; text-overflow: ellipsis">
+      <div class="column">
       
         <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="thumbnail" src="<%=book.getBookImage()%>"></a>
         <h5><%= book.getTitle()%></h5>
