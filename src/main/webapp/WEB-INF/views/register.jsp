@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Shopping </title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/form.css" type="text/css">
   </head>
   <body>
     
@@ -44,26 +45,28 @@
     <div class="callout large">
       <div class="row column">
         
-        <form action="/registerProcess" method="post">
+        <form action="/registerProcess" method="post" class="val">
         <div class="medium-6">
            <h3> Create an account  </h3>
                 
-                <p>${alert}</p>
-		        <label>Firstname * </label>
-		        <input type="text" placeholder="Enter firstname" name="firstName" id="firstName"/> 
-		        <label>Lastname * </label>
-		        <input type="text" placeholder="Enter lastname" name="lastName" id="lastName"/> 
-		        <label>Email ID * </label>
-		        <input type="text" placeholder="Enter email" name="email" id="email"/> 
-		        <label>Password * </label>
-				<input type="password" placeholder="Enter Password" name="password" id="password"/>
+
+               <p>${alert}</p>
+               <label>First Name * </label>
+               <input type="text" required pattern="[a-zA-Z]+" placeholder="Enter First Name" name="firstName" id="firstName" required="required"/> 
+               <label>Last Name * </label>
+               <input type="text" required pattern="[a-zA-Z]+" placeholder="Enter Last Name" name="lastName" id="lastName"/> 
+               <label>Email ID * </label>
+                <input type="text" placeholder="Enter Email" name="email" id="email" required="required"/> 
+                <label>Password * </label>
+				 <input type="password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="Enter Password (must have uppercase, lowercase, and number)" name="password" id="password"/>
             	
             </div>
             
             <div class="medium-6">
            
-	         	 <input type="checkbox" name="agreement"/> I have read and understood the 
-	         	 <a href="/registered_user_agreement">Registered User Agreement </a> and agree to be bound by all of its terms. 
+
+          	 <input type="checkbox" name="agreement" required/> I have read and understood the 
+          	 <a href="/registered_user_agreement">Registered User Agreement </a> and agree to be bound by all of its terms. 
          
             </div>
       		
@@ -82,6 +85,8 @@
     <script>
       $(document).foundation();
     </script>
+    
+  <jsp:include page="footer.jsp"/>
   </body>
 </html>
 

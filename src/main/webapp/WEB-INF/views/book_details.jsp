@@ -2,7 +2,13 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!doctype html>
+
 <%@page import="com.qa.models.Book"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+
+<!doctype html>
+
+
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
@@ -95,7 +101,7 @@
             Print book ISBN <%=book.getPaperISBN()%>
           </div>
           <div class="column">
-           Price :      <fmt:formatNumber value="<%=book.getPrice() %>" type="currency"/>
+           Price : <fmt:formatNumber type="currency" value="<%=book.getPrice()%>"/>
           </div>
           <div class="column">
             Published On <%=book.getPublishedDate()%>
@@ -107,8 +113,11 @@
         <h3><%=book.getTitle() %></h3>
         <p><%=book.getDescription() %></p>
 
+
+		<form>
+
         <label>Select the format
-        <select>
+        <select required>
           <option value="">-- Select -- </option>
           <option value="print">Paperback</option>
           <option value="eBook">eBook</option>
@@ -117,8 +126,9 @@
         </label>
 
         
-
-        <a href="/addToCart?bookId=<%=book.getBookId()%>" class="button large expanded">Add to Cart</a>
+	<%-- <a href="/addToCart?bookId=<%=book.getBookId()%>" class="button large expanded">Add to Cart</a> -
+          <button onclick="/addToCart?bookId=<%=book.getBookId()%>" class="button large expanded">Add to Cart</button>
+        </form>
 
         <!-- <div class="small secondary expanded button-group">
             <a class="button">Facebook</a>
@@ -225,6 +235,8 @@
     <script>
       $(document).foundation();
     </script> 
+    
+    <jsp:include page="footer.jsp"/>
   </body>
 </html>
 

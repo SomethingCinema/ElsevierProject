@@ -69,6 +69,22 @@ public class HomeController {
 		return modelAndView;
 	}
 
+	@RequestMapping("/contact")
+	public ModelAndView contact()
+	{
+		ModelAndView modelAndView = new ModelAndView("contact");
+	
+	    return modelAndView;
+	}
+	
+	@RequestMapping("/about_us")
+	public ModelAndView aboutus()
+	{
+		ModelAndView modelAndView = new ModelAndView("about_us");
+	
+	    return modelAndView;
+	}
+
 	@RequestMapping("/registerProcess")
 	public ModelAndView registerProcess(@ModelAttribute("Customer") Customer customer) {
 

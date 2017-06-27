@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Shopping </title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/form.css">
   </head>
   <body>
   
@@ -63,27 +64,27 @@
         <div class="large-6 columns">
            <h3> Billing Address </h3>
                 
-              <form action="/updateAddress" method="post">
+              <form action="/updateAddress" method="post" class="val">
                <label>Address Line1 * </label>
-               <input type="text" placeholder="Enter AddressLine2" name="addressLine1" id="addressLine1"/> 
+               <input type="text" required pattern="[a-fA-F0-9.]+" placeholder="Enter AddressLine2" name="addressLine1" id="addressLine1"/> 
                <label>Address Line2 * </label>
-               <input type="text" placeholder="Enter Address Line2" name="addressLine2" id="addressLine2"/> 
+               <input type="text" required pattern="[a-fA-F0-9.]+" placeholder="Enter Address Line2" name="addressLine2" id="addressLine2"/> 
                <label>City * </label>
-                <input type="text" placeholder="Enter City" name="city" id="city"/> 
+                <input type="text" required pattern="[a-zA-Z]+" placeholder="Enter City" name="city" id="city"/> 
                   <label>Postcode * </label>
-                <input type="text" placeholder="Enter Postcode" name="postcode" id="postcode"/> 
+                <input type="text" required pattern="(\d{5}([\-]\d{4})?)" placeholder="Enter Postcode" name="postcode" id="postcode"/> 
                 
                 
-                  <label>State/County * </label>
-                <input type="text" placeholder="Enter State/County" name="state" id="state"/> 
+                  <label>State * </label>
+                <input type="text" required pattern="[a-zA-Z]+" placeholder="Enter State" name="state" id="state"/> 
                 
                 
                   <label>Country * </label>
-                <input type="text" placeholder="Enter Country" name="country" id="county"/> 
+                <input type="text" required pattern="[a-zA-Z]+" placeholder="Enter Country" name="country" id="county"/> 
                 
                 
                   <label>Phone Number * </label>
-                <input type="text" placeholder="Enter Phone number" name="phoneNumber" id="phoneNumber"/> 
+                <input type="text" required pattern="\d{3}[\-]\d{3}[\-]\d{4}" placeholder="Enter Phone number" name="phoneNumber" id="phoneNumber"/> 
                 
                  
                 <input type="hidden" name="addressType" id="addressType" value="billing"/> 
@@ -99,27 +100,27 @@
                 
                 <input type="checkbox" class="ba" checked="checked" /> Different from billing address
                 
-              <form action="/updateAddress" method="post">
+              <form action="/updateAddress" method="post" class="val">
                <label>Address Line1 * </label>
-               <input type="text" placeholder="Enter AddressLine2" name="addressLine1" id="addressLine1" class="tex"/> 
+               <input type="text" required pattern="[a-fA-F0-9.]+" placeholder="Enter AddressLine2" name="addressLine1" id="addressLine1" class="tex"/> 
                <label>Address Line2 * </label>
-               <input type="text" placeholder="Enter Address Line2" name="addressLine2" id="addressLine2" class="tex"/> 
+               <input type="text" required pattern="[a-fA-F0-9.]+" placeholder="Enter Address Line2" name="addressLine2" id="addressLine2" class="tex"/> 
                <label>City * </label>
-                <input type="text" placeholder="Enter City" name="city" id="city" class="tex"/> 
+                <input type="text" required pattern="[a-zA-Z]+" placeholder="Enter City" name="city" id="city" class="tex"/> 
                   <label>Postcode * </label>
-                <input type="text" placeholder="Enter Postcode" name="postcode" id="postcode" class="tex"/> 
+                <input type="text" required pattern="(\d{5}([\-]\d{4})?)" placeholder="Enter Postcode" name="postcode" id="postcode" class="tex"/> 
                 
                 
-                  <label>State/County * </label>
-                <input type="text" placeholder="Enter State/County" name="state" id="state" class="tex"/> 
+                  <label>State * </label>
+                <input type="text" required pattern="[a-zA-Z]+" placeholder="Enter State" name="state" id="state" class="tex"/> 
                 
                 
                   <label>Country * </label>
-                <input type="text" placeholder="Enter Country" name="country" id="county" class="tex"/> 
+                <input type="text" required pattern="[a-zA-Z]+" placeholder="Enter Country" name="country" id="county" class="tex"/> 
                 
                 
                   <label>Phone Number * </label>
-                <input type="text" placeholder="Enter Phone number" name="phoneNumber" id="phoneNumber" class="tex"/> 
+                <input type="text" required pattern="\d{3}[\-]\d{3}[\-]\d{4}" placeholder="Enter Phone number" name="phoneNumber" id="phoneNumber" class="tex"/> 
                 
                  
                 <input type="hidden" name="addressType" id="addressType" value="shipping"/> 
@@ -147,6 +148,8 @@
     <script>
       $(document).foundation();
     </script>
+    
+    <jsp:include page="footer.jsp"/>
   </body>
 </html>
 

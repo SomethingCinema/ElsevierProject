@@ -2,16 +2,18 @@
 	pageEncoding="ISO-8859-1"%>
 <!doctype html>
 <html class="no-js" lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Online Shopping</title>
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
 
-	<!-- Start Top Bar -->
-	<!-- 
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Shopping </title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/form.css">
+  </head>
+  <body>
+    
+    <!-- Start Top Bar -->
+    <!-- 
     <div class="top-bar">
       <div class="top-bar-left">
         <ul class="menu">
@@ -51,11 +53,11 @@
 				<form action="loginProcess" method="post">
 
 					<p>${alert}</p>
-					<label>Email ID * </label> 
-					<input type="text" placeholder="Enter email" name="email" id="email" /> 
-					<label>Password * </label> 
-					<input type="password" placeholder="Enter Password" name="password" id="password" /> 
-					<input type="submit" class="button expanded" value="Login">
+					 <label>Email ID * </label>
+                <input type="text" placeholder="Enter Email" name="email" id="email" required="required"/> 
+                <label>Password * </label>
+				 <input type="password" placeholder="Enter Password" name="password" id="password" required="required"/>
+            	<input type="submit" class="button expanded" value="Login">
 
 				</form>
 			</div>
@@ -77,6 +79,7 @@
 	<script>
 		$(document).foundation();
 	</script>
+  <jsp:include page="footer.jsp"/>
 </body>
 </html>
 

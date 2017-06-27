@@ -107,7 +107,6 @@ public class Book {
 	}
 
 
-
 	public double getPrice() {
 		return price;
 	}

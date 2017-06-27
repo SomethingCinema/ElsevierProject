@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Shopping </title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/form.css">
   </head>
   <body>
   
@@ -64,7 +65,7 @@
        
        <div class="row column">
         
-        <form action="/updateProfile" method="post">
+        <form action="/updateProfile" method="post" class="val">
         <div class="medium-6">
            <h3> Account details </h3>
                 
@@ -74,7 +75,7 @@
                <label>Lastname * </label>
                <input type="text" placeholder="Enter lastname" name="lastName" id="lastName" value="<%=c.getLastName()%>"/> 
                <label>Email ID * </label>
-                <input type="text" placeholder="Enter email" name="email" id="email" value="<%=c.getEmail()%>"/> 
+                <input type="text" placeholder="Enter email" name="email" id="email" value="<%=c.getEmail()%>" required="required"/> 
                 
             </div>
             
@@ -101,6 +102,8 @@
     <script>
       $(document).foundation();
     </script>
+   
+   <jsp:include page="footer.jsp"/>
   </body>
 </html>
 
