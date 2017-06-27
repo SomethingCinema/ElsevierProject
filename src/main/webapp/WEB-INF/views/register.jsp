@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Shopping </title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/form.css" type="text/css">
   </head>
   <body>
     
@@ -42,13 +43,13 @@
     <div class="callout large">
       <div class="row column">
         
-        <form action="/registerProcess" method="post">
+        <form action="/registerProcess" method="post" class="register">
         <div class="medium-6">
            <h3> Create an account  </h3>
                 
                 
                <label>First Name * </label>
-               <input type="text" required pattern="[a-zA-Z]+" placeholder="Enter First Name" name="firstName" id="firstName"/> 
+               <input type="text" required pattern="[a-zA-Z]+" placeholder="Enter First Name" name="firstName" id="firstName" required="required"/> 
                <label>Last Name * </label>
                <input type="text" required pattern="[a-zA-Z]+" placeholder="Enter Last Name" name="lastName" id="lastName"/> 
                <label>Email ID * </label>

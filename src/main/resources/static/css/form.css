@@ -1,0 +1,20 @@
+form.register input[type="text"]:focus,
+form.register input[type="password"]:focus,
+form.register textarea:focus,
+form.register select:focus { 
+    border-color: #44f97e;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px #44f97e;
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px #44f97e;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px #44f97e;
+    color: rgb(0,0,0);
+}
+
+form.register input[type="text"]:invalid:focus,
+form.register input[type="password"]:invalid:focus,
+form.register textarea:invalid:focus,
+form.register select:invalid:focus { 
+    border-color: #f4aa42;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px #f4aa42;
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px #f4aa42;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px #f4aa42;
+}
