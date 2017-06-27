@@ -1,5 +1,11 @@
-<!doctype html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <%@page import="com.qa.models.Book"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+
+<!doctype html>
+
+
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
@@ -92,7 +98,7 @@
             Print book ISBN <%=book.getPaperISBN()%>
           </div>
           <div class="column">
-           Price :       $<%=book.getPrice()%>
+           Price : <fmt:formatNumber type="currency" value="<%=book.getPrice()%>"/>
           </div>
           <div class="column">
             Published On <%=book.getPublishedDate()%>
@@ -104,7 +110,9 @@
         <h3><%=book.getTitle() %></h3>
         <p><%=book.getDescription() %></p>
 
+
 		<form>
+
         <label>Select the format
         <select required>
           <option value="">-- Select -- </option>
@@ -224,6 +232,8 @@
     <script>
       $(document).foundation();
     </script> 
+    
+    <jsp:include page="footer.jsp"/>
   </body>
 </html>
 

@@ -3,6 +3,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="com.qa.models.Book"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
@@ -43,6 +44,7 @@
 
     <jsp:include page="nav_bar_loggedout.jsp" />
     
+    
     <div class="row column text-center">
       <h2>Our Newest Books
       
@@ -70,7 +72,7 @@
       
         <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="thumbnail" src="<%=book.getBookImage()%>"></a>
         <h5><%= book.getTitle()%></h5>
-        <p>$<%= book.getPrice()%></p>
+        <p><fmt:formatNumber type="currency" value="<%=book.getPrice()%>"></fmt:formatNumber></p>
         <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="button expanded">View book details</a>
         <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
       </div>
@@ -86,6 +88,9 @@
     <script src="js/elsevier.js"></script>
     <script>
       $(document).foundation();
-    </script> 
+    </script>
+    
+     <jsp:include page="footer.jsp"/>
+     
   </body>
 </html>

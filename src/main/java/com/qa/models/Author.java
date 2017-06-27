@@ -2,6 +2,7 @@ package com.qa.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Author {
@@ -17,6 +18,9 @@ public class Author {
 	private String affiliations;
 	
 	private String expertise;
+	
+	@ManyToOne
+	private Book book;
 
 	public int getAuthorId() {
 		return authorId;
