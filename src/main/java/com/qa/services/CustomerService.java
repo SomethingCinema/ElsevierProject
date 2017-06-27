@@ -1,5 +1,7 @@
 package com.qa.services;
 
+import java.sql.SQLException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +15,15 @@ public class CustomerService {
 	private CustomerRepository customerRepository;
 	
 	public Customer add(Customer c){
+		Iterable<Customer> allCustomers = customerRepository.findAll();
+		
+		for(Customer current: allCustomers){
+			if(current.getEmail().equalsIgnoreCase(c.getEmail())){
+				return null; //email already exists
+			}
+		}
 		return customerRepository.save(c);
-//		return null;
+
 	}
 	
 	public Customer loginProcess(String email,String password) {
