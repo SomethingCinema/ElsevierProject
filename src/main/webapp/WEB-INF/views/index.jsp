@@ -29,7 +29,7 @@
             <li class="has-submenu">
               <a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/></a>
               <ul class="submenu menu vertical" data-submenu>
-                <li><a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/></a></li>
+                <li><a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/> View Cart </a></li>
                 <tr><a href="/register">Register</a><a href="/login">Login</a></tr>
               </ul>
             </li>

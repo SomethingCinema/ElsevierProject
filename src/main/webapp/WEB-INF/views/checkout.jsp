@@ -47,7 +47,7 @@
                 <li><a href="/login">Register | Login</a></li>
               </ul>
             </li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="/about_us">About Us</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
           
