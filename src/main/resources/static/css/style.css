@@ -261,7 +261,7 @@ body {
     margin: 0;
     line-height: 1.5;
     color: #0a0a0a;
-    background: #EDFFF3;
+    background: #eff7fc;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
 }
@@ -1225,13 +1225,14 @@ h6 {
 }
 a {
     background-color: transparent;
-    color: #2199e8;
+    color: #003659;
     text-decoration: none;
     cursor: pointer
 }
 a:focus,
 a:hover {
-    color: #1585cf
+    color: #0000ff;
+    text-decoration: none;
 }
 a img {
     border: 0
@@ -1460,7 +1461,7 @@ p+.stat {
     padding: .85em 1em;
     margin: 0 1rem 1rem 0;
     font-size: .9rem;
-    background: #2199e8;
+    background: #779ab2;
     color: #fff
 }
 [data-whatinput=mouse] .button {
@@ -1468,7 +1469,7 @@ p+.stat {
 }
 .button:focus,
 .button:hover {
-    background: #1583cc;
+    background: #2c7cb2;
     color: #fff
 }
 .button.tiny {
@@ -1528,7 +1529,7 @@ p+.stat {
 }
 .button.warning:focus,
 .button.warning:hover {
-    background: #cc8b00;
+    background: #2c7cb2;
     color: #fff
 }
 .button.hollow {
@@ -1717,6 +1718,10 @@ label {
 .switch {
     font-weight: 700
 }
+.menu-text {
+	font-size: 2em
+}
+
 label.middle {
     margin: 0 0 1rem;
     padding: .5625rem 0
@@ -2113,7 +2118,7 @@ screen and (min-width: 75em) {
     width: 16.66667%
 }
 .button-group.primary .button {
-    background: #2199e8;
+    background: #8db7d3;
     color: #fff
 }
 .button-group.primary .button:focus,
@@ -2154,7 +2159,7 @@ screen and (min-width: 75em) {
 }
 .button-group.warning .button:focus,
 .button-group.warning .button:hover {
-    background: #cc8b00;
+    background: #2c7cb2;
     color: #fff
 }
 .button-group.stacked .button,
@@ -3475,7 +3480,7 @@ table.hover tr:nth-of-type(even):hover {
 }
 .top-bar,
 .top-bar ul {
-    background-color: #eee
+    background-color: #8db7d3
 }
 .top-bar input {
     width: 200px;
@@ -3494,7 +3499,7 @@ table.hover tr:nth-of-type(even):hover {
     margin: 0 auto;
 }
 .ecommerce-footer {
-    background-color: #fefefe;
+    background-color: #eff7fc;
     padding: 70px 20px 40px 20px;
 }
 .ecommerce-footer-links h5 {
