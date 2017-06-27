@@ -123,7 +123,7 @@
         </label>
 
         
-
+	<%-- <a href="/addToCart?bookId=<%=book.getBookId()%>" class="button large expanded">Add to Cart</a> -
           <button onclick="/addToCart?bookId=<%=book.getBookId()%>" class="button large expanded">Add to Cart</button>
         </form>
 
