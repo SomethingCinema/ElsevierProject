@@ -50,7 +50,7 @@
 			<div class="medium-6">
 				<h3>Please login using your stored credentials</h3>
 
-				<form action="loginProcess" method="post">
+				<form action="loginProcess" method="post" class="val">
 
 					<p>${alert}</p>
 					 <label>Email ID * </label>
