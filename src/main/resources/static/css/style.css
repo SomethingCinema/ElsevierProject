@@ -3482,6 +3482,10 @@ table.hover tr:nth-of-type(even):hover {
 .top-bar ul {
     background-color: #8db7d3
 }
+.top-bar a:hover {
+	color: #007fd6;
+	background-color: ffffff;	
+}
 .top-bar input {
     width: 200px;
     margin-right: 1rem
