@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
@@ -46,22 +48,22 @@
         <div class="medium-6">
            <h3> Create an account  </h3>
                 
-                
-               <label>Firstname * </label>
-               <input type="text" placeholder="Enter firstname" name="firstName" id="firstName"/> 
-               <label>Lastname * </label>
-               <input type="text" placeholder="Enter lastname" name="lastName" id="lastName"/> 
-               <label>Email ID * </label>
-                <input type="text" placeholder="Enter email" name="email" id="email"/> 
-                <label>Password * </label>
-				 <input type="password" placeholder="Enter Password" name="password" id="password"/>
+                <p>${alert}</p>
+		        <label>Firstname * </label>
+		        <input type="text" placeholder="Enter firstname" name="firstName" id="firstName"/> 
+		        <label>Lastname * </label>
+		        <input type="text" placeholder="Enter lastname" name="lastName" id="lastName"/> 
+		        <label>Email ID * </label>
+		        <input type="text" placeholder="Enter email" name="email" id="email"/> 
+		        <label>Password * </label>
+				<input type="password" placeholder="Enter Password" name="password" id="password"/>
             	
             </div>
             
             <div class="medium-6">
            
-          	 <input type="checkbox" name="aggreement"/> I have read and understood the 
-          	 <a href="/registered_user_agreement">Registered User Agreement </a> and agree to be bound by all of its terms. 
+	         	 <input type="checkbox" name="agreement"/> I have read and understood the 
+	         	 <a href="/registered_user_agreement">Registered User Agreement </a> and agree to be bound by all of its terms. 
          
             </div>
       		

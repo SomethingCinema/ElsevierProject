@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!doctype html>
 <%@page import="com.qa.models.Book"%>
 <html class="no-js" lang="en">
@@ -92,7 +95,7 @@
             Print book ISBN <%=book.getPaperISBN()%>
           </div>
           <div class="column">
-           Price :       $<%=book.getPrice()%>
+           Price :      <fmt:formatNumber value="<%=book.getPrice() %>" type="currency"/>
           </div>
           <div class="column">
             Published On <%=book.getPublishedDate()%>

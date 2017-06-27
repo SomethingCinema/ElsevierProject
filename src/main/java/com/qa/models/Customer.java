@@ -1,12 +1,9 @@
 package com.qa.models;
 
-import java.util.List;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
-import org.apache.tomcat.jni.Address;
 
 @Entity
 public class Customer {
@@ -19,6 +16,7 @@ public class Customer {
 	
 	private String lastName;
 	
+	@Column(unique=true)	
 	private String email;
 	
 	private String password;

@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!doctype html>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.ArrayList"%>
@@ -70,7 +73,8 @@
       
         <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="thumbnail" src="<%=book.getBookImage()%>"></a>
         <h5><%= book.getTitle()%></h5>
-        <p>$<%= book.getPrice()%></p>
+        <!--  <p>$<%= book.getPrice()%></p> -->
+        <p><fmt:formatNumber value="<%=book.getPrice() %>" type="currency"/></p>
         <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="button expanded">View book details</a>
         <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
       </div>
