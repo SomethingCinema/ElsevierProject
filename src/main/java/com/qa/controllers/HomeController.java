@@ -86,7 +86,8 @@ public class HomeController {
 	}
 
 	@RequestMapping("/registerProcess")
-	public ModelAndView registerProcess(@ModelAttribute("Customer") Customer customer) {
+	public ModelAndView registerProcess(@ModelAttribute("Customer") Customer customer, 
+			@RequestParam(value = "agreement", required = false) String agreement ) {
 
 //		ModelAndView modelAndView = null;
 
@@ -128,7 +129,22 @@ public class HomeController {
 			return new ModelAndView("register", "alert", msg);
 		}
 		
-		// if checks are all good
+//		// Validate password
+//		Pattern passPattern = Pattern.compile("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\\s).*$");
+//		Matcher passMatcher = passPattern.matcher(customer.getPassword());
+//		if (passMatcher.matches()) {
+//			String msg = "Registration failed - please enter a password with an uppercase, lowercase, and number";
+//			return new ModelAndView("register", "alert", msg);
+//		}
+		
+		// Check if user agreement box is checked
+		if(agreement == null){
+			String msg = "Registration failed - please check the User Agreement box";
+			return new ModelAndView("register", "alert", msg);
+		}
+		
+		
+		// if checks are all good, then try to add to database
 		Customer c = customerService.add(customer);
 		
 		if (c != null) {
