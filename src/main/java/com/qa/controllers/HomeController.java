@@ -1,5 +1,6 @@
 package com.qa.controllers;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -105,7 +106,7 @@ public class HomeController {
 			else {
 				
 				Customer c = customerService.add(customer);
-	
+				
 				if (c != null) {
 					modelAndView = new ModelAndView("registration_success");
 				} 
