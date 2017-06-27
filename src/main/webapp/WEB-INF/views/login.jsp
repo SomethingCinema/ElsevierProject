@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Shopping </title>
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
   </head>
   <body>
     
@@ -46,7 +47,7 @@
         <div class="medium-6">
            <h3> Please login using your stored credentials  </h3>
                 
-               <form action="loginProcess" method="post"> 
+               <form action="loginProcess" method="post" class="login"> 
               
                <label>Email ID * </label>
                 <input type="text" placeholder="Enter Email" name="email" id="email" required="required"/> 
