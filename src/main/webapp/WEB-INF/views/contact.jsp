@@ -3,9 +3,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<link rel="stylesheet" href="css/style.css">
-	<title>Contact</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Contact</title>
 </head>
 <body>
 
@@ -29,10 +28,7 @@
 	  	src="https://www.google.com/maps/embed/v1/place?key=AIzaSyACjIrMt05daQAw5oEbeEYQUaDF-Jy2pEc&q=1600+John+F+Kennedy+Boulevard,Philadelphia,Pennsylvania">
 	</iframe>
 	
-	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="js/elsevier.js"></script>
-    <script>
-      $(document).foundation();
-    </script>
+
+
 </body>
 </html>
