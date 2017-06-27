@@ -26,3 +26,9 @@ nbdist/
 ### MAC ###
 .DS_Store
 ._*
+
+### Java ###
+*.class
+
+### generated files ###
+bin/
