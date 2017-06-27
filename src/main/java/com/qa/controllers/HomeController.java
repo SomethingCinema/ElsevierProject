@@ -72,7 +72,7 @@ public class HomeController {
 	@RequestMapping("/registerProcess")
 	public ModelAndView registerProcess(@ModelAttribute("Customer") Customer customer) {
 
-		ModelAndView modelAndView = null;
+//		ModelAndView modelAndView = null;
 
 //		System.out.println("Customer Firstname is " + customer.getFirstName());
 
@@ -81,80 +81,94 @@ public class HomeController {
 		// Validate registration
 		if (customer.getFirstName().isEmpty()) {
 			String msg = "Registration failed - please enter a first name";
-			modelAndView = new ModelAndView("register", "alert", msg);
+			return new ModelAndView("register", "alert", msg);
 		} 
 		else if(customer.getLastName().isEmpty()){
 			String msg = "Registration failed - please enter a last name";
-			modelAndView = new ModelAndView("register", "alert", msg);
+			return new ModelAndView("register", "alert", msg);
 		}
 		else if(customer.getEmail().isEmpty()){
 			String msg = "Registration failed - please enter an email";
-			modelAndView = new ModelAndView("register", "alert", msg);
+			return new ModelAndView("register", "alert", msg);
 		}
 		else if(customer.getPassword().isEmpty()){
 			String msg = "Registration failed - please enter a password";
-			modelAndView = new ModelAndView("register", "alert", msg);
+			return new ModelAndView("register", "alert", msg);
 		}
+		
+		// Validate email
+		Pattern emailPattern = Pattern.compile("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}");
+		Matcher emailMatcher = emailPattern.matcher(customer.getEmail());
+		if (!emailMatcher.matches()) {
+			String msg = "Registration failed - please enter a valid email";
+			return new ModelAndView("register", "alert", msg);
+		}
+		// Validate names
+		Pattern namePattern = Pattern.compile("[a-zA-Z]+");
+		Matcher firstNameMatcher = namePattern.matcher(customer.getFirstName());
+		Matcher lastNameMatcher = namePattern.matcher(customer.getLastName());
+		if (!firstNameMatcher.matches() || !lastNameMatcher.matches()) {
+			String msg = "Registration failed - please enter alphabetical characters for names";
+			return new ModelAndView("register", "alert", msg);
+		}
+		
+		// if checks are all good
+		Customer c = customerService.add(customer);
+		
+		if (c != null) {
+			return new ModelAndView("registration_success");
+		} 
 		else {
-			// Validate email
-			Pattern pattern = Pattern.compile("[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}");
-			Matcher matcher = pattern.matcher(customer.getEmail().toUpperCase());
-			if (!matcher.matches()) {
-				String msg = "Registration failed - please enter a valid email";
-				modelAndView = new ModelAndView("register", "alert", msg);
-			}
-			else {
-				
-				Customer c = customerService.add(customer);
-				
-				if (c != null) {
-					modelAndView = new ModelAndView("registration_success");
-				} 
-				else {
-					String msg = "Registration failed - email taken";
-					modelAndView = new ModelAndView("register", "alert", msg);
-				}
-			}
+			String msg = "Registration failed - email taken";
+			return new ModelAndView("register", "alert", msg);
 		}
 
-		return modelAndView;
+//		return modelAndView;
 	}
 
 	@RequestMapping("/loginProcess")
 	public ModelAndView loginProcess(@RequestParam("email") String email, @RequestParam("password") String password) {
 
-		ModelAndView modelAndView = null;
+//		ModelAndView modelAndView = null;
 
 		System.out.println("Email is " + email);
 
 		System.out.println("Password is " + password);
+		
+		// Check if email or password fields are empty
+		if (email.isEmpty()) {
+			String msg = "Please enter an email";
+			return new ModelAndView("login", "alert", msg);
+		} 
+		else if (password.isEmpty()) {
+			String msg = "Please enter a password";
+			return new ModelAndView("login", "alert", msg);
+		} 
 
 		// Validate email
-		Pattern pattern = Pattern.compile("[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}");
-		Matcher matcher = pattern.matcher(email.toUpperCase());
-		if (!matcher.matches()) {
+		Pattern emailPattern = Pattern.compile("[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}");
+		Matcher emailMatcher = emailPattern.matcher(email.toUpperCase());
+		if (!emailMatcher.matches()) {
 			String msg = "Please enter a valid email";
-			modelAndView = new ModelAndView("login", "alert", msg); 
+			return new ModelAndView("login", "alert", msg); 
 			// alert is a request object since its not defined in @SessionAttributes
-		} else if (password.isEmpty()) {
-			String msg = "Please enter a password";
-			modelAndView = new ModelAndView("login", "alert", msg);
-		} else {
+		} 
+		else {
 			Customer c = customerService.loginProcess(email, password);
 
 			if (c != null) {
 				// System.out.println("Success");
-				modelAndView = new ModelAndView("customer_home", "logged_in_customer", c);
+				return new ModelAndView("customer_home", "logged_in_customer", c);
 			} else {
 				// System.out.println("Failure");
 				// modelAndView = new ModelAndView("login_failed");
 
 				String msg = "Login failed";
-				modelAndView = new ModelAndView("login", "alert", msg);
+				return new ModelAndView("login", "alert", msg);
 			}
 		}
 
-		return modelAndView;
+//		return modelAndView;
 	}
 
 	@RequestMapping("/profile")
