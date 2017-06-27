@@ -114,7 +114,7 @@
         <p><%=book.getDescription() %></p>
 
 
-		<form>
+		<form action="/addToCart" method="post">
 
         <label>Select the format
         <select required>
@@ -124,10 +124,9 @@
           <option value="printAndeBook">PrintBook & eBook</option>
         </select>
         </label>
-
-        
-	<%-- <a href="/addToCart?bookId=<%=book.getBookId()%>" class="button large expanded">Add to Cart</a> -
-          <button onclick="/addToCart?bookId=<%=book.getBookId()%>" class="button large expanded">Add to Cart</button>
+		<%-- <a href="/addToCart?bookId=<%=book.getBookId()%>" class="button large expanded">Add to Cart</a> --%>
+		<input type="hidden" name="bookId" value="<%=book.getBookId()%>"/>
+          <button id="addToCart" class="button large expanded">Add to Cart</button>
         </form>
 
         <!-- <div class="small secondary expanded button-group">
