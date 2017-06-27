@@ -40,5 +40,7 @@
 	  <a href="mailto:s.rogers.1@elsevier.com">s.rogers.1@elsevier.com</a>
 	 </div>
 	</div>	
+	
+	<jsp:include page="footer.jsp"/>
 </body>
 </html>

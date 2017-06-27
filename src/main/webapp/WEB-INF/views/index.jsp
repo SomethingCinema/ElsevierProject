@@ -43,6 +43,7 @@
 
     <jsp:include page="nav_bar_loggedout.jsp" />
     
+    
     <div class="row column text-center">
       <h2>Our Newest Books
       
@@ -86,6 +87,9 @@
     <script src="js/elsevier.js"></script>
     <script>
       $(document).foundation();
-    </script> 
+    </script>
+    
+     <jsp:include page="footer.jsp"/>
+     
   </body>
 </html>
