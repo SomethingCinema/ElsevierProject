@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
@@ -47,7 +49,8 @@
         <div class="medium-6">
            <h3> Create an account  </h3>
                 
-                
+
+               <p>${alert}</p>
                <label>First Name * </label>
                <input type="text" required pattern="[a-zA-Z]+" placeholder="Enter First Name" name="firstName" id="firstName" required="required"/> 
                <label>Last Name * </label>
@@ -61,6 +64,7 @@
             
             <div class="medium-6">
            
+
           	 <input type="checkbox" name="agreement" required/> I have read and understood the 
           	 <a href="/registered_user_agreement">Registered User Agreement </a> and agree to be bound by all of its terms. 
          
