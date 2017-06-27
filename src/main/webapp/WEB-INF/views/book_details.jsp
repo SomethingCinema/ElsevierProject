@@ -109,8 +109,12 @@
       <div class="medium-6 large-5 columns">
         <h3><%=book.getTitle() %></h3>
         <p><%=book.getDescription() %></p>
+
+
+		<form>
+
         <label>Select the format
-        <select>
+        <select required>
           <option value="">-- Select -- </option>
           <option value="print">Paperback</option>
           <option value="eBook">eBook</option>
@@ -120,7 +124,8 @@
 
         
 
-        <a href="/addToCart?bookId=<%=book.getBookId()%>" class="button large expanded">Add to Cart</a>
+          <button onclick="/addToCart?bookId=<%=book.getBookId()%>" class="button large expanded">Add to Cart</button>
+        </form>
 
         <!-- <div class="small secondary expanded button-group">
             <a class="button">Facebook</a>

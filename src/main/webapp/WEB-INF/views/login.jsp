@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Shopping </title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/form.css">
   </head>
   <body>
     
@@ -46,12 +47,12 @@
         <div class="medium-6">
            <h3> Please login using your stored credentials  </h3>
                 
-               <form action="loginProcess" method="post"> 
+               <form action="loginProcess" method="post" class="val"> 
               
                <label>Email ID * </label>
-                <input type="text" placeholder="Enter email" name="email" id="email"/> 
+                <input type="text" placeholder="Enter Email" name="email" id="email" required="required"/> 
                 <label>Password * </label>
-				 <input type="password" placeholder="Enter Password" name="password" id="password"/>
+				 <input type="password" placeholder="Enter Password" name="password" id="password" required="required"/>
             	<input type="submit" class="button expanded" value="Login">
               
               </form>
