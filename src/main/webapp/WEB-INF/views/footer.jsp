@@ -11,59 +11,34 @@
 
  <div class="ecommerce-footer">
   <div class="ecommerce-footer-links row">
-    <div class="small-12 medium-12 large-6 columns">
+    
       <div class="row ecommerce-footer-links-block">
         <div class="small-4 medium-4 large-4 columns">
-          <h5>Categories</h5>
+          <h5>Something Books</h5>
           <ul class="menu vertical">
-            <li><a href="#">Category 1</a></li>
-            <li><a href="#">Category 2</a></li>
-            <li><a href="#">Category 3</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about_us">About Us</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
         <div class="small-4 medium-4 large-4 columns">
-          <h5>Help</h5>
+          <h5>My Account</h5>
           <ul class="menu vertical">
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Return Policy</a></li>
-            <li><a href="#">Shipping &amp; Delivery</a></li>
+            <li><a href="login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+           
           </ul>
         </div>
-      </div>
-      
-    </div>
-    <div class="small-12 medium-12 large-6 columns">
-     <div class="row">
        <div class="small-4 medium-4 large-4 columns">
-        <h5>My Account</h5>
-        <ul class="menu vertical">
-          <li><a href="#">Sign In</a></li>
-          <li><a href="#">Order Status</a></li>
-          <li><a href="#">My Wishlist</a></li>
-        </ul>
-      </div>
-      <div class="small-4 medium-4 large-4 columns">
-        <h5>About</h5>
-        <ul class="menu vertical">
-          <li><a href="#">Company</a></li>
-          <li><a href="#">Store Locator</a></li>
-          <li><a href="#">Team</a></li>
-          <li><a href="#">Support</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Career</a></li>
-        </ul>
-      </div>
-      <div class="small-4 medium-4 large-4 columns">
         <h5>Social</h5>
         <ul class="menu vertical">
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Twitter</a></li>
           <li><a href="#">Instagram</a></li>
-          <li><a href="#">Youtube</a></li>
         </ul>
       </div>
-     </div> 
-    </div>
+        
+        
+      </div>
+      
   </div>
   <div class="ecommerce-footer-bottom-bar row">
     <div class="small-12 medium-5 columns">
