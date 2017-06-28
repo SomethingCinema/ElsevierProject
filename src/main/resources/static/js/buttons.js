@@ -1,39 +1,27 @@
 
 $(document).ready(function() {
-
-	var $input = $("#qty")
-
+	//var $input = $("#qty");
+	//var $input = $("#qty" + this.id);
+	
  $(".num").click(function(){
+	 var $input = $("#qty");
     if ($(this).hasClass("plus")) {
-        $input.val(parseInt($input.val())+1); 
-        // call update cartTotal price
-        //updatePrice();
+        $input.val(parseInt($input.val())+1);     
+        updateLabel($input.val());
     }    
     else if ($input.val()>=1) {
         $input.val(parseInt($input.val())-1);
+        updateLabel($input.val());
     }
   });
 });
 
-// Create function to update price
 
-/*function updatePrice(price,quantity,price_label) {	
-	/*var cartTotal = document.getElementById("cart_total").value;
-	cartTotal = (cartTotal * $input.val());	
-	
-	var cartTotal = document.getElementById("cart_total").value;
-    var orderTotal = document.getElementById("order_total").value;
-    
-    var totalPrice = parseFloat(price) * parseFloat(quantity);
-    
-    price_label.innerHTML = "$"+totalPrice;
-    
-    cTotal  = parseFloat(cartTotal) + parseFloat(price);
-    
-    oTotal = parseFloat(orderTotal) + parseFloat(price);
-    
-    document.getElementById("cart_total_label").innerHTML = "$"+cTotal;
-    
-    document.getElementById("order_total_label").innerHTML = "$"+oTotal;
-    
-}*/	
+function updateLabel(input) {
+	var price = document.getElementById("price_label1").value;
+	var price_label = document.getElementById("price_label22");
+	//alert("updatelabel" + price * input);
+	//price_label.innerHTML = "$dsfasda" +(price * input);
+	price_label.value = "$"+(price * input);
+		
+}

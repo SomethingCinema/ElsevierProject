@@ -114,7 +114,7 @@
     	  double price = book.getPrice();
     	  totalPrice = book.getPrice() * quantity;
     	  cartTotal = cartTotal + book.getPrice()*quantity;
-    	  System.out.println("Cart Total "+cartTotal);
+    	  System.out.println("Cart Total "+cartTotal);  
     	  
       %>
        
@@ -138,20 +138,17 @@
             <form name="f1">
             	<input type="hidden" name="price" value="<%=price%>"/>
             	<input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
-            	Price <label id="price_label<%=i%>">$<%=totalPrice%></label>
+            	<!-- Price <label id="price_label<%=i%>">$<%=totalPrice%></label> -->
+            	<!-- <input type="hidden" id="price_label1" value="<%=totalPrice%>" /> -->
+            	<input type="text" id="price_label22" value="<%=totalPrice%>" readonly/>
+            	<input type="hidden" id="price_label1" value="<%=totalPrice%>" />
             	<input type="hidden" id="car_total" name="cart_total" value="<%=price%>"/>
             	<!-- Quantity <input type="number"  min="1" name="quantity" value="<%=quantity%>" oninput="calculateTotalPrice(price.value,this.value,price_label<%=i%>)"/> -->
-            	<input type="text" name="quantity" id="qty" class="quant" value="<%=quantity%>"/>
-            	<input type="button" value="+" class="num plus"/>
-            	<input type="button" value="-" class="num minus"/> 
+            	<input type="text" id="qty" name="quantity" class="quant" value="<%=quantity%>"/>
+            	<input type="button" id="inc" value="+" class="num plus"/>
+            	<input type="button" id="dec" value="-" class="num minus"/> 
             </form>
           </div>
-            <!--
-            	<input type="text" id="qty" class="quant" value="<%=quantity%>"/>
-            	<input type="button" value="+" class="num plus"/>
-            	<input type="button" value="-" class="num minus"/>     	
-             -->
-          
          
         </div>
         
