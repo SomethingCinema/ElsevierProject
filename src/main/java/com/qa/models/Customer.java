@@ -20,7 +20,6 @@ public class Customer {
 	private String email;
 	
 	private String password;
-	
 
 	public int getCustomerId() {
 		return customerId;
@@ -61,8 +60,6 @@ public class Customer {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
 	
 	
 }

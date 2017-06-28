@@ -64,8 +64,7 @@ public class CustomerService {
 		
 		if(customerRepository.save(c) != null){ 
 			return 1;
-		}
-		else{
+		}else{
 			return 0;
 		}
 	}

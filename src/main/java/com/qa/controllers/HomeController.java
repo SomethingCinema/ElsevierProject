@@ -262,20 +262,12 @@ public class HomeController {
 
 			ModelAndView modelAndView = null;
 
-			System.out.println("Before update ");
-
-			System.out.println("ID " + loggedInCustomer.getCustomerId());
-			System.out.println("Password" + loggedInCustomer.getPassword());
-
 			int recordsUpdated = customerService.updatePassword(loggedInCustomer.getPassword(), 
 					loggedInCustomer.getCustomerId());
 
 			if (recordsUpdated > 0) {
 				Customer c = customerService.findOne(loggedInCustomer.getCustomerId());
-
-				System.out.println("After update ");
-
-				System.out.println("ID " + c.getCustomerId());
+				
 				System.out.println("Password" + c.getPassword());
 
 				modelAndView = new ModelAndView("password_change", "logged_in_customer", c);
