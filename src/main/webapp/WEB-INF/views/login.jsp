@@ -53,11 +53,11 @@
 				<form action="loginProcess" method="post" class="val">
 
 					<p>${alert}</p>
-					 <label>Email ID * </label>
-                <input type="text" placeholder="Enter Email" name="email" id="email" required="required"/> 
-                <label>Password * </label>
-				 <input type="password" placeholder="Enter Password" name="password" id="password" required="required"/>
-            	<input type="submit" class="button expanded" value="Login">
+					<label>Email ID * </label> 
+					<input type="text" placeholder="Enter Email" name="email" id="email" required="required" /> 
+					<label>Password * </label> 
+					<input type="password" placeholder="Enter Password" name="password" id="password" required="required" /> 
+					<input type="submit" class="button expanded" value="Login">
 
 				</form>
 			</div>
