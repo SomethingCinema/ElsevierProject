@@ -1,10 +1,6 @@
 package com.qa.controllers;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
-
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -55,12 +51,6 @@ public class CheckoutController {
 			@RequestParam("order_total") double orderTotal, @RequestParam("email") String email,
 			@RequestParam("password") String password) {
 
-		// ModelAndView modelAndView = new
-		// ModelAndView("login_through_checkout");
-		//
-		// modelAndView.addObject("order_total", orderTotal);
-		// modelAndView.addObject("book_counts", bookCounts);
-		// return modelAndView;
 
 		System.out.println("Email is " + email);
 
