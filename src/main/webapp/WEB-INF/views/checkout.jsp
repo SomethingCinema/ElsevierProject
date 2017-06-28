@@ -109,12 +109,12 @@
 					</div>
 
 					<div class="column">
-						<label> Country</label> <input type="text" name="country"
+						<label> Country * </label> <input type="text" name="country"
 							id="country" size="30" />
 					</div>
 
 					<div class="column">
-						<label> Phone Number</label> <input type="text" name="phone"
+						<label> Phone Number * </label> <input type="text" name="phone"
 							id="phone" size="30" />
 					</div>
 

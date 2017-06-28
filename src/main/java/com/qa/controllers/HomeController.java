@@ -302,7 +302,8 @@ public class HomeController {
 				System.out.println("Password" + c.getPassword());
 
 				modelAndView = new ModelAndView("password_change", "logged_in_customer", c);
-			} else {
+			} 
+			else {
 				modelAndView = new ModelAndView("password_change", "logged_in_customer", loggedInCustomer);
 			}
 
