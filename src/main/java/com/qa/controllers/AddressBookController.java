@@ -1,8 +1,5 @@
 package com.qa.controllers;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -22,51 +19,14 @@ public class AddressBookController {
 	@RequestMapping("/updateAddress")
 	public ModelAndView updateAddress(@ModelAttribute("logged_in_customer") Customer loggedInCustomer,
 			@ModelAttribute("Address") Address address) {
-		
+
 		// Address validation
-		
-		Pattern addressPattern = Pattern.compile("[a-fA-F0-9.]+");
-		Matcher addressMatcher1 = addressPattern.matcher(address.getAddressLine1());
-		Matcher addressMatcher2 = addressPattern.matcher(address.getAddressLine2());
-		if (!addressMatcher1.matches()|| !addressMatcher2.matches()) {
-			String msg = "Please enter a valid address";
+		String msg = Validate.validateAddress(address);
+		if(!msg.isEmpty()){
 			return new ModelAndView("address_book", "alert", msg);
 		}
-		
-		Pattern cityPattern = Pattern.compile("[a-zA-Z]+");
-		Matcher cityMatcher = cityPattern.matcher(address.getCity());
-		Matcher stateMatcher = cityPattern.matcher(address.getState());
-		Matcher countryMatcher = cityPattern.matcher(address.getCountry());
-		if (!cityMatcher.matches()) {
-			String msg = "Please enter a valid city";
-			return new ModelAndView("address_book", "alert", msg);
-		}
-		else if (!stateMatcher.matches()) {
-			String msg = "Please enter a valid state";
-			return new ModelAndView("address_book", "alert", msg);
-		}
-		else if (!countryMatcher.matches()) {
-			String msg = "Please enter a valid country";
-			return new ModelAndView("address_book", "alert", msg);
-		}
-		
-		Pattern zipPattern = Pattern.compile("(\\d{5}([-]\\d{4})?)");
-		Matcher zipMatcher = zipPattern.matcher(address.getPostcode());
-		if (!zipMatcher.matches()) {
-			String msg = "Please enter a valid zipcode";
-			return new ModelAndView("address_book", "alert", msg);
-		}
-		
-		Pattern phonePattern = Pattern.compile("\\d{3}[-]\\d{3}[-]\\d{4}");
-		Matcher phoneMatcher = phonePattern.matcher(address.getPostcode());
-		if (!phoneMatcher.matches()) {
-			String msg = "Please enter a valid phone number";
-			return new ModelAndView("address_book", "alert", msg);
-		}
-		
-		
-		
-		// If all checks are good 
+
+		// If all checks are good
 		ModelAndView modelAndView = null;
 
 		Address billingAddress = null;
@@ -108,5 +68,7 @@ public class AddressBookController {
 		}
 		return modelAndView;
 	}
+
+	
 
 }
