@@ -13,6 +13,6 @@
 	<h1>Order completed</h1>
 	<p>Thank you for your order!</p>
 
-	<jsp:include page="footer.jsp"/>
+	<jsp:include page="footer_loggedin.jsp"/>
 </body>
 </html>

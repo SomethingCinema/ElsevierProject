@@ -61,6 +61,23 @@
 	 </div>
 	</div>	
 	
-	<jsp:include page="footer.jsp"/>
+	
+  	
+  	<%
+ 		c = (Customer) session.getAttribute("logged_in_customer");
+  		if (c.getFirstName() != null) {
+ 	 %>
+ 	 	<jsp:include page="footer_loggedin.jsp" />
+ 	 <%
+  		}
+  		else
+  		{
+ 	 %>
+		<jsp:include page="footer.jsp" />
+	<%
+  		}
+	%>
+	
+	
 </body>
 </html>
