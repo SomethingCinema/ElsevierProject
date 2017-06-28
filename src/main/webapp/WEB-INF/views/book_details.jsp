@@ -111,6 +111,7 @@
       </div>
       <div class="medium-6 large-5 columns">
         <h3><%=book.getTitle() %></h3>
+        <h4>By: <%=book.getBookauthor() %></h4>
         <p><%=book.getDescription() %></p>
 
 
