@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 
 import com.qa.models.Address;
 import com.qa.models.Customer;
+import com.qa.models.Shipping;
 
 public class Validate {
 	public static String validateLogin(String email, String password) {
@@ -103,6 +104,43 @@ public class Validate {
 		Matcher phoneMatcher = phonePattern.matcher(address.getPostcode());
 		if (!phoneMatcher.matches()) {
 			msg = "Please enter a valid phone number";
+		}
+		return msg;
+	}
+	public static String validateShipping(Shipping address) {
+		String msg = "";
+
+		// Pattern namePattern =
+
+		Pattern addressPattern = Pattern.compile("[a-zA-Z0-9.]+");
+		Matcher addressMatcher1 = addressPattern.matcher(address.getAddressLine1());
+		Matcher addressMatcher2 = addressPattern.matcher(address.getAddressLine2());
+		if (!addressMatcher1.matches() || !addressMatcher2.matches()) {
+			msg += "Please enter a valid address\n";
+		}
+
+		Pattern cityPattern = Pattern.compile("[a-zA-Z]+");
+		Matcher cityMatcher = cityPattern.matcher(address.getCity());
+		Matcher stateMatcher = cityPattern.matcher(address.getState());
+		Matcher countryMatcher = cityPattern.matcher(address.getCountry());
+		if (!cityMatcher.matches()) {
+			msg += "Please enter a valid city\n";
+		} else if (!stateMatcher.matches()) {
+			msg += "Please enter a valid state\n";
+		} else if (!countryMatcher.matches()) {
+			msg += "Please enter a valid country\n";
+		}
+
+		Pattern zipPattern = Pattern.compile("(\\d{5}([-]\\d{4})?)");
+		Matcher zipMatcher = zipPattern.matcher(address.getPostcode());
+		if (!zipMatcher.matches()) {
+			msg += "Please enter a valid zipcode\n";
+		}
+
+		Pattern phonePattern = Pattern.compile("\\d{3}[-]\\d{3}[-]\\d{4}");
+		Matcher phoneMatcher = phonePattern.matcher(address.getPostcode());
+		if (!phoneMatcher.matches()) {
+			msg += "Please enter a valid phone number\n";
 		}
 		return msg;
 	}
