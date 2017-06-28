@@ -14,7 +14,7 @@
         
             <ul class="dropdown menu" data-dropdown-menu>
             
-            <li><input type="text" name="search" placeholder="Search.."><li>   
+            <li><input type="text" name="search" id="search" placeholder="Search.."><li>   
             <li id="cart_items"></li>
             
             <li><a href="/profile">Personal Details</a></li>
@@ -35,5 +35,10 @@
       </div>
     </div>
     <!-- End Top Bar -->
-    
+<script type="text/javascript">
+    document.getElementById("search").onsubmit = function() {
+        window.location = "http://www.google.com/search?q=site:yoursitename.com " + document.getElementById("search").value;
+        return false;
+    }
+</script>
 </html>

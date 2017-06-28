@@ -43,7 +43,7 @@
         
             <ul class="dropdown menu" data-dropdown-menu>
             
-            <li><input type="text" name="search" placeholder="Search.."><li>
+            <li><input type="text" name="search" id="search" placeholder="Search.."><li>
             
             <li class="has-submenu">
               <a href="/viewCart"><img src="images/cart.png" width="50" height="50"/></a>
@@ -59,4 +59,10 @@
       </div>
     </div>
 <!-- End Top Bar -->
+<script type="text/javascript">
+    document.getElementById("search").onsubmit = function() {
+        window.location = "http://www.google.com/search?q=site:yoursitename.com " + document.getElementById("search").value;
+        return false;
+    }
+</script>
 </html>
