@@ -15,7 +15,7 @@
   </head>
   <body>
     
-    <form action="/checkoutProcess" method="post">
+    <form action="/completePayment" method="post">
     
     
     <%
@@ -147,7 +147,7 @@
       
       </div>
       <div class="medium-6 large-5 columns">
-        <%-- <h3>Order Summary </h3>
+       <h3>Order Summary </h3>
         <p> </p>
 
         <div class="row">
@@ -160,8 +160,6 @@
            </div>
            
        </div>
-
-
 
           <div class="row">
           <div class="small-3 columns">
@@ -181,13 +179,12 @@
           
             <label for="middle-label" class="middle" id="order_total_label">$<%=orderTotal%></label>
            </div>
-      
         </div>
 
 		  
 		<input type="hidden" name="order_total" value="<%=orderTotal %>"/>   
         <input type="submit" class="button large expanded" value="Checkout"/>
-        --%>
+       
       </div>  
    
  </div>

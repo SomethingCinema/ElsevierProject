@@ -202,7 +202,7 @@
 				<!-- form action="checkoutProcess" id="checkout_form"> -->
 				<!-- Display books here -->
 				<input type="hidden" name="order_total" value="<%=orderTotal%>" />
-				<input type="submit" class="button large expanded" value="Proceed to checkout" />
+				<input type="submit" class="button large expanded" value="Proceed to payment" />
 
 			</div>
 		</div>

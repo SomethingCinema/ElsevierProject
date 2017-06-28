@@ -25,6 +25,13 @@ public class CheckoutController {
 	@Autowired
 	CustomerService customerService;
 
+	
+	@RequestMapping("/completePayment")
+	public ModelAndView completePayment(){
+		return new ModelAndView("order_complete");
+	}
+	
+	
 	@RequestMapping("/checkoutProcess")
 	public ModelAndView checkoutProcess(@ModelAttribute("Shipping") Shipping shipping,
 			@ModelAttribute("book_counts") Map<Integer,Integer> bookCounts,
