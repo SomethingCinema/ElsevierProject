@@ -67,83 +67,84 @@
 			</nav>
 		</div>
 
-		<!-- <div class="row"> -->
+		<div class="row">
+			<p>${alert}</p>
 
-		<div class="medium-6 columns">
+			<div class="medium-6 columns">
 
-			<h2>Shipping Address</h2>
+				<h2>Shipping Address</h2>
 
-			<div class="row small-up-shiping">
+				<div class="row small-up-shiping">
 
-				<div class="columns">
-					<label> First Name * </label> <input type="text" name="firstName"
-						id="firstName" size="30" />
+					<div class="columns">
+						<label> First Name * </label> <input type="text" name="firstName"
+							id="firstName" size="30" />
+					</div>
+					<div class="columns">
+						<label> Last Name * </label> <input type="text" name="lastName"
+							id="lastName" size="30" />
+					</div>
+
+					<div class="column">
+						<label> Address 1 * </label> <input type="text"
+							name="addressLine1" id="addressLine1" size="30" />
+					</div>
+					<div class="column">
+						<label> Address 2 * </label> <input type="text"
+							name="addressLine2" id="addressLine2" size="30" />
+					</div>
+					<div class="column">
+						<label> City * </label> <input type="text" name="city" id="city"
+							size="30" />
+					</div>
+
+					<div class="column">
+						<label> Postcode / Zip code * </label> <input type="text"
+							name="postcode" id="postcode" size="30" />
+					</div>
+
+					<div class="column">
+						<label> State/Province * </label> <input type="text" name="state"
+							id="state" size="30" />
+					</div>
+
+					<div class="column">
+						<label> Country</label> <input type="text" name="country"
+							id="country" size="30" />
+					</div>
+
+					<div class="column">
+						<label> Phone Number</label> <input type="text" name="phone"
+							id="phone" size="30" />
+					</div>
+
+
+					<div class="column">
+						<label> Email * </label> <input type="text" name="email"
+							id="email" size="30" />
+					</div>
+
+
+					<div class="column">
+						<input type="checkbox" name="same" id="same" /> My billing and
+						shipping address are the same
+					</div>
+
 				</div>
-				<div class="columns">
-					<label> Last Name * </label> <input type="text" name="lastName"
-						id="lastName" size="30" />
+
+				<div class="row small-up-4">
+
+					<div class="column"></div>
+
 				</div>
 
-				<div class="column">
-					<label> Address 1 * </label> <input type="text" name="addressLine1"
-						id="addressLine1" size="30" />
-				</div>
-				<div class="column">
-					<label> Address 2 * </label> <input type="text" name="addressLine2"
-						id="addressLine2" size="30" />
-				</div>
-				<div class="column">
-					<label> City * </label> <input type="text" name="city" id="city"
-						size="30" />
-				</div>
-
-				<div class="column">
-					<label> Postcode / Zip code * </label> <input type="text"
-						name="postcode" id="postcode" size="30" />
-				</div>
-
-				<div class="column">
-					<label> State/Province * </label> <input type="text" name="state"
-						id="state" size="30" />
-				</div>
-
-				<div class="column">
-					<label> Country</label> <input type="text" name="country"
-						id="country" size="30" />
-				</div>
-
-				<div class="column">
-					<label> Phone Number</label> 
-					<input type="text" name="phone" id="phone" size="30" />
-				</div>
-
-
-				<div class="column">
-					<label> Email * </label> 
-					<input type="text" name="email" id="email" size="30" />
-				</div>
-
-
-				<div class="column">
-					<input type="checkbox" name="same" id="same" /> 
-					My billing and shipping address are the same
-				</div>
+				<hr>
 
 			</div>
-
-			<div class="row small-up-4">
-
-				<div class="column"></div>
-
-			</div>
-
-			<hr>
-
-		</div>
-		<div class="medium-6 large-5 columns">
+			<div class="medium-6 large-5 columns">
 
 
-			<!--  <div class="login_in_shipping">
+				<!--  <div class="login_in_shipping">
     
 
         <div class="row">
@@ -164,7 +165,7 @@
       
       </div> -->
 
-			<!-- <h3>Already have an account</h3>
+				<!-- <h3>Already have an account</h3>
 				<p>Please login using saved details</p>
 
 				  <div class="row">
@@ -177,36 +178,37 @@
            
        </div> -->
 
-			<div class="row">
-				<div class="small-3 columns">
-					<label for="middle-label" class="middle">VAT </label>
+				<div class="row">
+					<div class="small-3 columns">
+						<label for="middle-label" class="middle">VAT </label>
+					</div>
+					<div class="small-3 columns">
+						<label for="middle-label" class="middle">Applicable Tax </label>
+					</div>
+
 				</div>
-				<div class="small-3 columns">
-					<label for="middle-label" class="middle">Applicable Tax </label>
+
+				<div class="row">
+					<div class="small-3 columns">
+						<label for="middle-label" class="middle">Order Total </label>
+					</div>
+					<div class="small-3 columns">
+
+						<label for="middle-label" class="middle" id="order_total_label">$<%=orderTotal%></label>
+					</div>
+
 				</div>
+
+				<!-- form action="checkoutProcess" id="checkout_form"> -->
+				<input type="hidden" name="order_total" value="<%=orderTotal%>" />
+				<input type="submit" class="button large expanded" value="Checkout" />
 
 			</div>
-
-			<div class="row">
-				<div class="small-3 columns">
-					<label for="middle-label" class="middle">Order Total </label>
-				</div>
-				<div class="small-3 columns">
-
-					<label for="middle-label" class="middle" id="order_total_label">$<%=orderTotal%></label>
-				</div>
-
-			</div>
-
-			<!-- form action="checkoutProcess" id="checkout_form"> -->
-			<input type="hidden" name="order_total" value="<%=orderTotal%>" /> <input
-				type="submit" class="button large expanded" value="Checkout" />
-
 		</div>
 	</form>
 
 
-	<br>
+
 
 	<%-- <h3>Order Summary </h3>
         <p> </p>

@@ -37,6 +37,7 @@ public class CheckoutController {
 		modelAndView.addObject("book_counts", bookCounts);
 	    return modelAndView;
 	}
+	
 	@RequestMapping("/loginThroughCheckout")
 	public ModelAndView loginThroughCheckout(@ModelAttribute("book_counts") Map<Integer,Integer> bookCounts,
 			@RequestParam("order_total") double orderTotal,
@@ -57,11 +58,11 @@ public class CheckoutController {
 		// Check if email or password fields are empty
 		if (email.isEmpty()) {
 			String msg = "Please enter an email";
-			return new ModelAndView("login_through_checkout", "alert", msg);
+			return new ModelAndView("login_through_checkout", "alertLogin", msg);
 		} 
 		else if (password.isEmpty()) {
 			String msg = "Please enter a password";
-			return new ModelAndView("login_through_checkout", "alert", msg);
+			return new ModelAndView("login_through_checkout", "alertLogin", msg);
 		} 
 
 		// Validate email
@@ -69,7 +70,7 @@ public class CheckoutController {
 		Matcher emailMatcher = emailPattern.matcher(email.toUpperCase());
 		if (!emailMatcher.matches()) {
 			String msg = "Please enter a valid email";
-			return new ModelAndView("login", "alert", msg); 
+			return new ModelAndView("login", "alertLogin", msg); 
 			// alert is a request object since its not defined in @SessionAttributes
 			// can also write as .addObject("alert", msg)
 		} 
@@ -89,19 +90,86 @@ public class CheckoutController {
 				// modelAndView = new ModelAndView("login_failed");
 
 				String msg = "Login failed";
-				return new ModelAndView("login_through_checkout", "alert", msg);
+				return new ModelAndView("login_through_checkout", "alertLogin", msg);
 			}
 		}
-
-		
-		
-		
-		
 	}
 	
-	
-	
-	
-	
-	
+	@RequestMapping("/registerThroughCheckout")
+	public ModelAndView registerThroughCheckout(@ModelAttribute("Customer") Customer customer, 
+			@RequestParam(value = "agreement", required = false) String agreement,
+			@ModelAttribute("book_counts") Map<Integer,Integer> bookCounts,
+			@RequestParam("order_total") double orderTotal) {
+
+//		ModelAndView modelAndView = null;
+
+//		System.out.println("Customer Firstname is " + customer.getFirstName());
+
+//		System.out.println("Customer Password is " + customer.getPassword());
+
+		// Validate registration
+		if (customer.getFirstName().isEmpty()) {
+			String msg = "Registration failed - please enter a first name";
+			return new ModelAndView("login_through_checkout", "alertRegister", msg);
+		} 
+		else if(customer.getLastName().isEmpty()){
+			String msg = "Registration failed - please enter a last name";
+			return new ModelAndView("login_through_checkout", "alertRegister", msg);
+		}
+		else if(customer.getEmail().isEmpty()){
+			String msg = "Registration failed - please enter an email";
+			return new ModelAndView("login_through_checkout", "alertRegister", msg);
+		}
+		else if(customer.getPassword().isEmpty()){
+			String msg = "Registration failed - please enter a password";
+			return new ModelAndView("login_through_checkout", "alertRegister", msg);
+		}
+		
+		// Validate email
+		Pattern emailPattern = Pattern.compile("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}");
+		Matcher emailMatcher = emailPattern.matcher(customer.getEmail());
+		if (!emailMatcher.matches()) {
+			String msg = "Registration failed - please enter a valid email";
+			return new ModelAndView("login_through_checkout", "alertRegister", msg);
+		}
+		// Validate names
+		Pattern namePattern = Pattern.compile("[a-zA-Z]+");
+		Matcher firstNameMatcher = namePattern.matcher(customer.getFirstName());
+		Matcher lastNameMatcher = namePattern.matcher(customer.getLastName());
+		if (!firstNameMatcher.matches() || !lastNameMatcher.matches()) {
+			String msg = "Registration failed - please enter alphabetical characters for names";
+			return new ModelAndView("login_through_checkout", "alertRegister", msg);
+		}
+		
+//		// Validate password
+//		Pattern passPattern = Pattern.compile("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\\s).*$");
+//		Matcher passMatcher = passPattern.matcher(customer.getPassword());
+//		if (passMatcher.matches()) {
+//			String msg = "Registration failed - please enter a password with an uppercase, lowercase, and number";
+//			return new ModelAndView("register", "alert", msg);
+//		}
+		
+		// Check if user agreement box is checked
+		if(agreement == null){
+			String msg = "Registration failed - please check the User Agreement box";
+			return new ModelAndView("login_through_checkout", "alertRegister", msg);
+		}
+		
+		
+		// if checks are all good, then try to add to database
+		Customer c = customerService.add(customer);
+		
+		if (c != null) {
+			String msg = "Thanks for registering!";
+			ModelAndView modelAndView = new ModelAndView("checkout", "alert", msg);
+			modelAndView.addObject("logged_in_customer", c);
+			modelAndView.addObject("order_total", orderTotal);
+			modelAndView.addObject("book_counts", bookCounts);
+			return modelAndView;
+		} 
+		else {
+			String msg = "Registration failed - email taken";
+			return new ModelAndView("login_through_checkout", "alertRegister", msg);
+		}
+	}
 }
