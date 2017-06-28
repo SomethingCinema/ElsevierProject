@@ -10,9 +10,11 @@
           
         </ul>
       </div>
-      <div class="top-bar-right">
+      <div class="top-bar-right"> 
         
             <ul class="dropdown menu" data-dropdown-menu>
+            
+            <li><input type="text" name="search" placeholder="Search.."><li>   
             <li id="cart_items"></li>
             
             <li><a href="/profile">Personal Details</a></li>

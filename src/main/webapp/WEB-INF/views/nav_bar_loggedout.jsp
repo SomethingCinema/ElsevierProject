@@ -12,7 +12,9 @@
       </div>
       <div class="top-bar-right">
         
-             <ul class="dropdown menu" data-dropdown-menu>
+            <ul class="dropdown menu" data-dropdown-menu>
+            
+            <li><input type="text" name="search" placeholder="Search.."><li>
             
             <li class="has-submenu">
               <a href="/viewCart"><img src="images/cart.png" width="50" height="50"/></a>

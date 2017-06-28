@@ -214,6 +214,11 @@ input::-moz-focus-inner {
 input {
     line-height: normal
 }
+input[type=text] {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
 input[type=checkbox],
 input[type=radio] {
     box-sizing: border-box;
