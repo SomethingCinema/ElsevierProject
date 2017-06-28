@@ -32,7 +32,7 @@
        <div class="small-4 medium-4 large-4 columns">
         <h5>Social</h5>
         <ul class="menu vertical">
-          <li><a href="#">Instagram</a></li>
+          <li><a href="https://www.instagram.com/holycrudbooksellers/">Instagram</a></li>
         </ul>
       </div>
         
