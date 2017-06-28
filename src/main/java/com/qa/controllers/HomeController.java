@@ -91,6 +91,13 @@ public class HomeController {
 		return modelAndView;
 	}
 
+	@RequestMapping("/logout")
+	public ModelAndView logout() {
+		ModelAndView modelAndView = new ModelAndView("logout");
+
+		return modelAndView;
+	}
+	
 	@RequestMapping("/register")
 	public ModelAndView register() {
 		ModelAndView modelAndView = new ModelAndView("register");
