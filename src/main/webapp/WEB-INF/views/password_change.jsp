@@ -10,50 +10,26 @@
   </head>
   <body>
   
-  <%!
-  
-  Customer c;
-  
-  %>
-  
-  
-  <%
+    <%!
+  		Customer c;
+  	%>
+  	
+  	<%
  		c = (Customer) session.getAttribute("logged_in_customer");
-  %>
+  		if (c.getFirstName() != null) {
+ 	 %>
+ 	 	<jsp:include page="nav_bar_loggedin.jsp" />
+ 	 <%
+  		}
+  		else
+  		{
+ 	 %>
+		<jsp:include page="nav_bar_loggedout.jsp" />
+	<%
+  		}
+	%>
     
-    <!-- Start Top Bar -->
-    <!--  
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li class="menu-text" style="color:red">Online Shopping</li>
-          <li><a href="/">Home</a></li>
-          
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        
-            <ul class="dropdown menu" data-dropdown-menu>
-            <li id="cart_items"></li>
-            
-            <li><a href="/profile">Personal Details</a></li>
-            <li><a href="/addressBook">Address Book</a></li>
-            <li><a href="#">Change Password </a></li>
-            <li><a href="#">Order History </a></li>
-             <li><a href="/logout">Logout</a></li>
-            <li class="has-submenu">
-              <a href="/viewCart"> <img src="images/cart.jpg" width="50" height="50"/></a>
-              <ul class="submenu menu vertical" data-submenu>
-                <li><a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/></a></li>
-               
-              </ul>
-            </li>
-            
-          </ul>
-          
-      </div>
-    </div> -->
-    <!-- End Top Bar -->
+   
     <jsp:include page="nav_bar_loggedin.jsp" />
 
     <div class="callout large">
