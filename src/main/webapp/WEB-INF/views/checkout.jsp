@@ -77,40 +77,38 @@
 				<div class="row small-up-shiping">
 
 					<div class="columns">
-						<label> First Name * </label> <input type="text" name="firstName"
-							id="firstName" size="30" />
+						<label> First Name * </label> 
+						<input type="text" name="firstName" id="firstName" size="30" />
 					</div>
 					<div class="columns">
-						<label> Last Name * </label> <input type="text" name="lastName"
-							id="lastName" size="30" />
+						<label> Last Name * </label> 
+						<input type="text" name="lastName" id="lastName" size="30" />
 					</div>
 
 					<div class="column">
-						<label> Address 1 * </label> <input type="text"
-							name="addressLine1" id="addressLine1" size="30" />
+						<label> Address 1 * </label> 
+						<input type="text" name="addressLine1" id="addressLine1" size="30" />
 					</div>
 					<div class="column">
-						<label> Address 2 * </label> <input type="text"
-							name="addressLine2" id="addressLine2" size="30" />
+						<label> Address 2 * </label> 
+						<input type="text" name="addressLine2" id="addressLine2" size="30" />
 					</div>
 					<div class="column">
-						<label> City * </label> <input type="text" name="city" id="city"
-							size="30" />
-					</div>
-
-					<div class="column">
-						<label> Postcode / Zip code * </label> <input type="text"
-							name="postcode" id="postcode" size="30" />
+						<label> City * </label> 
+						<input type="text" name="city" id="city" size="30" />
 					</div>
 
 					<div class="column">
-						<label> State/Province * </label> <input type="text" name="state"
-							id="state" size="30" />
+						<label> Postcode / Zip code * </label> <input type="text" name="postcode" id="postcode" size="30" />
 					</div>
 
 					<div class="column">
-						<label> Country * </label> <input type="text" name="country"
-							id="country" size="30" />
+						<label> State/Province * </label> <input type="text" name="state" id="state" size="30" />
+					</div>
+
+					<div class="column">
+						<label> Country * </label> 
+						<input type="text" name="country" id="country" size="30" />
 					</div>
 
 					<div class="column">

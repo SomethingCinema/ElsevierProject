@@ -40,7 +40,11 @@ public class CheckoutController {
 			modelAndView.addObject("book_counts", bookCounts);
 			return modelAndView;
 		} else {
-			return null;
+			ModelAndView modelAndView = new ModelAndView("checkout", "alert", msg);
+			modelAndView.addObject("shipping_address", shipping);
+			modelAndView.addObject("order_total", orderTotal);
+			modelAndView.addObject("book_counts", bookCounts);
+			return modelAndView;
 		}
 	}
 
