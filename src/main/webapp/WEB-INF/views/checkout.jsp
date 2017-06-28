@@ -114,20 +114,14 @@
 					</div>
 
 					<div class="column">
-						<label> Phone Number * </label> <input type="text" name="phone"
-							id="phone" size="30" />
+						<label> Phone Number * </label>
+						<input type="text" name="phone" id="phone" size="30" />
 					</div>
 
 
 					<div class="column">
-						<label> Email * </label> <input type="text" name="email"
-							id="email" size="30" />
-					</div>
-
-
-					<div class="column">
-						<input type="checkbox" name="same" id="same" /> My billing and
-						shipping address are the same
+						<label> Email * </label> 
+						<input type="text" name="email" id="email" size="30" />
 					</div>
 
 				</div>
@@ -142,41 +136,6 @@
 
 			</div>
 			<div class="medium-6 large-5 columns">
-
-
-				<!--  <div class="login_in_shipping">
-    
-
-        <div class="row">
-          <div class="small-3 columns">
-            <h4>Already have an account </h4>
-            <p> Login to check out using your saved details </p>
-            <label> Email * </label>
-            <input type="text" name="email" placeholder="Enter your email ID" size="40"/>   
-             <label> Password * </label>
-            <input type="password" name="password" placeholder="Enter your password" size="40"/>   
-           
-           <input type="submit" id="login_submit" value="Login"/>
-             
-          </div>
-          
-           
-       </div>
-      
-      </div> -->
-
-				<!-- <h3>Already have an account</h3>
-				<p>Please login using saved details</p>
-
-				  <div class="row">
-        
-          <div class="small-3 columnsee">
-          
-          
-             <a href="/loginThroughCheckout?order_total=<%=orderTotal%>" class="button large expanded">Login</a>
-          </div>
-           
-       </div> -->
 
 				<div class="row">
 					<div class="small-3 columns">
