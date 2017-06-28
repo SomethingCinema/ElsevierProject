@@ -65,14 +65,14 @@
            <h3> Billing Address </h3>
                 <p>${alert }</p>
               <form action="/updateAddress" method="post" class="val">
-               <label>Address Line1 * </label>
-               <input type="text" required pattern="[a-fA-F0-9.]+" placeholder="Enter AddressLine2" name="addressLine1" id="addressLine1"/> 
-               <label>Address Line2 * </label>
-               <input type="text" required pattern="[a-fA-F0-9.]+" placeholder="Enter Address Line2" name="addressLine2" id="addressLine2"/> 
+               <label>Address Line 1 * </label>
+               <input type="text" required pattern="^[0-9a-zA-Z. ]+$" placeholder="Enter AddressLine2" name="addressLine1" id="addressLine1"/> 
+               <label>Address Line 2  </label>
+               <input type="text" placeholder="Enter Address Line 2" name="addressLine2" id="addressLine2"/> 
                <label>City * </label>
                 <input type="text" required pattern="[a-zA-Z]+" placeholder="Enter City" name="city" id="city"/> 
-                  <label>Postcode * </label>
-                <input type="text" required pattern="(\d{5}([\-]\d{4})?)" placeholder="Enter Postcode" name="postcode" id="postcode"/> 
+                  <label>Postal Code * </label>
+                <input type="text" required pattern="(\d{5}([\-]\d{4})?)" placeholder="Enter Postcode (XXXXX)" name="postcode" id="postcode"/> 
                 
                 
                   <label>State * </label>
@@ -84,7 +84,7 @@
                 
                 
                   <label>Phone Number * </label>
-                <input type="text" required pattern="\d{3}[\-]\d{3}[\-]\d{4}" placeholder="Enter Phone number" name="phoneNumber" id="phoneNumber"/> 
+                <input type="text" required pattern="\d{3}[\-]\d{3}[\-]\d{4}" placeholder="Enter Phone Number (XXX-XXX-XXXX)" name="phoneNumber" id="phoneNumber"/> 
                 
                  
                 <input type="hidden" name="addressType" id="addressType" value="billing"/> 
@@ -102,13 +102,13 @@
                 
               <form action="/updateAddress" method="post" class="val">
                <label>Address Line1 * </label>
-               <input type="text" required pattern="[a-fA-F0-9.]+" placeholder="Enter AddressLine2" name="addressLine1" id="addressLine1" class="tex"/> 
-               <label>Address Line2 * </label>
-               <input type="text" required pattern="[a-fA-F0-9.]+" placeholder="Enter Address Line2" name="addressLine2" id="addressLine2" class="tex"/> 
+               <input type="text" required pattern="^[0-9a-zA-Z. ]+$" placeholder="Enter AddressLine2" name="addressLine1" id="addressLine1" class="tex"/> 
+               <label>Address Line 2 </label>
+               <input type="text" placeholder="Enter Address Line 2" name="addressLine2" id="addressLine2" class="tex"/> 
                <label>City * </label>
                 <input type="text" required pattern="[a-zA-Z]+" placeholder="Enter City" name="city" id="city" class="tex"/> 
-                  <label>Postcode * </label>
-                <input type="text" required pattern="(\d{5}([\-]\d{4})?)" placeholder="Enter Postcode" name="postcode" id="postcode" class="tex"/> 
+                  <label>Postal Code * </label>
+                <input type="text" required pattern="(\d{5}([\-]\d{4})?)" placeholder="Enter Postcode (XXXXX)" name="postcode" id="postcode" class="tex"/> 
                 
                 
                   <label>State * </label>
@@ -120,7 +120,7 @@
                 
                 
                   <label>Phone Number * </label>
-                <input type="text" required pattern="\d{3}[\-]\d{3}[\-]\d{4}" placeholder="Enter Phone number" name="phoneNumber" id="phoneNumber" class="tex"/> 
+                <input type="text" required pattern="\d{3}[\-]\d{3}[\-]\d{4}" placeholder="Enter Phone Number (XXX-XXX-XXXX)" name="phoneNumber" id="phoneNumber" class="tex"/> 
                 
                  
                 <input type="hidden" name="addressType" id="addressType" value="shipping"/> 
