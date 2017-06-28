@@ -74,7 +74,7 @@
 			<div class="medium-6 columns">
 
 				<h2>Payment Details</h2>
-
+				<h3>Billing Address</h3>
 				<div class="row small-up-shiping">
 					<div class="column">
 						<input type="checkbox" class="ba" checked="checked" /> Different from shipping address
@@ -101,34 +101,14 @@
 						<label> City * </label> 
 						<input type="text" name="city" id="city" size="30" />
 					</div>
+					<div class="column">
+						<label> Credit Card Number * </label> 
+						<input type="text" name="cc" id="cc" size="30" />
+					</div>
+					
 
-					<!--    <div class="column">
-            <label> Postcode / Zip code * </label>
-            <input type="text" name="postcode" id="postcode" size="30"/>
-          </div>
           
-          <div class="column">
-            <label> State/Province * </label>
-            <input type="text" name="state" id="state" size="30"/>
-          </div> -->
-
-					<!--        <div class="column">
-            <label> Country</label>
-            <input type="text" name="country" id="country" size="30"/>
-          </div>
-          
-           <div class="column">
-            <label> Phone Number</label>
-            <input type="text" name="phone" id="phone" size="30"/>
-          </div>
-          
-          
-           <div class="column">
-            <label> Email * </label>
-            <input type="text" name="email" id="email" size="30"/>
-          </div>
-          
-          
+          <!--
           <div class="column">
             <input type="checkbox" name="same" id="same"/> My billing and shipping address are the same
           </div> -->
@@ -198,7 +178,6 @@
 	</form>
 
 	<jsp:include page="footer.jsp" />
-	<script src="js/elsevier2.js"></script>
 </body>
 </html>
 
