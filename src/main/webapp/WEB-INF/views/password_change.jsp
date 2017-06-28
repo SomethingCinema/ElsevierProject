@@ -71,9 +71,9 @@
                 
                 
                <label>Old Password * </label>
-               <input type="text" placeholder="Enter Old Password" name="oldPW" id="oldPW" value=""/> 
+               <input type="password" placeholder="Enter Old Password" name="oldPW" id="oldPW" value=""/> 
                <label>New Password * </label>
-               <input type="text" placeholder="Enter New Password" name="newPW" id="newPW" value=""/>  
+               <input type="password" placeholder="Enter New Password" name="newPW" id="newPW" value=""/>  
                 
             </div>
             
