@@ -20,6 +20,7 @@ public class Customer {
 	private String email;
 	
 	private String password;
+  
 
 	public int getCustomerId() {
 		return customerId;
