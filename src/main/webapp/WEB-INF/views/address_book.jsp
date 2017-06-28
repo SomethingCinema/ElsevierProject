@@ -63,7 +63,7 @@
        
         <div class="large-6 columns">
            <h3> Billing Address </h3>
-                
+                <p>${alert }</p>
               <form action="/updateAddress" method="post" class="val">
                <label>Address Line1 * </label>
                <input type="text" required pattern="[a-fA-F0-9.]+" placeholder="Enter AddressLine2" name="addressLine1" id="addressLine1"/> 

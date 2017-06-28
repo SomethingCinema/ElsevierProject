@@ -50,23 +50,23 @@
            <h3> Create an account  </h3>
                 
 
-               <p>${alert}</p>
-               <label>First Name * </label>
-               <input type="text" required pattern="[a-zA-Z]+" placeholder="Enter First Name" name="firstName" id="firstName" required="required"/> 
-               <label>Last Name * </label>
-               <input type="text" required pattern="[a-zA-Z]+" placeholder="Enter Last Name" name="lastName" id="lastName"/> 
-               <label>Email ID * </label>
-                <input type="text" placeholder="Enter Email" name="email" id="email" required="required"/> 
-                <label>Password * </label>
-				 <input type="password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="Enter Password (must have uppercase, lowercase, and number)" name="password" id="password"/>
+	            <p>${alert}</p>
+	            <label>First Name * </label>
+	            <input type="text" required pattern="[a-zA-Z]+" placeholder="Enter First Name" name="firstName" id="firstName" required="required"/> 
+	            <label>Last Name * </label>
+	            <input type="text" required pattern="[a-zA-Z]+" placeholder="Enter Last Name" name="lastName" id="lastName"/> 
+	            <label>Email ID * </label>
+	            <input type="text" placeholder="Enter Email" name="email" id="email" required="required"/> 
+	            <label>Password * </label>
+				<input type="password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" placeholder="Enter Password (must have uppercase, lowercase, and number)" name="password" id="password"/>
             	
             </div>
             
             <div class="medium-6">
            
 
-          	 <input type="checkbox" name="agreement" required/> I have read and understood the 
-          	 <a href="/registered_user_agreement">Registered User Agreement </a> and agree to be bound by all of its terms. 
+	         	 <input type="checkbox" name="agreement"  required/> I have read and understood the 
+	         	 <a href="/registered_user_agreement">Registered User Agreement </a> and agree to be bound by all of its terms. 
          
             </div>
       		
@@ -77,7 +77,7 @@
       
       
       </div>
-    </div>
+    </div> 
     
    
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
