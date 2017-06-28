@@ -19,6 +19,7 @@
   
   <%
  		c = (Customer) session.getAttribute("logged_in_customer");
+  	if (c.getFirstName() != null) {
   %>
     
     <!-- Start Top Bar -->
@@ -54,7 +55,21 @@
       </div>
     </div> -->
     <!-- End Top Bar -->
+    
     <jsp:include page="nav_bar_loggedin.jsp" />
+    
+    <%
+  	}
+  	else {
+    %>
+    	<jsp:include page="nav_bar_loggedout.jsp" />
+    <%
+  	}
+    %>
+    
+    <%
+	if (c.getFirstName() != null) {
+	%>
 
     <div class="callout large">
       <div class="row column text-center">
@@ -84,18 +99,22 @@
       		<input type="submit" class="button create account" value="Update Account">
               
               </form>
-    
-      
       
       </div>
        
-       
-       
-       
-       
-       
-       
     </div>
+    
+    <%
+	}
+	else
+	{
+    %>
+    
+    Please login to see this page.
+    
+    <%
+	}
+    %>
     
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier.js"></script>

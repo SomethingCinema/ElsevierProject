@@ -19,6 +19,7 @@
   
   <%
  		c = (Customer) session.getAttribute("logged_in_customer");
+
   %>
     
     <!-- Start Top Bar -->
