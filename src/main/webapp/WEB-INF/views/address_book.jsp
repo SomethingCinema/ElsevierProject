@@ -19,7 +19,7 @@
   
   <%
  		c = (Customer) session.getAttribute("logged_in_customer");
-
+ 	 if (c.getFirstName() != null) {
   %>
     
     <!-- Start Top Bar -->
@@ -58,6 +58,21 @@
     
     <jsp:include page="nav_bar_loggedin.jsp" />
     
+    <%
+ 	 }
+ 	 else
+ 	 {
+    %> 
+    
+    <jsp:include page="nav_bar_loggedout.jsp" />
+    
+    <%
+    }
+    %>
+    
+    <%
+ 	 if (c.getFirstName() != null) {
+  	%>
        
        <div class="row">
         
@@ -134,15 +149,19 @@
      
       </div>
       
+      <%
+      }
+      else
+      {
+      %>
+      
+      <h3>Please login to view this page.</h3>
+
+       <%
+       }
+       %>
+       
   
-       
-       
-  <!--   </div> -->
-    
-    
-         
-       
-    </div>
     
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier2.js"></script>

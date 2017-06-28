@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	import="com.qa.models.Customer"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!doctype html>
@@ -24,22 +25,15 @@
   <body>
     
     <%!
-    
-      Book book;
-    
-    
-    
-    
-    %>
+	Book book;
+    Customer c;
+ 	%>
     
     
     <%
-    
-     book = (Book) request.getAttribute("book");
-    
-    
-    
-    
+    book = (Book) request.getAttribute("book");
+    c = (Customer) session.getAttribute("logged_in_customer");
+	if (c.getFirstName() != null) {
     %>
     
    
@@ -74,7 +68,22 @@
      -->
     <!-- End Top Bar -->
     
-    <jsp:include page="nav_bar_loggedout.jsp" />
+    
+    
+    
+    <jsp:include page="nav_bar_loggedin.jsp" />
+    
+    <%
+	}
+	else
+	{
+    %>
+    
+     <jsp:include page="nav_bar_loggedout.jsp" />
+     
+	<%
+	}
+	%>
     
     <br>
     <!-- You can now combine a row and column if you just need a 12 column row -->

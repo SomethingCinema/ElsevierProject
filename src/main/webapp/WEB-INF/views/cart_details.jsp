@@ -4,6 +4,7 @@
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.qa.models.Book"%>
+<%@page import="com.qa.models.Customer"%>
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
@@ -17,28 +18,20 @@
   <body>
     
     <%!
-    
       ArrayList<Book> books;
-    
       Map<Integer,Integer> bookCounts;
-    
-      
+      Customer c; 
     %>
     
     
     <%
-    
-
-    
     books  = (ArrayList<Book>) session.getAttribute("filtered_books");
-    
     bookCounts = (Map<Integer,Integer>)  session.getAttribute("book_counts");
-    
     double cartTotal = 0.0;
-    
     double orderTotal = 0.0;
-    
     double totalPrice =  0.0;
+    c = (Customer) session.getAttribute("logged_in_customer");
+	if (c.getFirstName() != null) {
     %>
     
    
@@ -73,7 +66,19 @@
     <!-- End Top Bar -->
     
     
+    <jsp:include page="nav_bar_loggedin.jsp" />
+    
+    <%
+    }
+    else
+    {
+    %>
+    
     <jsp:include page="nav_bar_loggedout.jsp" />
+    
+    <%
+    }
+    %>
     
     <br>
     <!-- You can now combine a row and column if you just need a 12 column row -->

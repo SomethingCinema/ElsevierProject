@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+import="com.qa.models.Customer"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -8,7 +9,25 @@
 </head>
 <body>
 
-<jsp:include page="nav_bar_loggedout.jsp" />
+<%!
+  		Customer c;
+  	%>
+  	
+  	<%
+ 		c = (Customer) session.getAttribute("logged_in_customer");
+  		if (c.getFirstName() != null) {
+ 	 %>
+ 	 	<jsp:include page="nav_bar_loggedin.jsp" />
+ 	 <%
+  		}
+  		else
+  		{
+ 	 %>
+		<jsp:include page="nav_bar_loggedout.jsp" />
+	<%
+  		}
+	%>
+
 	
 
 <div style="text-align: center">
