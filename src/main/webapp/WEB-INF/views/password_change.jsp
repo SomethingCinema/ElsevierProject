@@ -69,11 +69,9 @@
         <div class="medium-6">
            <h3> Account details </h3>
                 
-                
-               <label>Old Password * </label>
-               <input type="text" placeholder="Enter Old Password" name="oldPW" id="oldPW" value=""/> 
-               <label>New Password * </label>
-               <input type="text" placeholder="Enter New Password" name="newPW" id="newPW" value=""/>  
+                 
+               <label>Type In New Password * </label>
+               <input type="password" placeholder="Enter New Password" name="password" id="password" value=""/> 
                 
             </div>
             

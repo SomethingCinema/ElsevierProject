@@ -26,6 +26,18 @@ public class Book {
 	
 	private int pageCount;
 	
+	private String bookauthor;
+	
+
+	public String getBookauthor() {
+		return bookauthor;
+	}
+
+	public void setBookauthor(String bookauthor) {
+		this.bookauthor = bookauthor;
+	}
+
+
 	public List<Author> getAuthors() {
 		return authors;
 	}

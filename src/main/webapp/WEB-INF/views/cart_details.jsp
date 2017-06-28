@@ -10,9 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping Cart | Week 3</title>
     <link rel="stylesheet" href="css/style.css">
-    
-    
+    <link rel="stylesheet" type="text/css" href="css/buttons.css">  
+    <script src="js/buttons.js"></script>
   </head>
+  
   <body>
     
     <%!
@@ -133,15 +134,23 @@
           <div class="column">
             Published On <%=book.getPublishedDate()%>
           </div>
-          <div class="column">
+          <div class="column" id="quantity">
             <form name="f1">
             	<input type="hidden" name="price" value="<%=price%>"/>
             	<input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
             	Price <label id="price_label<%=i%>">$<%=totalPrice%></label>
-            	<input type="hidden" name="cart_total" value="<%=price%>"/>
-            	Quantity <input type="number"  min="1" name="quantity" value="<%=quantity%>" oninput="calculateTotalPrice(price.value,this.value,price_label<%=i%>)"/>
+            	<input type="hidden" id="car_total" name="cart_total" value="<%=price%>"/>
+            	<!-- Quantity <input type="number"  min="1" name="quantity" value="<%=quantity%>" oninput="calculateTotalPrice(price.value,this.value,price_label<%=i%>)"/> -->
+            	<input type="text" name="quantity" id="qty" class="quant" value="<%=quantity%>"/>
+            	<input type="button" value="+" class="num plus"/>
+            	<input type="button" value="-" class="num minus"/> 
             </form>
           </div>
+            <!--
+            	<input type="text" id="qty" class="quant" value="<%=quantity%>"/>
+            	<input type="button" value="+" class="num plus"/>
+            	<input type="button" value="-" class="num minus"/>     	
+             -->
           
          
         </div>
@@ -207,6 +216,7 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier.js"></script>
     <script src="js/update_cart.js"></script>
+    <script src="js/buttons.js"></script>
     <script>
       $(document).foundation();
     </script> 

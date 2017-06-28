@@ -23,7 +23,12 @@ public interface CustomerRepository extends CrudRepository<Customer, Integer>{
 			@Param("lastName") String lastName,
 			@Param("email") String email,
 			@Param("customerId") int customerId);
-	
+
+	@Modifying
+	@Transactional
+	@Query("UPDATE Customer c set c.password = :password WHERE c.customerId = :customerId")
+	public int updatePassword(@Param("password") String password, 
+			@Param("customerId") int customerId);
 
 }
 
