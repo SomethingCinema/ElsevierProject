@@ -216,16 +216,7 @@
       </div>
     </div>
 -->
-    <div class="row column">
-      <hr>
-      <ul class="menu">
-        <li>Online Shopping</li>
-        <li><a href="/">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li class="float-right">Copyright 2017</li>
-      </ul>
-    </div>
+  
 
 
  

@@ -218,6 +218,7 @@ public class HomeController {
 
 			if (c != null) {
 				// System.out.println("Success");
+				System.out.println(c);
 				return new ModelAndView("customer_home", "logged_in_customer", c);
 			} else {
 				// System.out.println("Failure");

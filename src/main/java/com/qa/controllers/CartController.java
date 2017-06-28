@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.qa.models.Customer;
-@SessionAttributes(names={"book_counts"})
+@SessionAttributes(names={"book_counts","logged_in_customer"})
 @Controller
 public class CartController {
 	
@@ -42,6 +42,9 @@ public class CartController {
 	{
 		
 		ModelAndView modelAndView = null;
+		System.out.println("Checking out, customer is: ");
+		System.out.println(c);
+		System.out.println(c.getFirstName());
 		// if user is logged in
 		if(c.getFirstName()!=null){
 			modelAndView = new ModelAndView("checkout","order_total",orderTotal);

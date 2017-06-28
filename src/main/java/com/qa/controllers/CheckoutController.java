@@ -159,7 +159,7 @@ public class CheckoutController {
 		// if checks are all good, then try to add to database
 		Customer c = customerService.add(customer);
 		
-		if (c != null) {
+		if (c != null) { //registration successful, redirect to checkout page
 			String msg = "Thanks for registering!";
 			ModelAndView modelAndView = new ModelAndView("checkout", "alert", msg);
 			modelAndView.addObject("logged_in_customer", c);

@@ -56,7 +56,7 @@
     <!-- End Top Bar -->
     
     
-    <jsp:include page="nav_bar_loggedout.jsp" />
+    <jsp:include page="nav_bar_loggedin.jsp" />
     
     <br>
     <!-- You can now combine a row and column if you just need a 12 column row -->
