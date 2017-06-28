@@ -119,7 +119,7 @@ public class HomeController {
 
 		// System.out.println("Customer Password is " + customer.getPassword());
 
-		String msg = validateRegistration(customer, agreement);
+		String msg = Validate.validateRegistration(customer, agreement);
 		if (!msg.isEmpty()) {
 			return new ModelAndView("register", "alert", msg);
 		}
@@ -138,50 +138,7 @@ public class HomeController {
 		// return modelAndView;
 	}
 
-	public String validateRegistration(Customer customer, String agreement) {
-		// Validate registration
-//		String msg = "";
-		if (customer.getFirstName().isEmpty()) {
-			return "Registration failed - please enter a first name";
-		} else if (customer.getLastName().isEmpty()) {
-			return"Registration failed - please enter a last name";
-		} else if (customer.getEmail().isEmpty()) {
-			return "Registration failed - please enter an email";
-		} else if (customer.getPassword().isEmpty()) {
-			return "Registration failed - please enter a password";
-		}
-
-		// Validate email
-		Pattern emailPattern = Pattern.compile("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}");
-		Matcher emailMatcher = emailPattern.matcher(customer.getEmail());
-		if (!emailMatcher.matches()) {
-			return "Registration failed - please enter a valid email";
-		}
-		// Validate names
-		Pattern namePattern = Pattern.compile("[a-zA-Z]+");
-		Matcher firstNameMatcher = namePattern.matcher(customer.getFirstName());
-		Matcher lastNameMatcher = namePattern.matcher(customer.getLastName());
-		if (!firstNameMatcher.matches() || !lastNameMatcher.matches()) {
-			return "Registration failed - please enter alphabetical characters for names";
-		}
 	
-		// // Validate password
-		// Pattern passPattern =
-		// Pattern.compile("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\\s).*$");
-		// Matcher passMatcher = passPattern.matcher(customer.getPassword());
-		// if (passMatcher.matches()) {
-		// String msg = "Registration failed - please enter a password with an
-		// uppercase, lowercase, and number";
-		// return new ModelAndView("register", "alert", msg);
-		// }
-		
-		// Check if user agreement box is checked
-		if (agreement == null) {
-			return "Registration failed - please check the User Agreement box";
-		}
-		
-		return "";
-	}
 
 	@RequestMapping("/loginProcess")
 	public ModelAndView loginProcess(@RequestParam("email") String email, @RequestParam("password") String password) {
@@ -192,7 +149,7 @@ public class HomeController {
 		//
 		// System.out.println("Password is " + password);
 		//
-		String msg = validateLogin(email, password);
+		String msg = Validate.validateLogin(email, password);
 		if (!msg.isEmpty()) {
 			return new ModelAndView("login", "alert", msg);
 			// alert is a request object since its not defined in
@@ -212,23 +169,7 @@ public class HomeController {
 		// return modelAndView;
 	}
 
-	public String validateLogin(String email, String password) {
-		// Check if email or password fields are empty
-//		String msg = "";
-		if (email.isEmpty()) {
-			return "Please enter an email";
-		} else if (password.isEmpty()) {
-			return "Please enter a password";
-		}
-
-		// Validate email
-		Pattern emailPattern = Pattern.compile("[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}");
-		Matcher emailMatcher = emailPattern.matcher(email.toUpperCase());
-		if (!emailMatcher.matches()) {
-			return "Please enter a valid email";
-		}
-		return "";
-	}
+	
 
 	@RequestMapping("/profile")
 	public ModelAndView profile(@ModelAttribute("logged_in_customer") Customer loggedInCustomer) {
