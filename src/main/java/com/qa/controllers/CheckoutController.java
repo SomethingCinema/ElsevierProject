@@ -57,7 +57,7 @@ public class CheckoutController {
 		
 //		Pattern namePattern = 
 		
-		Pattern addressPattern = Pattern.compile("[a-ZA-Z0-9.]+");
+		Pattern addressPattern = Pattern.compile("[a-zA-Z0-9.]+");
 		Matcher addressMatcher1 = addressPattern.matcher(address.getAddressLine1());
 		Matcher addressMatcher2 = addressPattern.matcher(address.getAddressLine2());
 		if (!addressMatcher1.matches() || !addressMatcher2.matches()) {

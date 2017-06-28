@@ -1,6 +1,5 @@
 package com.qa.controllers;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -32,33 +31,30 @@ public class HomeController {
 
 	@Autowired
 	CustomerService customerService;
-	
-	// Initialize default object here so that 
-	// there are no null pointer exceptions 
+
+	// Initialize default object here so that
+	// there are no null pointer exceptions
 	// when pressing back -> form resubmission
 	// and so that the objects can persist across the session
 	@ModelAttribute("logged_in_customer")
-	public Customer c(){
+	public Customer c() {
 		return new Customer();
 	}
-	
+
 	@ModelAttribute("books")
 	public Iterable<Book> books() {
 		return null;
 	}
-	
+
 	@ModelAttribute("cart_items")
-	public ArrayList<Book> cart_items(){
+	public ArrayList<Book> cart_items() {
 		return new ArrayList<Book>();
 	}
+
 	@ModelAttribute("address")
-	public Address address(){
+	public Address address() {
 		return new Address();
 	}
-	
-	
-	
-	
 
 	@RequestMapping("/")
 	public ModelAndView indexPage(HttpServletRequest request) {
@@ -97,141 +93,141 @@ public class HomeController {
 
 		return modelAndView;
 	}
-	
-	
+
 	@RequestMapping("/contact")
-	public ModelAndView contact()
-	{
+	public ModelAndView contact() {
 		ModelAndView modelAndView = new ModelAndView("contact");
-	
-	    return modelAndView;
+
+		return modelAndView;
 	}
-	
+
 	@RequestMapping("/about_us")
-	public ModelAndView aboutus()
-	{
+	public ModelAndView aboutus() {
 		ModelAndView modelAndView = new ModelAndView("about_us");
-	
-	    return modelAndView;
+
+		return modelAndView;
 	}
 
 	@RequestMapping("/registerProcess")
-	public ModelAndView registerProcess(@ModelAttribute("Customer") Customer customer, 
-			@RequestParam(value = "agreement", required = false) String agreement ) {
+	public ModelAndView registerProcess(@ModelAttribute("Customer") Customer customer,
+			@RequestParam(value = "agreement", required = false) String agreement) {
 
-//		ModelAndView modelAndView = null;
+		// ModelAndView modelAndView = null;
 
-//		System.out.println("Customer Firstname is " + customer.getFirstName());
+		// System.out.println("Customer Firstname is " +
+		// customer.getFirstName());
 
-//		System.out.println("Customer Password is " + customer.getPassword());
+		// System.out.println("Customer Password is " + customer.getPassword());
 
-		// Validate registration
-		if (customer.getFirstName().isEmpty()) {
-			String msg = "Registration failed - please enter a first name";
+		String msg = validateRegistration(customer, agreement);
+		if (!msg.isEmpty()) {
 			return new ModelAndView("register", "alert", msg);
+		}
+
+		// if checks are all good, then try to add to database
+		Customer c = customerService.add(customer);
+
+		if (c != null) {
+			return new ModelAndView("registration_success");
 		} 
-		else if(customer.getLastName().isEmpty()){
-			String msg = "Registration failed - please enter a last name";
+		else {
+			msg = "Registration failed - email taken";
 			return new ModelAndView("register", "alert", msg);
 		}
-		else if(customer.getEmail().isEmpty()){
-			String msg = "Registration failed - please enter an email";
-			return new ModelAndView("register", "alert", msg);
+
+		// return modelAndView;
+	}
+
+	public String validateRegistration(Customer customer, String agreement) {
+		// Validate registration
+//		String msg = "";
+		if (customer.getFirstName().isEmpty()) {
+			return "Registration failed - please enter a first name";
+		} else if (customer.getLastName().isEmpty()) {
+			return"Registration failed - please enter a last name";
+		} else if (customer.getEmail().isEmpty()) {
+			return "Registration failed - please enter an email";
+		} else if (customer.getPassword().isEmpty()) {
+			return "Registration failed - please enter a password";
 		}
-		else if(customer.getPassword().isEmpty()){
-			String msg = "Registration failed - please enter a password";
-			return new ModelAndView("register", "alert", msg);
-		}
-		
+
 		// Validate email
 		Pattern emailPattern = Pattern.compile("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}");
 		Matcher emailMatcher = emailPattern.matcher(customer.getEmail());
 		if (!emailMatcher.matches()) {
-			String msg = "Registration failed - please enter a valid email";
-			return new ModelAndView("register", "alert", msg);
+			return "Registration failed - please enter a valid email";
 		}
 		// Validate names
 		Pattern namePattern = Pattern.compile("[a-zA-Z]+");
 		Matcher firstNameMatcher = namePattern.matcher(customer.getFirstName());
 		Matcher lastNameMatcher = namePattern.matcher(customer.getLastName());
 		if (!firstNameMatcher.matches() || !lastNameMatcher.matches()) {
-			String msg = "Registration failed - please enter alphabetical characters for names";
-			return new ModelAndView("register", "alert", msg);
+			return "Registration failed - please enter alphabetical characters for names";
 		}
-		
-//		// Validate password
-//		Pattern passPattern = Pattern.compile("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\\s).*$");
-//		Matcher passMatcher = passPattern.matcher(customer.getPassword());
-//		if (passMatcher.matches()) {
-//			String msg = "Registration failed - please enter a password with an uppercase, lowercase, and number";
-//			return new ModelAndView("register", "alert", msg);
-//		}
+	
+		// // Validate password
+		// Pattern passPattern =
+		// Pattern.compile("^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\\s).*$");
+		// Matcher passMatcher = passPattern.matcher(customer.getPassword());
+		// if (passMatcher.matches()) {
+		// String msg = "Registration failed - please enter a password with an
+		// uppercase, lowercase, and number";
+		// return new ModelAndView("register", "alert", msg);
+		// }
 		
 		// Check if user agreement box is checked
-		if(agreement == null){
-			String msg = "Registration failed - please check the User Agreement box";
-			return new ModelAndView("register", "alert", msg);
+		if (agreement == null) {
+			return "Registration failed - please check the User Agreement box";
 		}
 		
-		
-		// if checks are all good, then try to add to database
-		Customer c = customerService.add(customer);
-		
-		if (c != null) {
-			return new ModelAndView("registration_success");
-		} 
-		else {
-			String msg = "Registration failed - email taken";
-			return new ModelAndView("register", "alert", msg);
-		}
-
-//		return modelAndView;
+		return "";
 	}
 
 	@RequestMapping("/loginProcess")
 	public ModelAndView loginProcess(@RequestParam("email") String email, @RequestParam("password") String password) {
 
-//		ModelAndView modelAndView = null;
+		// ModelAndView modelAndView = null;
 
-		System.out.println("Email is " + email);
+		// System.out.println("Email is " + email);
+		//
+		// System.out.println("Password is " + password);
+		//
+		String msg = validateLogin(email, password);
+		if (!msg.isEmpty()) {
+			return new ModelAndView("login", "alert", msg);
+			// alert is a request object since its not defined in
+			// @SessionAttributes
+		}
 
-		System.out.println("Password is " + password);
-		
+		Customer c = customerService.loginProcess(email, password);
+
+		if (c != null) {
+			System.out.println(c);
+			return new ModelAndView("customer_home", "logged_in_customer", c);
+		} else {
+			msg = "Login failed";
+			return new ModelAndView("login", "alert", msg);
+		}
+
+		// return modelAndView;
+	}
+
+	public String validateLogin(String email, String password) {
 		// Check if email or password fields are empty
+//		String msg = "";
 		if (email.isEmpty()) {
-			String msg = "Please enter an email";
-			return new ModelAndView("login", "alert", msg);
-		} 
-		else if (password.isEmpty()) {
-			String msg = "Please enter a password";
-			return new ModelAndView("login", "alert", msg);
-		} 
+			return "Please enter an email";
+		} else if (password.isEmpty()) {
+			return "Please enter a password";
+		}
 
 		// Validate email
 		Pattern emailPattern = Pattern.compile("[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}");
 		Matcher emailMatcher = emailPattern.matcher(email.toUpperCase());
 		if (!emailMatcher.matches()) {
-			String msg = "Please enter a valid email";
-			return new ModelAndView("login", "alert", msg); 
-			// alert is a request object since its not defined in @SessionAttributes
-		} 
-		else {
-			Customer c = customerService.loginProcess(email, password);
-
-			if (c != null) {
-				// System.out.println("Success");
-				System.out.println(c);
-				return new ModelAndView("customer_home", "logged_in_customer", c);
-			} else {
-				// System.out.println("Failure");
-				// modelAndView = new ModelAndView("login_failed");
-
-				String msg = "Login failed";
-				return new ModelAndView("login", "alert", msg);
-			}
+			return "Please enter a valid email";
 		}
-
-//		return modelAndView;
+		return "";
 	}
 
 	@RequestMapping("/profile")
@@ -279,71 +275,68 @@ public class HomeController {
 
 		return modelAndView;
 	}
-	
+
 	@RequestMapping("/changePassword")
-	public ModelAndView changePassword(@ModelAttribute("logged_in_customer") Customer loggedInCustomer){
+	public ModelAndView changePassword(@ModelAttribute("logged_in_customer") Customer loggedInCustomer) {
 		ModelAndView modelAndView = new ModelAndView("password_change", "logged_in_customer", loggedInCustomer);
-		
+
 		return modelAndView;
 	}
-	
+
 	@RequestMapping("/updatePassword")
 	public ModelAndView updatePassword(@ModelAttribute("logged_in_customer") Customer loggedInCustomer,
-				@ModelAttribute("Customer") Customer customer) {
+			@ModelAttribute("Customer") Customer customer) {
 
-			ModelAndView modelAndView = null;
+		ModelAndView modelAndView = null;
 
-			int recordsUpdated = customerService.updatePassword(loggedInCustomer.getPassword(), 
-					loggedInCustomer.getCustomerId());
+		int recordsUpdated = customerService.updatePassword(loggedInCustomer.getPassword(),
+				loggedInCustomer.getCustomerId());
 
-			if (recordsUpdated > 0) {
-				Customer c = customerService.findOne(loggedInCustomer.getCustomerId());
-				
-				System.out.println("Password" + c.getPassword());
+		if (recordsUpdated > 0) {
+			Customer c = customerService.findOne(loggedInCustomer.getCustomerId());
 
-				modelAndView = new ModelAndView("password_change", "logged_in_customer", c);
-			} 
-			else {
-				modelAndView = new ModelAndView("password_change", "logged_in_customer", loggedInCustomer);
-			}
+			System.out.println("Password" + c.getPassword());
 
-			return modelAndView;
+			modelAndView = new ModelAndView("password_change", "logged_in_customer", c);
+		} 
+		else {
+			modelAndView = new ModelAndView("password_change", "logged_in_customer", loggedInCustomer);
 		}
-  
-   @RequestMapping(value = "errors", method = RequestMethod.GET)
-	    public ModelAndView renderErrorPage(HttpServletRequest httpRequest) {
-	         
-	        ModelAndView errorPage = new ModelAndView("errorPage");
-	        String errorMsg = "";
-	        int httpErrorCode = getErrorCode(httpRequest);
-	 
-	        switch (httpErrorCode) {
-	            case 400: {
-	                errorMsg = "Http Error Code: 400. Bad Request";
-	                break;
-	            }
-	            case 401: {
-	                errorMsg = "Http Error Code: 401. Unauthorized";
-	                break;
-	            }
-	            case 404: {
-	                errorMsg = "Http Error Code: 404. Resource not found";
-	                break;
-	            }
-	            case 500: {
-	                errorMsg = "Http Error Code: 500. Internal Server Error";
-	                break;
-	            }
-	        }
-	        errorPage.addObject("errorMsg", errorMsg);
-	        return errorPage;
-	    }
-	     
-	    private int getErrorCode(HttpServletRequest httpRequest) {
-	        return (Integer) httpRequest
-	          .getAttribute("javax.servlet.error.status_code");
-	    }
-	
+
+		return modelAndView;
+	}
+
+	@RequestMapping(value = "errors", method = RequestMethod.GET)
+	public ModelAndView renderErrorPage(HttpServletRequest httpRequest) {
+
+		ModelAndView errorPage = new ModelAndView("errorPage");
+		String errorMsg = "";
+		int httpErrorCode = getErrorCode(httpRequest);
+
+		switch (httpErrorCode) {
+		case 400: {
+			errorMsg = "Http Error Code: 400. Bad Request";
+			break;
+		}
+		case 401: {
+			errorMsg = "Http Error Code: 401. Unauthorized";
+			break;
+		}
+		case 404: {
+			errorMsg = "Http Error Code: 404. Resource not found";
+			break;
+		}
+		case 500: {
+			errorMsg = "Http Error Code: 500. Internal Server Error";
+			break;
+		}
+		}
+		errorPage.addObject("errorMsg", errorMsg);
+		return errorPage;
+	}
+
+	private int getErrorCode(HttpServletRequest httpRequest) {
+		return (Integer) httpRequest.getAttribute("javax.servlet.error.status_code");
+	}
+
 }
-
-

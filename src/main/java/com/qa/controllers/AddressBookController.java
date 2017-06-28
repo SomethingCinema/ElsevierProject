@@ -79,7 +79,7 @@ public class AddressBookController {
 		Matcher addressMatcher1 = addressPattern.matcher(address.getAddressLine1());
 		Matcher addressMatcher2 = addressPattern.matcher(address.getAddressLine2());
 		if (!addressMatcher1.matches() || !addressMatcher2.matches()) {
-			msg += "Please enter a valid address\n";
+			msg = "Please enter a valid address";
 		}
 
 		Pattern cityPattern = Pattern.compile("[a-zA-Z]+");
@@ -87,25 +87,25 @@ public class AddressBookController {
 		Matcher stateMatcher = cityPattern.matcher(address.getState());
 		Matcher countryMatcher = cityPattern.matcher(address.getCountry());
 		if (!cityMatcher.matches()) {
-			msg += "Please enter a valid city\n";
+			msg = "Please enter a valid city";
 		} 
 		else if (!stateMatcher.matches()) {
-			msg += "Please enter a valid state\n";
+			msg = "Please enter a valid state";
 		} 
 		else if (!countryMatcher.matches()) {
-			msg += "Please enter a valid country\n";
+			msg = "Please enter a valid country";
 		}
 
 		Pattern zipPattern = Pattern.compile("(\\d{5}([-]\\d{4})?)");
 		Matcher zipMatcher = zipPattern.matcher(address.getPostcode());
 		if (!zipMatcher.matches()) {
-			msg += "Please enter a valid zipcode\n";
+			msg = "Please enter a valid zipcode";
 		}
 
 		Pattern phonePattern = Pattern.compile("\\d{3}[-]\\d{3}[-]\\d{4}");
 		Matcher phoneMatcher = phonePattern.matcher(address.getPostcode());
 		if (!phoneMatcher.matches()) {
-			msg += "Please enter a valid phone number\n";
+			msg = "Please enter a valid phone number";
 		}
 		return msg;
 	}
