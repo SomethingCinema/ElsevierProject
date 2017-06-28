@@ -39,26 +39,27 @@
     <!-- End Top Bar -->
     
     <jsp:include page="nav_bar_loggedout.jsp" />
-
+	
     <div class="callout large">
       <div class="row column text-center">
         
         
         <div class="medium-6 columns22">
-           <h3> Please login using your stored credentials  </h3>
-                
-               <form action="/loginProcessThroughCheckout" method="post" class="val"> 
-                <input type="text" placeholder="Enter email" name="email" id="email"/>
-				 <input type="password" placeholder="Enter Password" name="password" id="password"/>
-            	<input type="submit" class="button expanded" value="Submit">
-              
-              </form>
+           	<h3> Please login using your stored credentials  </h3>
+            <p>${alert}</p>
+            <form action="/loginThroughCheckout" method="post" class="val"> 
+            	<input type="hidden" name="order_total" value="${order_total}"/>
+            	<input type="hidden" name="book_counts" value="${book_counts}"/>
+            
+	            <input type="text" placeholder="Enter email" name="email" id="email"/>
+				<input type="password" placeholder="Enter Password" name="password" id="password"/>
+	            <input type="submit" class="button expanded" value="Submit"/>
+            </form>
             </div>
-      
       </div>
     </div>
     
-   
+   <br/>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier.js"></script>
     <script>

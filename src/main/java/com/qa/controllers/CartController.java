@@ -8,12 +8,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.qa.models.Customer;
 @SessionAttributes(names={"book_counts"})
 @Controller
 public class CartController {
+	
+	@ModelAttribute("book_counts") 
+	public Map<Integer,Integer> book_counts(){
+		return null;
+	}
+	
 
 	@RequestMapping("/updatePrice")
-	public ModelAndView bookDetails(@RequestParam("price") double price,@RequestParam("quantity") int quantity)
+	public ModelAndView bookDetails(@RequestParam("price") double price,
+			@RequestParam("quantity") int quantity)
 	{
 		double totalPrice = price * quantity;
 		
@@ -27,13 +36,23 @@ public class CartController {
 	
 	
 	@RequestMapping("/checkout")
-	public ModelAndView checkoutForm(@ModelAttribute("book_counts") Map<Integer,Integer> bookCounts,@RequestParam("order_total") double orderTotal)
+	public ModelAndView checkoutForm(@ModelAttribute("book_counts") Map<Integer,Integer> bookCounts,
+			@RequestParam("order_total") double orderTotal,
+			@ModelAttribute("logged_in_customer") Customer c)
 	{
 		
-		ModelAndView modelAndView = new ModelAndView("checkout","order_total",orderTotal);
-		modelAndView.addObject("book_counts", bookCounts);
-		return modelAndView;
+		ModelAndView modelAndView = null;
+		// if user is logged in
+		if(c.getFirstName()!=null){
+			modelAndView = new ModelAndView("checkout","order_total",orderTotal);
+			modelAndView.addObject("book_counts", bookCounts);
+		}
+		else{ // show login page
+			modelAndView = new ModelAndView("login_through_checkout","order_total",orderTotal);
+			modelAndView.addObject("book_counts", bookCounts);
+		}
 		
+		return modelAndView;
 	}
 	
 	

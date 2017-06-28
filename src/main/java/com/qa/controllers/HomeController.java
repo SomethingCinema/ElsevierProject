@@ -16,13 +16,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.qa.models.Address;
 import com.qa.models.Book;
 import com.qa.models.Customer;
 import com.qa.services.BookService;
 import com.qa.services.CustomerService;
 
 @Controller
-@SessionAttributes(names = { "books", "cart_items", "logged_in_customer", "Address" })
+@SessionAttributes(names = { "books", "cart_items", "logged_in_customer", "address" })
 public class HomeController {
 
 	@Autowired
@@ -30,6 +31,33 @@ public class HomeController {
 
 	@Autowired
 	CustomerService customerService;
+	
+	// Initialize default object here so that 
+	// there are no null pointer exceptions 
+	// when pressing back -> form resubmission
+	// and so that the objects can persist across the session
+	@ModelAttribute("logged_in_customer")
+	public Customer c(){
+		return new Customer();
+	}
+	
+	@ModelAttribute("books")
+	public Iterable<Book> books() {
+		return null;
+	}
+	
+	@ModelAttribute("cart_items")
+	public ArrayList<Book> cart_items(){
+		return new ArrayList<Book>();
+	}
+	@ModelAttribute("address")
+	public Address address(){
+		return new Address();
+	}
+	
+	
+	
+	
 
 	@RequestMapping("/")
 	public ModelAndView indexPage(HttpServletRequest request) {
