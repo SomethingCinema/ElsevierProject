@@ -1,4 +1,5 @@
 <!doctype html>
+<%@page import="com.qa.models.Customer"%>
 <html class="no-js" lang="en">
 <head>
 <meta charset="utf-8" />
