@@ -94,9 +94,9 @@ public class HomeController {
 		return modelAndView;
 	}
 	
-	@RequestMapping("/register")
-	public ModelAndView register() {
-		ModelAndView modelAndView = new ModelAndView("register");
+	@RequestMapping("/template")
+	public ModelAndView template() {
+		ModelAndView modelAndView = new ModelAndView("template");
 
 		return modelAndView;
 	}
