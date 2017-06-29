@@ -64,6 +64,7 @@
    
     %>
       <div class="column">
+      <fmt:setLocale value="en_US" scope="session"/>
       
         <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="thumbnail" src="<%=book.getBookImage()%>" style="height:250px; width:auto;"></a>
         <h5  style="height: 50px; overflow: hidden; text-overflow: ellipses;"><%= book.getTitle()%></h5>
