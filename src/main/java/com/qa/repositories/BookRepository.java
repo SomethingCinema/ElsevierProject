@@ -13,5 +13,8 @@ public interface BookRepository extends CrudRepository<Book, Integer>{
 	@Query("SELECT b FROM Book b WHERE b.title = :title")
 	public Iterable<Book> findBookByTitle(@Param("title") String title);
 	
+	@Query("SELECT b FROM Book b WHERE b.bookauthor = :author")
+	public Iterable<Book> findBookByAuthor(@Param("author") String author);
+	
 	
 }

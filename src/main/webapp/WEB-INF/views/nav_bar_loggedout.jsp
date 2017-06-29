@@ -43,11 +43,13 @@
         
             <ul class="dropdown menu" data-dropdown-menu>
             
-            
+			<li>
             <form action="/search" method="get">
-            	<li><input type="text" name="search" id="search" placeholder="Search.."/></li>
-            	<li><input type="submit" value="Search"/></li>
+            	<input type="hidden" name="type" value="title"/>
+            	<input type="text" name="search" id="search" placeholder="Search.."/>
+            	<input type="submit" value="Search"/>
            	</form>
+           	</li>
            	
             
             <li class="has-submenu">

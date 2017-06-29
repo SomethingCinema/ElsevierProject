@@ -17,4 +17,7 @@ public class BookService {
 	public Iterable<Book> findBookByTitle(String title){
 		return bookRepository.findBookByTitle(title);
 	}
+	public Iterable<Book> findBookByAuthor(String author){
+		return bookRepository.findBookByAuthor(author);
+	}
 } 
