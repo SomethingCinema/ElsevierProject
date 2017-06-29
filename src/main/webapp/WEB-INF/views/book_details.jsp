@@ -8,7 +8,6 @@
  <%@page import="com.qa.models.Customer"%>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
-<!doctype html>
 
 
 <html class="no-js" lang="en">
@@ -27,7 +26,6 @@
     
     <%!
 	Book book;
-    Customer c;
  	%>
     
     
