@@ -43,24 +43,22 @@
         
             <ul class="dropdown menu" data-dropdown-menu>
             
-			<li>
-            <form action="/search" method="get">
-            	<input type="hidden" name="type" value="title"/>
-            	<input type="text" name="search" id="search" placeholder="Search.."/>
-            	<input type="submit" value="Search"/>
-           	</form>
-           	</li>
+				<li>
+	            <form action="/search" method="get">
+	            	<input type="hidden" name="type" value="title"/>
+	            	<input type="text" name="search" id="search" placeholder="Search.."/>
+	            	<input type="submit" value="Search"/>
+	           	</form>
+	           	</li>
            	
-            
-            <li class="has-submenu">
-              <a href="/viewCart"><img src="images/cart.png" width="50" height="50"/></a>
-              <ul class="submenu menu vertical" data-submenu>
-                <li><a href="/viewCart"><img src="images/cart.png" width="50" height="50"/></a></li>
-                <tr><a href="/register">Register</a><a href="/login">Login</a></tr>
-              </ul>
+            <li><a id="hover-link" href="/about_us">About Us</a></li>
+            <li><a id="hover-link" href="/contact">Contact</a></li>
+            <li><a href="/viewCart"><img src="images/cart.png" width="50" height="50"/></a></li>
+            <li><a href="/register">Register</a>
+            <li><a href="/login">Login</a></li>
+             
             </li>
-            	<li><a id="hover-link" href="/about_us">About Us</a></li>
-            	<li><a id="hover-link" href="/contact">Contact</a></li>
+            	
           </ul>
           
       </div>

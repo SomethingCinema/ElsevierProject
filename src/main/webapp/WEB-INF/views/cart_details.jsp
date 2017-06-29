@@ -103,7 +103,7 @@
     	  
       %>
        
-        <img class="thumbnail" src="<%=book.getBookImage()%>"/>
+        <img class="thumbnail" src="<%=book.getBookImage()%>" style="width: 150px; height:auto"/>
         <div class="row small-up-4">
         
           <div class="column">
@@ -128,7 +128,7 @@
             	<!-- <input type="text" id="price_label22" value="<%=totalPrice%>" readonly/>-->
             	<input type="hidden" id="car_total" name="cart_total" value="<%=totalPrice%>"/>
             	<!-- Quantity <input type="number"  min="1" name="quantity" value="<%=quantity%>" oninput="calculateTotalPrice(price.value,this.value,price_label<%=i%>)"/> -->
-            	<input type="text" name="quantity" class="quant" value="<%=quantity%>"/>
+            	<input type="text" name="quantity" class="quant" value="<%=quantity%>" style="width: 50px" readonly/>
             	<input type="button" id="inc" value="+" class="num plus" onclick="increment(this.form,price_label<%=i%>)"/>
             	<input type="button" id="dec" value="-" class="num minus" onclick="decrement(this.form,price_label<%=i%>)"/> 
             </form>
