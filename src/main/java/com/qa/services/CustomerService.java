@@ -14,6 +14,10 @@ public class CustomerService {
 	@Autowired
 	private CustomerRepository customerRepository;
 	
+	public void delete(int id){
+		customerRepository.delete(id);
+	}
+	
 	public Customer add(Customer c){
 		Iterable<Customer> allCustomers = customerRepository.findAll();
 		
