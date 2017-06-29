@@ -55,7 +55,7 @@
     </div>
     <div class="small-12 medium-5 columns">
       <div class="bottom-copyright">
-        <span>©2017 Something Books. All rights reserved.</span>
+        <span>©2017 Holy Crud Books. All rights reserved.</span>
       </div>
     </div>
   </div>
