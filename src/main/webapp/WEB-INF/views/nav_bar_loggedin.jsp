@@ -21,7 +21,7 @@
             <form action="/search" method="get">
             	<input type="text" name="search" id="search" placeholder="Search.."/>
             	Search by: 
-            	<select name="type" style="width:100px">
+            	<select name="type" style="width:119px; height:35px">
 			        <option value="title">Title</option>
 			        <option value="author">Author</option>
 			        <option value="isbn">ISBN</option>
