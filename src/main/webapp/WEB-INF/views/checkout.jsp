@@ -20,42 +20,7 @@
 
 		<%
 			double orderTotal = (Double) request.getAttribute("order_total");
-		%>
 
-
-
-		<!-- Start Top Bar -->
-		<!--  
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li class="menu-text" style="color:red">Online Shopping</li>
-          <li><a href="#">Home</a></li>
-          
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        
-             <ul class="dropdown menu" data-dropdown-menu>
-            <li id="cart_items"></li>
-            <li class="has-submenu">
-              <a href="/viewCart"> <img src="images/cart.jpg" width="50" height="50"/></a>
-              <ul class="submenu menu vertical" data-submenu>
-                <li><a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/> View Cart </a></li>
-                <li><a href="/login">Register | Login</a></li>
-              </ul>
-            </li>
-            <li><a href="/about_us">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-          
-      </div>
-    </div> -->
-		<!-- End Top Bar -->
-
-	<%!
-  		Customer c;
-  	%>
   	
   	<%
  		c = (Customer) session.getAttribute("logged_in_customer");
@@ -71,7 +36,7 @@
 	<%
   		}
 	%>
-		
+
 
 		<br>
 		<!-- You can now combine a row and column if you just need a 12 column row -->
@@ -95,57 +60,49 @@
 				<div class="row small-up-shiping">
 
 					<div class="columns">
-						<label> First Name * </label> <input type="text" name="firstName"
-							id="firstName" size="30" />
+						<label> First Name * </label> 
+						<input type="text" name="firstName" id="firstName" size="30" />
 					</div>
 					<div class="columns">
-						<label> Last Name * </label> <input type="text" name="lastName"
-							id="lastName" size="30" />
+						<label> Last Name * </label> 
+						<input type="text" name="lastName" id="lastName" size="30" />
 					</div>
 
 					<div class="column">
-						<label> Address 1 * </label> <input type="text"
-							name="addressLine1" id="addressLine1" size="30" />
+						<label> Address 1 * </label> 
+						<input type="text" name="addressLine1" id="addressLine1" size="30" />
 					</div>
 					<div class="column">
-						<label> Address 2 * </label> <input type="text"
-							name="addressLine2" id="addressLine2" size="30" />
+						<label> Address 2 * </label> 
+						<input type="text" name="addressLine2" id="addressLine2" size="30" />
 					</div>
 					<div class="column">
-						<label> City * </label> <input type="text" name="city" id="city"
-							size="30" />
-					</div>
-
-					<div class="column">
-						<label> Postcode / Zip code * </label> <input type="text"
-							name="postcode" id="postcode" size="30" />
+						<label> City * </label> 
+						<input type="text" name="city" id="city" size="30" />
 					</div>
 
 					<div class="column">
-						<label> State/Province * </label> <input type="text" name="state"
-							id="state" size="30" />
+						<label> Postcode / Zip code * </label> <input type="text" name="postcode" id="postcode" size="30" />
 					</div>
 
 					<div class="column">
-						<label> Country</label> <input type="text" name="country"
-							id="country" size="30" />
+						<label> State/Province * </label> <input type="text" name="state" id="state" size="30" />
 					</div>
 
 					<div class="column">
-						<label> Phone Number</label> <input type="text" name="phone"
-							id="phone" size="30" />
+						<label> Country * </label> 
+						<input type="text" name="country" id="country" size="30" />
 					</div>
 
-
 					<div class="column">
-						<label> Email * </label> <input type="text" name="email"
-							id="email" size="30" />
+						<label> Phone Number * </label>
+						<input type="text" name="phone" id="phone" size="30" />
 					</div>
 
 
 					<div class="column">
-						<input type="checkbox" name="same" id="same" /> My billing and
-						shipping address are the same
+						<label> Email * </label> 
+						<input type="text" name="email" id="email" size="30" />
 					</div>
 
 				</div>
@@ -160,41 +117,6 @@
 
 			</div>
 			<div class="medium-6 large-5 columns">
-
-
-				<!--  <div class="login_in_shipping">
-    
-
-        <div class="row">
-          <div class="small-3 columns">
-            <h4>Already have an account </h4>
-            <p> Login to check out using your saved details </p>
-            <label> Email * </label>
-            <input type="text" name="email" placeholder="Enter your email ID" size="40"/>   
-             <label> Password * </label>
-            <input type="password" name="password" placeholder="Enter your password" size="40"/>   
-           
-           <input type="submit" id="login_submit" value="Login"/>
-             
-          </div>
-          
-           
-       </div>
-      
-      </div> -->
-
-				<!-- <h3>Already have an account</h3>
-				<p>Please login using saved details</p>
-
-				  <div class="row">
-        
-          <div class="small-3 columnsee">
-          
-          
-             <a href="/loginThroughCheckout?order_total=<%=orderTotal%>" class="button large expanded">Login</a>
-          </div>
-           
-       </div> -->
 
 				<div class="row">
 					<div class="small-3 columns">

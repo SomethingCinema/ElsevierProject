@@ -4,7 +4,9 @@
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.qa.models.Book"%>
+
 <%@page import="com.qa.models.Customer" %>
+
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
@@ -37,63 +39,29 @@
 	%>
     
     <%!
-    
       ArrayList<Book> books;
-    
       Map<Integer,Integer> bookCounts;
-    
-      
+      Customer c; 
     %>
     
     
     <%
-    
-
-    
     books  = (ArrayList<Book>) session.getAttribute("filtered_books");
-    
     bookCounts = (Map<Integer,Integer>)  session.getAttribute("book_counts");
-    
     double cartTotal = 0.0;
-    
     double orderTotal = 0.0;
-    
     double totalPrice =  0.0;
+    c = (Customer) session.getAttribute("logged_in_customer");
+	if (c.getFirstName() != null) {
     %>
     
    
 
-<!-- Start Top Bar -->
-<!-- 
-        <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li class="menu-text" style="color:red">Online Shopping</li>
-          <li><a href="/">Home</a></li>
-          
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        
-             <ul class="dropdown menu" data-dropdown-menu>
-            <li id="cart_items"></li>
-            <li class="has-submenu">
-              <a href="/viewCart"> <img src="images/cart.jpg" width="50" height="50"/></a>
-              <ul class="submenu menu vertical" data-submenu>
-                <li><a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/> View Cart </a></li>
-                <tr><a href="/register">Register</a><a href="/login">Login</a></tr>
-              </ul>
-            </li>
-            <li><a href="/about_us">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-          
-      </div>
-    </div> -->
-    <!-- End Top Bar -->
+
     
-    
-    
+    <%
+    }
+    %>
     
     <br>
     <!-- You can now combine a row and column if you just need a 12 column row -->
