@@ -19,17 +19,8 @@
   		if (c.getFirstName() != null) {
  	 %>
  	 	<jsp:include page="nav_bar_loggedin.jsp" />
- 	 <%
-  		}
-  		else
-  		{
- 	 %>
-		<jsp:include page="nav_bar_loggedout.jsp" />
-	<%
-  		}
-	%>
-
-    <div class="callout large">
+ 	 	
+ 	 	<div class="callout large">
       <div class="row column text-center">
         
         <h3>You have logged in as <%=c.getFirstName() %></h3>
@@ -57,14 +48,20 @@
       
       
       </div>
-       
-       
-       
-       
-       
-       
-       
     </div>
+ 	 <%
+  		}
+  		else
+  		{
+ 	 %>
+		<jsp:include page="nav_bar_loggedout.jsp" />
+		
+		<h2>Please login to view this page.</h2>
+	<%
+  		}
+	%>
+
+    
     
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier.js"></script>
