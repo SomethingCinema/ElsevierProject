@@ -30,9 +30,18 @@
     
     
     <%
-    book = (Book) request.getAttribute("book");
+
+    if(session.getAttribute("book")!=null) {
+   		 book = (Book) session.getAttribute("book");
+    }
     c = (Customer) session.getAttribute("logged_in_customer");
+    
+    if(c!=null)
+    {
 	if (c.getFirstName() != null) {
+		
+		
+	
     %>
     
    
@@ -74,14 +83,22 @@
     
     <%
 	}
-	else
-	{
-    %>
-    
-     <jsp:include page="nav_bar_loggedout.jsp" />
-     
-	<%
+	else {
+		%>
+		<jsp:include page="nav_bar_loggedout.jsp" />
+		<%
 	}
+    }
+    
+	else
+		{
+	    %>
+	    
+	     <jsp:include page="nav_bar_loggedout.jsp" />
+	     out.println("Not logged in ");
+		<%
+		}
+   
 	%>
     
     <br>

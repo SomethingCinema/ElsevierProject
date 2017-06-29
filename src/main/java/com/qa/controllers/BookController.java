@@ -1,9 +1,12 @@
 package com.qa.controllers;
 
+
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,22 +17,59 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.qa.models.Book;
-import com.qa.repositories.BookRepository;
+import com.qa.services.BookService;
 
 @Controller
-@SessionAttributes(names={"books","cart_items","book_counts","filtered_books"})
+@SessionAttributes(names={"books","cart_items","book_counts","filtered_books","book"})
 public class BookController {
 
 	@Autowired
-	BookRepository bookService;
+	BookService bookService;
 	
+	@ModelAttribute("books")
+	public Iterable<Book> books() {
+		return new ArrayList<Book>();
+	}
+	
+	
+	
+	@ModelAttribute("book")
+	public Book book() {
+		return new Book();
+	}
 	@RequestMapping("/bookDetails")
-	public ModelAndView bookDetails(@ModelAttribute("books") Iterable<Book> books,@RequestParam("bookId") int bookId)
+	public ModelAndView bookDetails(@ModelAttribute("books") Iterable<Book> books,
+			@RequestParam("bookId") int bookId, @ModelAttribute("book") Book book,
+			HttpServletRequest request)
 	{
-		Book book = findBookById(books, bookId);
 		
-		ModelAndView modelAndView = new ModelAndView("book_details","book",book);
+		System.out.println("Book details controller!");
+		ArrayList<Book> cartItems = null;
+
+		HttpSession session = request.getSession();
+
+		Object items = session.getAttribute("cart_items");
+
+		if (items != null) {
+			cartItems = (ArrayList<Book>) items;
+		} else {
+			cartItems = new ArrayList<Book>();
+		}
+		
+		if(!books.iterator().hasNext()){
+			books = bookService.getAllBooks();
+		}
+
+		ModelAndView modelAndView = new ModelAndView("book_details");
+
+		modelAndView.addObject("cart_items", cartItems);
+		
 		modelAndView.addObject("books", books);
+				
+		book = findBookById(books, bookId);
+		
+		modelAndView.addObject("book",book);
+		
 		return modelAndView;
 		
 	}
