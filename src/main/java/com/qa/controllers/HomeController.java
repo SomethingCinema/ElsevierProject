@@ -101,9 +101,9 @@ public class HomeController {
 		return modelAndView;
 	}
 	
-	@RequestMapping("/template")
+	@RequestMapping("/registered_user_agreement")
 	public ModelAndView template() {
-		ModelAndView modelAndView = new ModelAndView("template");
+		ModelAndView modelAndView = new ModelAndView("registered_user_agreement");
 
 		return modelAndView;
 	}
