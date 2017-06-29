@@ -2,11 +2,14 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<head>
+	<link rel="stylesheet" href="css/login.css">
+</head>
 <!-- Start Top Bar -->
     <div class="top-bar">
       <div class="top-bar-left">
         <ul class="menu">
-           <li class="menu-text" style="color:black"><a href="/">Something Books</a></li>
+           <li><img class="logo" src="images/HCB.png" width="335" height="75" hspace="70"/></li>
           
         </ul>
       </div>
