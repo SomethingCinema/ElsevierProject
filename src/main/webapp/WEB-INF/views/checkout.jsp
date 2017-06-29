@@ -21,8 +21,9 @@
 		<%
 			double orderTotal = (Double) request.getAttribute("order_total");
 
-  	
+  	%>
   	<%
+ 		Customer c;
  		c = (Customer) session.getAttribute("logged_in_customer");
   		if (c.getFirstName() != null) {
  	 %>
