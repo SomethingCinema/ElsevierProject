@@ -51,7 +51,7 @@
       </ul>
     </div>
     <div class="small-12 medium-2 columns ecommerce-footer-logomark">
-      <img src="images/MiniHCB2.png" width="75" height="75"/>
+      <a href="/"><img src="images/MiniHCB2.png" width="75" height="75"/></a>
     </div>
     <div class="small-12 medium-5 columns">
       <div class="bottom-copyright">

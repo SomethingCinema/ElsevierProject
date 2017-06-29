@@ -30,7 +30,7 @@
     <div class="top-bar">
       <div class="top-bar-left">
         <ul class="menu">
-          <li><img class="logo" src="images/HCB.png" width="335" height="75" hspace="70"/></li>
+          <li><a href="/"><img class="logo" src="images/HCB.png" width="335" height="75" hspace="70"/></a></li>
           
         </ul>
       </div>
