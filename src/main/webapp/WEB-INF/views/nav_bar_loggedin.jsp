@@ -21,9 +21,11 @@
             <form action="/search" method="get">
             	<input type="text" name="search" id="search" placeholder="Search.."/>
             	Search by: 
-            	<input type="radio" name="type" value="title" checked>Title
-				<input type="radio" name="type" value="author">Author
-				<input type="radio" name="type" value="isbn">ISBN
+            	<select name="type">
+			        <option value="title">Title</option>
+			        <option value="author">Author</option>
+			        <option value="isbn">ISBN</option>
+			     </select>
             	<input type="submit" value="Search"/>
            	</form>
            	</li>
