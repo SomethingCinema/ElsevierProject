@@ -6,6 +6,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="com.qa.models.Book"%>
+<%@page import="com.qa.models.Customer"%>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <html class="no-js" lang="en">
   <head>
@@ -44,8 +45,26 @@
       </div>
     </div> -->
     <!-- End Top Bar -->
+    <%!
+  		Customer c;
+  	%>
+  	
+  	<%
+ 		c = (Customer) session.getAttribute("logged_in_customer");
+  		if (c.getFirstName() != null) {
+ 	 %>
+ 	 	<jsp:include page="nav_bar_loggedin.jsp" />
+ 	 <%
+  		}
+  		else
+  		{
+ 	 %>
+		<jsp:include page="nav_bar_loggedout.jsp" />
+	<%
+  		}
+	%>
 
-    <jsp:include page="nav_bar_loggedout.jsp" />
+    
     
     
     <div class="row column text-center">
@@ -93,7 +112,21 @@
       $(document).foundation();
     </script>
     
-     <jsp:include page="footer.jsp"/>
+     <%
+ 		c = (Customer) session.getAttribute("logged_in_customer");
+  		if (c.getFirstName() != null) {
+ 	 %>
+ 	 	<jsp:include page="footer_loggedin.jsp" />
+ 	 <%
+  		}
+  		else
+  		{
+ 	 %>
+		<jsp:include page="footer.jsp" />
+	<%
+  		}
+	%>
+ 
      
   </body>
 </html>

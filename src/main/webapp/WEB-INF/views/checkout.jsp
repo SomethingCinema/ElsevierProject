@@ -4,6 +4,7 @@
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.qa.models.Book"%>
+<%@page import="com.qa.models.Customer"%>
 <html class="no-js" lang="en">
 <head>
 <meta charset="utf-8" />
@@ -52,8 +53,25 @@
     </div> -->
 		<!-- End Top Bar -->
 
-
-		<jsp:include page="nav_bar_loggedin.jsp" />
+	<%!
+  		Customer c;
+  	%>
+  	
+  	<%
+ 		c = (Customer) session.getAttribute("logged_in_customer");
+  		if (c.getFirstName() != null) {
+ 	 %>
+ 	 	<jsp:include page="nav_bar_loggedin.jsp" />
+ 	 <%
+  		}
+  		else
+  		{
+ 	 %>
+		<jsp:include page="nav_bar_loggedout.jsp" />
+	<%
+  		}
+	%>
+		
 
 		<br>
 		<!-- You can now combine a row and column if you just need a 12 column row -->
@@ -266,7 +284,20 @@
 
 	<!-- </form> -->
 
-	<jsp:include page="footer.jsp" />
+	  <%
+ 		c = (Customer) session.getAttribute("logged_in_customer");
+  		if (c.getFirstName() != null) {
+ 	 %>
+ 	 	<jsp:include page="footer_loggedin.jsp" />
+ 	 <%
+  		}
+  		else
+  		{
+ 	 %>
+		<jsp:include page="footer.jsp" />
+	<%
+  		}
+	%>
 </body>
 </html>
 

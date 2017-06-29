@@ -8,7 +8,7 @@
 <title>Thank you</title>
 </head>
 <body>
-	<jsp:include page="nav_bar_loggedout.jsp" />
+	<jsp:include page="nav_bar_loggedin.jsp" />
 	
 	<h1>Order completed</h1>
 	<p>Thank you for your order!</p>

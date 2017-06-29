@@ -199,7 +199,7 @@
     
    </form>
    
-   <jsp:include page="footer.jsp"/>
+   <jsp:include page="footer_loggedin.jsp"/>
   </body>
 </html>
 
