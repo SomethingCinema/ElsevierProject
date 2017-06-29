@@ -1,0 +1,61 @@
+
+.hover-link {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.35s ease;
+}
+
+.hover-link li a {
+  padding: 0.75rem 0;
+  color: rgba(10, 10, 10, 0.5);
+  position: relative;
+  margin-left: 1rem;
+}
+
+.hover-link li:first-child a {
+  margin-left: 0;
+}
+
+.hover-link li.active > a {
+  background-color: transparent;
+}
+
+.hover-link a:before,
+.hover-link a::after {
+  height: 3px;
+  position: absolute;
+  content: '';
+  transition: all 0.35s ease;
+  background-color: #1779ba;
+  width: 0;
+}
+
+.hover-link a::before {
+  top: 0;
+  left: 0;
+}
+
+.hover-link a::after {
+  bottom: 0;
+  right: 0;
+}
+
+.hover-link a:hover,
+.hover-link li.active > a {
+  color: #0a0a0a;
+  transition: all 0.35s ease;
+}
+
+.hover-link a:hover::before,
+.hover-link .active a::before,
+.hover-link a:hover::after,
+.hover-link .active a::after {
+  width: 100%;
+}
+
+.top-bar-right{
+	padding-top: 60px;
+	padding-right: 70px;
+}

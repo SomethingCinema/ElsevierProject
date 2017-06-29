@@ -28,9 +28,6 @@
 	<%
   		}
 	%>
-    
-   
-    <jsp:include page="nav_bar_loggedin.jsp" />
 
     <div class="callout large">
       <div class="row column text-center">
