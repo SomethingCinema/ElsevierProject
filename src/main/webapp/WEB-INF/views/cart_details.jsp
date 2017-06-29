@@ -4,9 +4,7 @@
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.qa.models.Book"%>
-
 <%@page import="com.qa.models.Customer" %>
-
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
@@ -122,18 +120,17 @@
             Published On <%=book.getPublishedDate()%>
           </div>
           <div class="column" id="quantity">
-            <form name="f1">
-            	<input type="hidden" name="price" value="<%=price%>"/>
+            <form name="f<%=i%>">
+            	<!-- <input type="hidden" name="price" value="<%=price%>"/> -->
             	<input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
-            	<!-- Price <label id="price_label<%=i%>">$<%=totalPrice%></label> -->
-            	<!-- <input type="hidden" id="price_label1" value="<%=totalPrice%>" /> -->
-            	<input type="text" id="price_label22" value="<%=totalPrice%>" readonly/>
-            	<input type="hidden" id="price_label1" value="<%=totalPrice%>" />
-            	<input type="hidden" id="car_total" name="cart_total" value="<%=price%>"/>
+            	Price <label id="price_label<%=i%>">$<%=price%></label> 
+            	 <input type="hidden" name="price" value="<%=price%>" /> 
+            	<!-- <input type="text" id="price_label22" value="<%=totalPrice%>" readonly/>-->
+            	<input type="hidden" id="car_total" name="cart_total" value="<%=totalPrice%>"/>
             	<!-- Quantity <input type="number"  min="1" name="quantity" value="<%=quantity%>" oninput="calculateTotalPrice(price.value,this.value,price_label<%=i%>)"/> -->
-            	<input type="text" id="qty" name="quantity" class="quant" value="<%=quantity%>"/>
-            	<input type="button" id="inc" value="+" class="num plus"/>
-            	<input type="button" id="dec" value="-" class="num minus"/> 
+            	<input type="text" name="quantity" class="quant" value="<%=quantity%>"/>
+            	<input type="button" id="inc" value="+" class="num plus" onclick="increment(this.form,price_label<%=i%>)"/>
+            	<input type="button" id="dec" value="-" class="num minus" onclick="decrement(this.form,price_label<%=i%>)"/> 
             </form>
           </div>
          
