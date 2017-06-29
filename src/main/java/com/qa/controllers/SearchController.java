@@ -20,6 +20,11 @@ public class SearchController {
 
 	@Autowired
 	private BookService bookService;
+	
+	@ModelAttribute("logged_in_customer")
+	public Customer c() {
+		return new Customer();
+	}
 
 	@RequestMapping("/search")
 	public ModelAndView search(@RequestParam("search") String searchTerm,
@@ -34,6 +39,7 @@ public class SearchController {
 		if(c != null && c.getFirstName() != null){
 			loggedIn = true;
 		}
+		
 		String msg = "";
 		
 		switch(type){
