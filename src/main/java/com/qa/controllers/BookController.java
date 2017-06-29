@@ -32,7 +32,6 @@ public class BookController {
 	}
 	
 	
-	
 	@ModelAttribute("book")
 	public Book book() {
 		return new Book();

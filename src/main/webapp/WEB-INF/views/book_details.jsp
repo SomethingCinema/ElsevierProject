@@ -82,22 +82,16 @@
     <jsp:include page="nav_bar_loggedin.jsp" />
     
     <%
-	}
+		}
+    }
 	else {
 		%>
 		<jsp:include page="nav_bar_loggedout.jsp" />
 		<%
 	}
-    }
     
-	else
-		{
-	    %>
-	    
-	     <jsp:include page="nav_bar_loggedout.jsp" />
-	     out.println("Not logged in ");
-		<%
-		}
+    
+
    
 	%>
     
@@ -259,17 +253,20 @@
   %>
   
   
-  <%
- 		c = (Customer) session.getAttribute("logged_in_customer");
-  %>
-  
         <%
- 		c = (Customer) session.getAttribute("logged_in_customer");
-  		if (c.getFirstName() != null) {
+        if(session.getAttribute("book")!=null) {
+      		 book = (Book) session.getAttribute("book");
+	       }
+	       c = (Customer) session.getAttribute("logged_in_customer");
+	       
+	       if(c!=null)
+	       {
+	  		if (c.getFirstName() != null) {
  	 %>
  	 	<jsp:include page="footer_loggedin.jsp" />
  	 <%
-  		}
+  			}
+	       }
   		else
   		{
  	 %>

@@ -53,6 +53,7 @@
     if(!results.iterator().hasNext()){
     	%>
     	<h3>No search results</h3>
+    	<h3>${alert}</h3>
     	<% 
     
     }
