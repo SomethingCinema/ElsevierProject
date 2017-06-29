@@ -31,7 +31,7 @@ public class SearchController {
 			results = bookService.findBookByAuthor(searchTerm);
 			break;
 		case "isbn":
-//			results = bookService.findBookByISBN(searchTerm);
+			results = bookService.findBookByISBN(searchTerm);
 			break;
 		default:
 			//scold ppl messing with the code :)

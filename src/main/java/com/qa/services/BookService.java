@@ -20,4 +20,7 @@ public class BookService {
 	public Iterable<Book> findBookByAuthor(String author){
 		return bookRepository.findBookByAuthor(author);
 	}
+	public Iterable<Book> findBookByISBN(String isbn){
+		return bookRepository.findBookByISBN(isbn);
+	}
 } 

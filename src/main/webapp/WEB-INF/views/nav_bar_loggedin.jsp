@@ -23,7 +23,7 @@
             	Search by: 
             	<input type="radio" name="type" value="title" checked>Title
 				<input type="radio" name="type" value="author">Author
-				<input type="radio" name="type" value="ISBN">ISBN
+				<input type="radio" name="type" value="isbn">ISBN
             	<input type="submit" value="Search"/>
            	</form>
            	</li>
