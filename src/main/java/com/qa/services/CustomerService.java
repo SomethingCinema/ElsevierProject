@@ -27,14 +27,15 @@ public class CustomerService {
 	}
 	
 	public Customer loginProcess(String email,String password) {
-		Iterable<Customer> allCustomers = customerRepository.findAll();
-		
-		for(Customer c: allCustomers){
-			if(c.getEmail().equalsIgnoreCase(email) && c.getPassword().equals(password)){
-				return c;
-			}
-		}
-		return null;
+//		Iterable<Customer> allCustomers = customerRepository.findAll();
+//		
+//		for(Customer c: allCustomers){
+//			if(c.getEmail().equalsIgnoreCase(email) && c.getPassword().equals(password)){
+//				return c;
+//			}
+//		}
+//		return null;
+		return customerRepository.loginProcess(email, password);
 	}
 	
 	public int updateCustomer(String firstName,
@@ -42,31 +43,33 @@ public class CustomerService {
 			String email,
 			 int customerId){
 		
-		Customer c = customerRepository.findOne(customerId);
-		
-		c.setFirstName(firstName);
-		c.setLastName(lastName);
-		c.setEmail(email);
-		
-		if(customerRepository.save(c) != null){ 
-			return 1;
-		}
-		else{
-			return 0;
-		}
+//		Customer c = customerRepository.findOne(customerId);
+//		
+//		c.setFirstName(firstName);
+//		c.setLastName(lastName);
+//		c.setEmail(email);
+//		
+//		if(customerRepository.save(c) != null){ 
+//			return 1;
+//		}
+//		else{
+//			return 0;
+//		}
+		return customerRepository.updateCustomer(firstName, lastName, email, customerId);
 	}
 	
 	public int updatePassword(String password, int customerId){
 		
-		Customer c = customerRepository.findOne(customerId);
-		
-		c.setPassword(password);
-		
-		if(customerRepository.save(c) != null){ 
-			return 1;
-		}else{
-			return 0;
-		}
+//		Customer c = customerRepository.findOne(customerId);
+//		
+//		c.setPassword(password);
+//		
+//		if(customerRepository.save(c) != null){ 
+//			return 1;
+//		}else{
+//			return 0;
+//		}
+		return customerRepository.updatePassword(password, customerId);
 	}
 	
 	public Customer findOne(int customerId){
