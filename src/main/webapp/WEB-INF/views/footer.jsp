@@ -14,7 +14,7 @@
     
       <div class="row ecommerce-footer-links-block">
         <div class="small-4 medium-4 large-4 columns">
-          <h5>Something Books</h5>
+          <h5>Holy Crud Books</h5>
           <ul class="menu vertical">
             <li><a href="/">Home</a></li>
             <li><a href="/about_us">About Us</a></li>
@@ -41,10 +41,10 @@
       
   </div>
   <div class="ecommerce-footer-bottom-bar row">
-    <div class="small-12 medium-5 columns">
+<div class="small-12 medium-5 columns">
       <ul class="bottom-links">
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms &amp; Conditions</a></li>
+<!--         <li><a href="#">Privacy Policy</a></li> -->
+<!--         <li><a href="#">Terms &amp; Conditions</a></li> -->
       </ul>
     </div>
     <div class="small-12 medium-2 columns ecommerce-footer-logomark">

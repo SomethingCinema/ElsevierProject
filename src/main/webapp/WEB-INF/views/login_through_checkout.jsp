@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Online Shopping</title>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/form.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
@@ -36,12 +37,15 @@
 					<input type="hidden" name="book_counts" value="${book_counts}" />
 
 					<label>First Name * </label> <input type="text"
-						placeholder="Enter First Name" name="firstName" id="firstName" />
-					<label>Last Name * </label> <input type="text"
-						placeholder="Enter Last Name" name="lastName" id="lastName" /> <label>Email
+						placeholder="Enter First Name" name="firstName" required
+						pattern="[a-zA-Z]+" id="firstName" /> <label>Last Name *
+					</label> <input type="text" placeholder="Enter Last Name" name="lastName"
+						required pattern="[a-zA-Z]+" id="lastName" /> <label>Email
 						ID * </label> <input type="text" placeholder="Enter Email" name="email"
-						id="email" /> <label>Password * </label> <input type="password"
+						id="email" required="required" /> <label>Password * </label> <input
+						type="password"
 						placeholder="Enter Password (must have uppercase, lowercase, and number)"
+						required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
 						title="Must have uppercase, lowercase, and number" name="password"
 						id="password" /> <input type="submit" class="button expanded"
 						value="Register" />
@@ -87,10 +91,12 @@
 
 
 					<label>Email ID * </label> <input type="text"
-						placeholder="Enter email" name="email" id="email" /> <label>Password
-						* </label> <input type="password" placeholder="Enter Password"
-						name="password" id="password" /> <input type="submit"
-						class="button expanded" value="Login" />
+						placeholder="Enter email" name="email" id="email"
+						required="required" /> <label>Password * </label> <input
+						type="password" placeholder="Enter Password" name="password"
+						id="password" required
+						pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" /> <input
+						type="submit" class="button expanded" value="Login" />
 				</form>
 			</div>
 		</div>

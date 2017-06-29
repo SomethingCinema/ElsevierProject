@@ -3584,6 +3584,7 @@ table.hover tr:nth-of-type(even):hover {
 .ecommerce-footer-bottom-bar .ecommerce-footer-logomark {
     text-align: center;
 }
+
 @media screen and (max-width: 39.9375em) {
     .ecommerce-footer-bottom-bar .ecommerce-footer-logomark {
         padding-top: 1rem;
@@ -3602,3 +3603,4 @@ table.hover tr:nth-of-type(even):hover {
         text-align: center;
     }
 }
+

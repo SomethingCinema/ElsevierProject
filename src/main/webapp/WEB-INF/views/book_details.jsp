@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	import="com.qa.models.Customer"
 	pageEncoding="ISO-8859-1"%>
+<%@page import="com.qa.models.Book"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!doctype html>
 
-<%@page import="com.qa.models.Book"%>
- <%@page import="com.qa.models.Customer"%>
+
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 
@@ -26,6 +26,7 @@
     
     <%!
 	Book book;
+    Customer c;
  	%>
     
     
@@ -34,49 +35,13 @@
     if(request.getAttribute("book")!=null) {
    		 book = (Book) request.getAttribute("book");
     }
-    c = (Customer) session.getAttribute("logged_in_customer");
-    
-    if(c!=null)
-    {
-	if (c.getFirstName() != null) {
+    if(c != null){
+ 		c = (Customer) session.getAttribute("logged_in_customer");
+  		if (c.getFirstName() != null) {
 		
 		
 	
     %>
-    
-   
-
-<!-- Start Top Bar -->
-<!-- 
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li class="menu-text" style="color:red">Online Shopping</li>
-          <li><a href="#">Home</a></li>
-          
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        
-             <ul class="dropdown menu" data-dropdown-menu>
-            <li id="cart_items"></li>
-            <li class="has-submenu">
-              <a href="/viewCart"> <img src="images/cart.jpg" width="50" height="50"/></a>
-              <ul class="submenu menu vertical" data-submenu>
-                <li><a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/> View Cart </a></li>
-                <tr><a href="/register">Register</a><a href="/login">Login</a></tr>
-              </ul>
-            </li>
-            <li><a href="/about_us">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-          
-      </div>
-    </div>
-     -->
-    <!-- End Top Bar -->
-    
-    
     
     
     <jsp:include page="nav_bar_loggedin.jsp" />
@@ -120,7 +85,9 @@
             Print book ISBN <%=book.getPaperISBN()%>
           </div>
           <div class="column">
-           <fmt:setLocale value = "en_US"/>
+
+          <fmt:setLocale value="en_US" scope="session"/>
+
            Price : <fmt:formatNumber type="currency" value="<%=book.getPrice()%>"/>
           </div>
           <div class="column">
@@ -247,22 +214,11 @@
       $(document).foundation();
     </script> 
     
-      <%!
-  
-  Customer c;
-  
-  %>
-  
   
         <%
-        if(session.getAttribute("book")!=null) {
-      		 book = (Book) session.getAttribute("book");
-	       }
-	       c = (Customer) session.getAttribute("logged_in_customer");
-	       
-	       if(c!=null)
-	       {
-	  		if (c.getFirstName() != null) {
+        if(c != null){
+     		c = (Customer) session.getAttribute("logged_in_customer");
+      		if (c.getFirstName() != null) {
  	 %>
  	 	<jsp:include page="footer_loggedin.jsp" />
  	 <%
