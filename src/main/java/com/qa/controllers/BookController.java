@@ -20,7 +20,8 @@ import com.qa.models.Book;
 import com.qa.services.BookService;
 
 @Controller
-@SessionAttributes(names={"books","cart_items","book_counts","filtered_books","book"})
+//@SessionAttributes(names={"books","cart_items","book_counts","filtered_books","book"})
+@SessionAttributes(names={"books","cart_items","book_counts","filtered_books"})
 public class BookController {
 
 	@Autowired
@@ -32,10 +33,11 @@ public class BookController {
 	}
 	
 	
-	@ModelAttribute("book")
-	public Book book() {
-		return new Book();
-	}
+//	@ModelAttribute("book")
+//	public Book book() {
+//		return new Book();
+//	}
+	
 	@RequestMapping("/bookDetails")
 	public ModelAndView bookDetails(@ModelAttribute("books") Iterable<Book> books,
 			@RequestParam("bookId") int bookId, @ModelAttribute("book") Book book,
