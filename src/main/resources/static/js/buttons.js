@@ -47,7 +47,7 @@ function increment(form,label)
 	document.getElementById("order_total").value = currentOrderTotal;
 	
 	label.innerHTML = "$ "+calculatedValue.toFixed(2);
-	
+	//alert(label.innerHTML);
 
     form.quantity.value = quantity;
     
@@ -57,29 +57,34 @@ function increment(form,label)
 
 function decrement(form,label)
 {
-  
 	var price = parseInt(form.price.value);
+	//var quantity = parseInt(form.quantity.value) - 1;
+	var quantity = parseInt(form.quantity.value);
 	
-	var quantity = parseInt(form.quantity.value) - 1;
+	if(quantity >= 1) {
+		
+		quantity = parseInt(form.quantity.value) - 1
+		var calculatedValue = (price * quantity);
+		
+		var currentCartTotal = parseInt(document.getElementById("cart_total").value);
+		var currentOrderTotal = parseInt(document.getElementById("order_total").value);
+		
+		
+		currentCartTotal = currentCartTotal - price;
+		
+		currentOrderTotal = currentOrderTotal - price;
+		document.getElementById("cart_total_label").innerHTML = "$ "+currentCartTotal.toFixed(2);
+		document.getElementById("order_total_label").innerHTML = "$ "+currentOrderTotal.toFixed(2);
+		
+		document.getElementById("cart_total").value = currentCartTotal;
+		document.getElementById("order_total").value = currentOrderTotal;
+		
+		label.innerHTML = "$ "+calculatedValue.toFixed(2);
+		//alert(label.innerHTML);
+		
+	    form.quantity.value = quantity;
+	     
+	}
 	
-	var calculatedValue = (price * quantity);
 	
-	var currentCartTotal = parseInt(document.getElementById("cart_total").value);
-	var currentOrderTotal = parseInt(document.getElementById("order_total").value);
-	
-	
-	currentCartTotal = currentCartTotal - price;
-	
-	currentOrderTotal = currentOrderTotal - price;
-	document.getElementById("cart_total_label").innerHTML = "$ "+currentCartTotal.toFixed(2);
-	document.getElementById("order_total_label").innerHTML = "$ "+currentOrderTotal.toFixed(2);
-	
-	document.getElementById("cart_total").value = currentCartTotal;
-	document.getElementById("order_total").value = currentOrderTotal;
-	
-	label.innerHTML = "$ "+calculatedValue.toFixed(2);
-	
-
-    form.quantity.value = quantity;
-     
 }
