@@ -17,10 +17,12 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.qa.models.Book;
+import com.qa.models.Customer;
 import com.qa.services.BookService;
 
 @Controller
-@SessionAttributes(names={"books","cart_items","book_counts","filtered_books","book"})
+//@SessionAttributes(names={"books","cart_items","book_counts","filtered_books","book"})
+@SessionAttributes(names={"books","cart_items","book_counts","filtered_books", "logged_in_customer"})
 public class BookController {
 
 	@Autowired
@@ -30,15 +32,19 @@ public class BookController {
 	public Iterable<Book> books() {
 		return new ArrayList<Book>();
 	}
-	
-	
-	@ModelAttribute("book")
-	public Book book() {
-		return new Book();
+	@ModelAttribute("logged_in_customer")
+	public Customer c() {
+		return new Customer();
 	}
+	
+//	@ModelAttribute("book")
+//	public Book book() {
+//		return new Book();
+//	}
+	
 	@RequestMapping("/bookDetails")
 	public ModelAndView bookDetails(@ModelAttribute("books") Iterable<Book> books,
-			@RequestParam("bookId") int bookId, @ModelAttribute("book") Book book,
+			@RequestParam("bookId") int bookId, 
 			HttpServletRequest request)
 	{
 		
@@ -65,7 +71,7 @@ public class BookController {
 		
 		modelAndView.addObject("books", books);
 				
-		book = findBookById(books, bookId);
+		Book book = findBookById(books, bookId);
 		
 		modelAndView.addObject("book",book);
 		

@@ -31,8 +31,8 @@
     
     <%
 
-    if(session.getAttribute("book")!=null) {
-   		 book = (Book) session.getAttribute("book");
+    if(request.getAttribute("book")!=null) {
+   		 book = (Book) request.getAttribute("book");
     }
     c = (Customer) session.getAttribute("logged_in_customer");
     

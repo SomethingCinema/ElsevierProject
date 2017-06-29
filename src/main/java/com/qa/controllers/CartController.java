@@ -18,6 +18,10 @@ public class CartController {
 	public Map<Integer,Integer> book_counts(){
 		return null;
 	}
+	@ModelAttribute("logged_in_customer")
+	public Customer c() {
+		return new Customer();
+	}
 	
 
 	@RequestMapping("/updatePrice")
