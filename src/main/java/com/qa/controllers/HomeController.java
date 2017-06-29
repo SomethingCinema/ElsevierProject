@@ -100,13 +100,6 @@ public class HomeController {
 
 		return modelAndView;
 	}
-	
-	@RequestMapping("/registered_user_agreement")
-	public ModelAndView template() {
-		ModelAndView modelAndView = new ModelAndView("registered_user_agreement");
-
-		return modelAndView;
-	}
 
 	@RequestMapping("/contact")
 	public ModelAndView contact() {
