@@ -7,13 +7,13 @@
 </head>
 <!-- Start Top Bar -->
     <div class="top-bar" style="height:160px">
-      <div class="top-bar-left" style="vertical-align:baseline">
+      <div class="top-bar-left">
         <ul class="menu">
            <li><a href="/"><img class="logo" src="images/HCB.png" width="315" height="auto" hspace="0"/></a></li>
           
         </ul>
       </div>
-      <div class="top-bar-right" style="vertical-align:baseline"> 
+      <div class="top-bar-right"> 
         
             <ul class="dropdown menu" data-dropdown-menu>
             
