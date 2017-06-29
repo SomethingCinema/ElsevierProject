@@ -17,7 +17,18 @@
         
             <ul class="dropdown menu" data-dropdown-menu>
             
-            <li><input type="text" name="search" id="search" placeholder="Search.."><li>   
+            <li>
+            <form action="/search" method="get">
+            	<input type="text" name="search" id="search" placeholder="Search.."/>
+            	Search by: 
+            	<input type="radio" name="type" value="title" checked>Title
+				<input type="radio" name="type" value="author">Author
+				<input type="radio" name="type" value="isbn">ISBN
+            	<input type="submit" value="Search"/>
+           	</form>
+           	</li>
+           	
+           	
             <li id="cart_items"></li>
             
             <li><a href="/profile">Personal Details</a></li>

@@ -43,7 +43,14 @@
         
             <ul class="dropdown menu" data-dropdown-menu>
             
-            <li><input type="text" name="search" id="search" placeholder="Search.."><li>
+			<li>
+            <form action="/search" method="get">
+            	<input type="hidden" name="type" value="title"/>
+            	<input type="text" name="search" id="search" placeholder="Search.."/>
+            	<input type="submit" value="Search"/>
+           	</form>
+           	</li>
+           	
             
             <li class="has-submenu">
               <a href="/viewCart"><img src="images/cart.png" width="50" height="50"/></a>
