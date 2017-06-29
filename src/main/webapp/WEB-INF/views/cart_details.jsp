@@ -22,12 +22,14 @@
   	%>
   	
   	<%
+  	if(c != null){
  		c = (Customer) session.getAttribute("logged_in_customer");
   		if (c.getFirstName() != null) {
  	 %>
  	 	<jsp:include page="nav_bar_loggedin.jsp" />
  	 <%
   		}
+  	}
   		else
   		{
  	 %>
@@ -48,8 +50,10 @@
     double cartTotal = 0.0;
     double orderTotal = 0.0;
     double totalPrice =  0.0;
-    c = (Customer) session.getAttribute("logged_in_customer");
-	if (c.getFirstName() != null) {
+    
+    //c = (Customer) session.getAttribute("logged_in_customer");
+   
+	//if (c.getFirstName() != null) {
     %>
     
    
@@ -57,7 +61,7 @@
 
     
     <%
-    }
+   // }
     %>
     
     <br>
@@ -203,12 +207,14 @@
     </script> 
     
       <%
- 		c = (Customer) session.getAttribute("logged_in_customer");
+ 		//c = (Customer) session.getAttribute("logged_in_customer");
+      if(c != null){
   		if (c.getFirstName() != null) {
  	 %>
  	 	<jsp:include page="footer_loggedin.jsp" />
  	 <%
   		}
+      }
   		else
   		{
  	 %>

@@ -18,12 +18,14 @@
   	%>
   	
   	<%
+  	if(c != null){
  		c = (Customer) session.getAttribute("logged_in_customer");
   		if (c.getFirstName() != null) {
  	 %>
  	 	<jsp:include page="nav_bar_loggedin.jsp" />
  	 <%
   		}
+  	}
   		else
   		{
  	 %>
@@ -50,12 +52,14 @@
     </script>
     
       <%
- 		c = (Customer) session.getAttribute("logged_in_customer");
+ 		//c = (Customer) session.getAttribute("logged_in_customer");
+      if(c != null){
   		if (c.getFirstName() != null) {
  	 %>
  	 	<jsp:include page="footer_loggedin.jsp" />
  	 <%
   		}
+      }
   		else
   		{
  	 %>
