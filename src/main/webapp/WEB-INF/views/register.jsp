@@ -47,7 +47,8 @@
 						type="password" required
 						pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
 						placeholder="Enter Password (must have uppercase, lowercase, and number)"
-						name="password" id="password" />
+						name="password" id="password"
+						title="Must have uppercase, lowercase, and number" />
 
 				</div>
 
