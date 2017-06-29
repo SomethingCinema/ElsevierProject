@@ -13,13 +13,14 @@ public class AddressService {
 	private AddressRepository addressRepository;
 
 	public Address findAddressByType(int customerId, String addressType) {
-		Iterable<Address> allAddresses = addressRepository.findAll();
-		for(Address a: allAddresses){
-			if(a.getCustomerId() == customerId && a.getAddressType().equals(addressType)){
-				return a;
-			}
-		}
-		return null;
+//		Iterable<Address> allAddresses = addressRepository.findAll();
+//		for(Address a: allAddresses){
+//			if(a.getCustomerId() == customerId && a.getAddressType().equals(addressType)){
+//				return a;
+//			}
+//		}
+//		return null;
+		return addressRepository.findAddressByType(customerId, addressType);
 	}
 
 	public int updateBillingAddress(
@@ -27,23 +28,25 @@ public class AddressService {
 	String city, String postcode,
 	String state, String country,
 	String phoneNumber, int customerId, String addressType){
-		Iterable<Address> allAddresses = addressRepository.findAll();
-		
-		for(Address a: allAddresses){
-			if(a.getCustomerId() == customerId && a.getAddressType().equals(addressType)){
-				a.setAddressLine1(addressLine1);
-				a.setAddressLine2(addressLine2);
-				a.setCity(city);
-				a.setPostcode(postcode);
-				a.setState(state);
-				a.setCountry(country);
-				a.setPhoneNumber(phoneNumber);
-				if(addressRepository.save(a) != null){
-					return 1;
-				}
-			}
-		}
-		return 0;
+//		Iterable<Address> allAddresses = addressRepository.findAll();
+//		
+//		for(Address a: allAddresses){
+//			if(a.getCustomerId() == customerId && a.getAddressType().equals(addressType)){
+//				a.setAddressLine1(addressLine1);
+//				a.setAddressLine2(addressLine2);
+//				a.setCity(city);
+//				a.setPostcode(postcode);
+//				a.setState(state);
+//				a.setCountry(country);
+//				a.setPhoneNumber(phoneNumber);
+//				if(addressRepository.save(a) != null){
+//					return 1;
+//				}
+//			}
+//		}
+//		return 0;
+		return addressRepository.updateBillingAddress(addressLine1, addressLine2, 
+				city, postcode, state, country, phoneNumber, customerId, addressType);
 	}
 	
 	public Address add(Address a){
