@@ -21,11 +21,11 @@
             <form action="/search" method="get">
             	<input type="text" name="search" id="search" placeholder="Search.."/>
             	Search by: 
-            	<select name="type">
+            	<select name="type" style="width:119px; height:35px">
 			        <option value="title">Title</option>
 			        <option value="author">Author</option>
 			        <option value="isbn">ISBN</option>
-			     </select>
+			     </select><br>
             	<input type="submit" value="Search"/>
            	</form>
            	</li>
@@ -37,13 +37,8 @@
             <li><a href="/addressBook">Address Book</a></li>
             <li><a href="/changePassword">Change Password </a></li>
             <li><a href="#">Order History </a></li>
-             <li><a href="/logout">Logout</a></li>
-            <li class="has-submenu">
-              <a href="/viewCart"> <img src="images/cart.png" width="50" height="50"/></a>
-              <ul class="submenu menu vertical" data-submenu>
-                <li><a href="/viewCart"><img src="images/cart.png" width="50" height="50"/></a></li>
-               
-              </ul>
+            <li><a href="/viewCart"> <img src="images/cart.png" width="50" height="50"/></a>
+            <li><a href="/logout">Logout</a></li>
             </li>
             
           </ul>
