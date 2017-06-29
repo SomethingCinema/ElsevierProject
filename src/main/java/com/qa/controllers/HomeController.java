@@ -43,7 +43,7 @@ public class HomeController {
 
 	@ModelAttribute("books")
 	public Iterable<Book> books() {
-		return null;
+		return bookService.getAllBooks();
 	}
 
 	@ModelAttribute("cart_items")
