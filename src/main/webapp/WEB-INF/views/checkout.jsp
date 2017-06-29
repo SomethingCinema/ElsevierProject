@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Shopping Cart | Week 3</title>
 <link rel="stylesheet" href="css/style.css">
-
+<link rel="stylesheet" href="css/form.css">
 
 </head>
 <body>
@@ -59,19 +59,21 @@
 				<h2>Shipping Address</h2>
 
 				<div class="row small-up-shiping">
-
+					<form class="val">
 					<div class="columns">
 						<label> First Name * </label> 
-						<input type="text" name="firstName" id="firstName" size="30" />
+						<input type="text" name="firstName" id="firstName" required
+						pattern="[a-zA-Z]+" size="30" />
 					</div>
 					<div class="columns">
 						<label> Last Name * </label> 
-						<input type="text" name="lastName" id="lastName" size="30" />
+						<input type="text" name="lastName" id="lastName" required
+						pattern="[a-zA-Z]+" size="30" />
 					</div>
 
 					<div class="column">
 						<label> Address 1 * </label> 
-						<input type="text" name="addressLine1" id="addressLine1" size="30" />
+						<input type="text" name="addressLine1" required pattern="^[0-9a-zA-Z. ]+$" id="addressLine1" size="30" />
 					</div>
 					<div class="column">
 						<label> Address 2 * </label> 
@@ -79,35 +81,38 @@
 					</div>
 					<div class="column">
 						<label> City * </label> 
-						<input type="text" name="city" id="city" size="30" />
+						<input type="text" name="city" id="city" required
+						pattern="[a-zA-Z]+" size="30" />
 					</div>
 
 					<div class="column">
-						<label> Postcode / Zip code * </label> <input type="text" name="postcode" id="postcode" size="30" />
+						<label> Postcode / Zip code * </label> <input type="text" name="postcode" id="postcode" required pattern="(\d{5}([\-]\d{4})?)" size="30" />
 					</div>
 
 					<div class="column">
-						<label> State/Province * </label> <input type="text" name="state" id="state" size="30" />
+						<label> State/Province * </label> <input type="text" name="state" id="state" required
+						pattern="[a-zA-Z]+" size="30" />
 					</div>
 
 					<div class="column">
 						<label> Country * </label> 
-						<input type="text" name="country" id="country" size="30" />
+						<input type="text" name="country" id="country" required
+						pattern="[a-zA-Z]+" size="30" />
 					</div>
 
 					<div class="column">
 						<label> Phone Number * </label>
-						<input type="text" name="phone" id="phone" size="30" />
+						<input type="text" name="phone" id="phone" required pattern="\d{3}[\-]\d{3}[\-]\d{4}" size="30" />
 					</div>
 
 
 					<div class="column">
 						<label> Email * </label> 
-						<input type="text" name="email" id="email" size="30" />
+						<input type="text" name="email" id="email" size="30" required="required"/>
 					</div>
-
+					
 				</div>
-
+			</form>
 				<div class="row small-up-4">
 
 					<div class="column"></div>
