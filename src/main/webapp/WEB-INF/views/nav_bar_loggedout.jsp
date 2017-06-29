@@ -27,14 +27,14 @@
 </div> -->
 
 <!-- Start Top Bar -->
-    <div class="top-bar">
-      <div class="top-bar-left">
+    <div class="top-bar" style="height:160px">
+      <div class="top-bar-left" style="vertical-align:baseline">
         <ul class="menu">
-          <li><a href="/"><img class="logo" src="images/HCB.png" width="335" height="75" hspace="20"/></a></li>
+          <li><a href="/"><img class="logo" src="images/HCB.png" width="315" height="auto" hspace="0"/></a></li>
           
         </ul>
       </div>
-      <div class="top-bar-right">
+      <div class="top-bar-right" style="vertical-align:baseline">
       
  <!--       <ul class="menu">
         <li><input type="search" placeholder="Search"></li>
