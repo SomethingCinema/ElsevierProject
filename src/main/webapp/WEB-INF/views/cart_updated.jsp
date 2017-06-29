@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	import="com.qa.models.Customer"
+    pageEncoding="ISO-8859-1"%>
 <!doctype html>
 <%@page import="com.qa.models.Customer"%>
 <html class="no-js" lang="en">
@@ -9,6 +12,7 @@
   </head>
   <body>
     
+
     <%!
   		Customer c;
   	%>
@@ -28,6 +32,7 @@
   		}
 	%>
 
+
     <div class="callout large">
       <div class="row column text-center">
         <h1>Item added to cart </h1>
@@ -44,7 +49,22 @@
       $(document).foundation();
     </script>
     
-    <jsp:include page="footer.jsp"/>
+      <%
+ 		c = (Customer) session.getAttribute("logged_in_customer");
+  		if (c.getFirstName() != null) {
+ 	 %>
+ 	 	<jsp:include page="footer_loggedin.jsp" />
+ 	 <%
+  		}
+  		else
+  		{
+ 	 %>
+		<jsp:include page="footer.jsp" />
+	<%
+  		}
+	%>
+    
+    
   </body>
 </html>
 

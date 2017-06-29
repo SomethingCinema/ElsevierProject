@@ -96,73 +96,76 @@
           <div class="column">
             <input type="checkbox" name="same" id="same"/> My billing and shipping address are the same
           </div> -->
+          
+        </div>
+        
+        <div class="row small-up-4">
+          
+          <div class="column">
+           
+          </div>
+        
+        </div>
+        
+        <hr>
+      
+      </div>
+      <div class="medium-6 large-5 columns">
+       <h3>Order Summary </h3>
+        <p> </p>
 
-				</div>
+        <div class="row">
+          <div class="small-3 columns">
+            <label for="middle-label" class="middle">Cart Total</label>
+          </div>
+          <div class="small-3 columns">
+             
+            <label for="middle-label" class="middle" id="cart_total_label">$<%=orderTotal %></label>
+           </div>
+           
+       </div>
 
-				<div class="row small-up-4">
+          <div class="row">
+          <div class="small-3 columns">
+            <label for="middle-label" class="middle">VAT </label>
+          </div>
+          <div class="small-3 columns">
+            <label for="middle-label" class="middle">Applicable Tax </label>
+           </div>
+           
+        </div>
+    
+        <div class="row">
+          <div class="small-3 columns">
+            <label for="middle-label" class="middle">Order Total  </label>
+          </div>
+          <div class="small-3 columns">
+          
+            <label for="middle-label" class="middle" id="order_total_label">$<%=orderTotal%></label>
+           </div>
+        </div>
 
-					<div class="column"></div>
+		  
+		<input type="hidden" name="order_total" value="<%=orderTotal %>"/>   
+        <input type="submit" class="button large expanded" value="Checkout"/>
+       
+      </div>  
+   
+ </div>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="js/elsevier.js"></script>
+    <script src="js/update_cart.js"></script>
+    
+    <script src="js/validations.js"></script>
+    <script>
+      $(document).foundation();
+    </script> 
+    
+   </form>
+   
+   <jsp:include page="footer_loggedin.jsp"/>
+  </body>
 
-				</div>
-
-				<hr>
-
-			</div>
-			<div class="medium-6 large-5 columns">
-				<h3>Order Summary</h3>
-				<p></p>
-
-				<div class="row">
-					<div class="small-3 columns">
-						<label for="middle-label" class="middle">Cart Total</label>
-					</div>
-					<div class="small-3 columns">
-
-						<label for="middle-label" class="middle" id="cart_total_label">$<%=orderTotal%></label>
-					</div>
-
-				</div>
-
-				<div class="row">
-					<div class="small-3 columns">
-						<label for="middle-label" class="middle">VAT </label>
-					</div>
-					<div class="small-3 columns">
-						<label for="middle-label" class="middle">Applicable Tax </label>
-					</div>
-
-				</div>
-
-				<div class="row">
-					<div class="small-3 columns">
-						<label for="middle-label" class="middle">Order Total </label>
-					</div>
-					<div class="small-3 columns">
-
-						<label for="middle-label" class="middle" id="order_total_label">$<%=orderTotal%></label>
-					</div>
-				</div>
-
-
-				<input type="hidden" name="order_total" value="<%=orderTotal%>" />
-				<input type="submit" class="button large expanded" value="Checkout" />
-
-			</div>
-
-		</div>
-		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-		<script src="js/elsevier.js"></script>
-		<script src="js/update_cart.js"></script>
-
-		<script src="js/validations.js"></script>
-		<script>
-			$(document).foundation();
-		</script>
-
-	</form>
-
-	<jsp:include page="footer.jsp" />
-</body>
 </html>
 
 

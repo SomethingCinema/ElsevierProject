@@ -9,6 +9,7 @@
 <title>Thank you</title>
 </head>
 <body>
+
 	
 	<%!
   		Customer c;
@@ -28,6 +29,7 @@
 	<%
   		}
 	%>
+
 	
 	<h1>Order completed</h1>
 	<p>Thank you for your order!</p>

@@ -4,7 +4,9 @@
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.qa.models.Book"%>
-<%@page import="com.qa.models.Customer"%>
+
+<%@page import="com.qa.models.Customer" %>
+
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
@@ -16,6 +18,25 @@
   </head>
   
   <body>
+  
+   	<%!
+  		Customer c;
+  	%>
+  	
+  	<%
+ 		c = (Customer) session.getAttribute("logged_in_customer");
+  		if (c.getFirstName() != null) {
+ 	 %>
+ 	 	<jsp:include page="nav_bar_loggedin.jsp" />
+ 	 <%
+  		}
+  		else
+  		{
+ 	 %>
+		<jsp:include page="nav_bar_loggedout.jsp" />
+	<%
+  		}
+	%>
     
     <%!
       ArrayList<Book> books;
@@ -36,45 +57,7 @@
     
    
 
-<!-- Start Top Bar -->
-<!-- 
-        <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li class="menu-text" style="color:red">Online Shopping</li>
-          <li><a href="/">Home</a></li>
-          
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        
-             <ul class="dropdown menu" data-dropdown-menu>
-            <li id="cart_items"></li>
-            <li class="has-submenu">
-              <a href="/viewCart"> <img src="images/cart.jpg" width="50" height="50"/></a>
-              <ul class="submenu menu vertical" data-submenu>
-                <li><a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/> View Cart </a></li>
-                <tr><a href="/register">Register</a><a href="/login">Login</a></tr>
-              </ul>
-            </li>
-            <li><a href="/about_us">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-          
-      </div>
-    </div> -->
-    <!-- End Top Bar -->
-    
-    
-    <jsp:include page="nav_bar_loggedin.jsp" />
-    
-    <%
-    }
-    else
-    {
-    %>
-    
-    <jsp:include page="nav_bar_loggedout.jsp" />
+
     
     <%
     }
@@ -223,7 +206,20 @@
       $(document).foundation();
     </script> 
     
-    <jsp:include page="footer.jsp"/>
+      <%
+ 		c = (Customer) session.getAttribute("logged_in_customer");
+  		if (c.getFirstName() != null) {
+ 	 %>
+ 	 	<jsp:include page="footer_loggedin.jsp" />
+ 	 <%
+  		}
+  		else
+  		{
+ 	 %>
+		<jsp:include page="footer.jsp" />
+	<%
+  		}
+	%>
   </body>
 </html>
 

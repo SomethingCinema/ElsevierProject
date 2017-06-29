@@ -20,8 +20,7 @@
 
 		<%
 			double orderTotal = (Double) request.getAttribute("order_total");
-  			Customer c;
-  		%>
+
   	
   	<%
  		c = (Customer) session.getAttribute("logged_in_customer");
@@ -37,6 +36,7 @@
 	<%
   		}
 	%>
+
 
 		<br>
 		<!-- You can now combine a row and column if you just need a 12 column row -->
@@ -206,7 +206,20 @@
 
 	<!-- </form> -->
 
-	<jsp:include page="footer.jsp" />
+	  <%
+ 		c = (Customer) session.getAttribute("logged_in_customer");
+  		if (c.getFirstName() != null) {
+ 	 %>
+ 	 	<jsp:include page="footer_loggedin.jsp" />
+ 	 <%
+  		}
+  		else
+  		{
+ 	 %>
+		<jsp:include page="footer.jsp" />
+	<%
+  		}
+	%>
 </body>
 </html>
 

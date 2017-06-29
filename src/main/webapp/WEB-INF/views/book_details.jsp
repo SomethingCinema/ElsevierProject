@@ -5,6 +5,7 @@
 <!doctype html>
 
 <%@page import="com.qa.models.Book"%>
+ <%@page import="com.qa.models.Customer"%>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <!doctype html>
@@ -236,7 +237,31 @@
       $(document).foundation();
     </script> 
     
-    <jsp:include page="footer.jsp"/>
+      <%!
+  
+  Customer c;
+  
+  %>
+  
+  
+  <%
+ 		c = (Customer) session.getAttribute("logged_in_customer");
+  %>
+  
+        <%
+ 		c = (Customer) session.getAttribute("logged_in_customer");
+  		if (c.getFirstName() != null) {
+ 	 %>
+ 	 	<jsp:include page="footer_loggedin.jsp" />
+ 	 <%
+  		}
+  		else
+  		{
+ 	 %>
+		<jsp:include page="footer.jsp" />
+	<%
+  		}
+	%>	
   </body>
 </html>
 

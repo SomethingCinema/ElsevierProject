@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 import="com.qa.models.Customer"
     pageEncoding="ISO-8859-1"%>
+ <%@page import="com.qa.models.Customer"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -28,6 +29,7 @@ import="com.qa.models.Customer"
   		}
 	%>
 
+
 	
 
 <div style="text-align: center">
@@ -48,8 +50,24 @@ import="com.qa.models.Customer"
 		  	frameborder="0" style="border:0"
 		  	src="https://www.google.com/maps/embed/v1/place?key=AIzaSyACjIrMt05daQAw5oEbeEYQUaDF-Jy2pEc&q=1600+John+F+Kennedy+Boulevard,Philadelphia,Pennsylvania">
 		</iframe>
-</div>		
+</div>	
 
-<jsp:include page="footer.jsp"/>
+
+  
+     <%
+ 		c = (Customer) session.getAttribute("logged_in_customer");
+  		if (c.getFirstName() != null) {
+ 	 %>
+ 	 	<jsp:include page="footer_loggedin.jsp" />
+ 	 <%
+  		}
+  		else
+  		{
+ 	 %>
+		<jsp:include page="footer.jsp" />
+	<%
+  		}
+	%>	
+
 </body>
 </html>
