@@ -41,7 +41,6 @@
     <%!
       ArrayList<Book> books;
       Map<Integer,Integer> bookCounts;
-      Customer c; 
     %>
     
     

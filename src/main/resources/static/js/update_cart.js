@@ -1,7 +1,6 @@
 
 function calculateTotalPrice(price,quantity,price_label)
 {
-	     
 	       
 	       var cartTotal = document.getElementById("cart_total").value;
 	       var orderTotal = document.getElementById("order_total").value;
