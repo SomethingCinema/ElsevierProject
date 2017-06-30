@@ -25,7 +25,7 @@ p a:hover {
 }
 #header {
 	margin: 0 auto;
-	max-width: 960px;
+	max-width: 1000px;
 }
 #header h1 {
 	font-size: 50px;
@@ -65,7 +65,7 @@ p a:hover {
 #header ul#navigation li a {
 	color: #99dbf4;
 	font-size: 18px;
-	padding: 0 15px;
+	padding: 0 10px;
 	text-align: center;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -379,3 +379,4 @@ p a:hover {
     clip: rect(0, 0, 0, 0)
     
 }
+

@@ -48,7 +48,7 @@
 					<input type="text" placeholder="Enter Email" name="email" id="email" required="required" /> 
 					<label>Password * </label> 
 					<input type="password" placeholder="Enter Password" name="password" id="password" required="required" /> 
-					<br><br> <input type="submit" class="button expanded" value="Login">
+					<br><input type="submit" class="button expanded" value="Login">
 
 				</form>
 			</div>

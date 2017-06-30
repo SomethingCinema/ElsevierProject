@@ -16,13 +16,20 @@
 	<h1>
 		<a href="/"><img class="logo" src="images/HCB.png" /></a>
 	</h1>
+	
 	<div id="search">
 			<form action="/search" method="get" style="float:right;">
-				<input type="hidden" name="type" value="title" /> <input type="text"
-					name="search" id="search" placeholder="Search.." /> <input
-					type="submit" value="Search" />
-			</form>
+            	<input type="text" name="search" id="search" placeholder="Search.."/>
+            	Search by: 
+            	<select name="type" style="width:60px; height:35px">
+			        <option value="title">Title</option>
+			        <option value="author">Author</option>
+			        <option value="isbn">ISBN</option>
+			     </select>
+            	<input type="submit" value="Search" style="float:right;"/>
+           	</form>
 	</div>
+	
 	<ul id="navigation">
 		<li><a href="/allBooks">All Books</a></li>
 		<li id="drop"><a href="/about_us">About Us</a>

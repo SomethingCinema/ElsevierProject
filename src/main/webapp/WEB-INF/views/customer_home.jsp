@@ -22,7 +22,7 @@
 	<%--     <jsp:include page="nav_bar_loggedin.jsp" /> --%>
 	<jsp:include page="temp_head_in.jsp" />
 
-	<div class="callout large" id="body">
+	<div class="callout large" id="body" style="text-align:center">
 		<div class="row column text-center">
 
 			<h3>

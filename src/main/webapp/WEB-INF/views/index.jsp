@@ -35,7 +35,6 @@
 		}
 	%>
 
-
 	<div id="body">
 		<div class="row column text-center">
 
@@ -52,7 +51,7 @@
 			<hr>
 		</div>
 
-		<div class="row small-up-2 medium-up-3 large-up-4">
+		<div class="row small-up-2 medium-up-3 large-up-2">
 
 			<%
 				int i = 0;
