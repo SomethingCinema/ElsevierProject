@@ -84,6 +84,39 @@ public class ValidationTest {
 		String result = Validate.validateRegistration(c, agreement);
 		assertThat(result, is("Registration failed - please enter a password"));
 	}
+	@Test
+	public void validateRegistrationEmailFail(){
+		c.setEmail("emailtest");
+		String agreement = "agree";
+		String result = Validate.validateRegistration(c, agreement);
+		assertThat(result, is("Registration failed - please enter a valid email"));
+	}
+	@Test
+	public void validateRegistrationFirstNameFail(){
+		c.setFirstName("1111");
+		String agreement = "agree";
+		String result = Validate.validateRegistration(c, agreement);
+		assertThat(result, is("Registration failed - please enter alphabetical characters for names"));
+	}
+	@Test
+	public void validateRegistrationLastNameFail(){
+		c.setLastName("1111");
+		String agreement = "agree";
+		String result = Validate.validateRegistration(c, agreement);
+		assertThat(result, is("Registration failed - please enter alphabetical characters for names"));
+	}
+	@Test
+	public void validateRegistrationAgreementNotChecked(){
+		String agreement = null;
+		String result = Validate.validateRegistration(c, agreement);
+		assertThat(result, is("Registration failed - please check the User Agreement box"));
+	}
+	@Test
+	public void validateRegistrationSuccess(){
+		String agreement = "agree";
+		String result = Validate.validateRegistration(c, agreement);
+		assertThat(result, is(""));
+	}
 
 
 }
