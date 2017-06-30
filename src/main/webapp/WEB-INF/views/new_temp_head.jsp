@@ -25,7 +25,7 @@
 	</div>
 	<ul id="navigation">
 		<li><a href="/allBooks">All Books</a></li>
-		<li><a href="/about_us">About Us</a>
+		<li id="drop"><a href="/about_us">About Us</a>
 			<ul>
 				<li><a href="/contact">Contact</a></li>
 			</ul>

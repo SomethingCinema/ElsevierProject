@@ -25,15 +25,16 @@
 	</div>
 	<ul id="navigation">
 		<li><a href="/allBooks">All Books</a></li>
-		<li><a href="/about_us">About Us</a>
+		<li id="drop"><a href="/about_us">About Us</a>
 			<ul>
 				<li><a href="/contact">Contact</a></li>
 			</ul>
 		</li>
 		<li><a href="/viewCart">Shopping Cart</a></li>
-		<li><a href="/profile">Profile</a>
+		<li id="drop"><a href="/profile">Profile</a>
 			<ul>
 				<li><a href="/changePassword">Password</a>
+				<li><a href="/addressBook">Address</a>
 			</ul>
 		</li>
 		<li><a href="/logout">Logout</a></li>

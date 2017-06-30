@@ -35,7 +35,7 @@
 	%>
 
 	<div class="callout large" id="body">
-		<div class="row column">
+		<div class="row column" style="text-align:center">
 
 
 			<div class="medium-6">
@@ -48,7 +48,7 @@
 					<input type="text" placeholder="Enter Email" name="email" id="email" required="required" /> 
 					<label>Password * </label> 
 					<input type="password" placeholder="Enter Password" name="password" id="password" required="required" /> 
-					<input type="submit" class="button expanded" value="Login">
+					<br><br> <input type="submit" class="button expanded" value="Login">
 
 				</form>
 			</div>

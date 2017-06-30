@@ -52,70 +52,71 @@
 
 	<br>
 	<!-- You can now combine a row and column if you just need a 12 column row -->
+<div id="body">
 	<div class="row columns">
 		<nav aria-label="You are here:" role="navigation">
 			<ul class="breadcrumbs">
-
 				<li><a href="/">Home</a></li>
 				<li><span class="show-for-sr">Current: </span> Book Details</li>
 			</ul>
 		</nav>
 	</div>
+	
+		<div class="row">
+			<div class="medium-6 columns">
+				<img class="thumbnail" src="<%=book.getBookImage()%>" />
+				<div class="row small-up-4">
+					<div class="column">
+						eBook ISBN :
+						<%=book.geteBookISBN()%>
+					</div>
+					<div class="column">
+						Print book ISBN
+						<%=book.getPaperISBN()%>
+					</div>
+					<div class="column">
 
-	<div class="row">
-		<div class="medium-6 columns">
-			<img class="thumbnail" src="<%=book.getBookImage()%>" />
-			<div class="row small-up-4">
-				<div class="column">
-					eBook ISBN :
-					<%=book.geteBookISBN()%>
-				</div>
-				<div class="column">
-					Print book ISBN
-					<%=book.getPaperISBN()%>
-				</div>
-				<div class="column">
+						<fmt:setLocale value="en_US" scope="session" />
 
-					<fmt:setLocale value="en_US" scope="session" />
+						Price :
+						<fmt:formatNumber type="currency" value="<%=book.getPrice()%>" />
+					</div>
+					<div class="column">
+						Published On
+						<%=book.getPublishedDate()%>
+					</div>
 
-					Price :
-					<fmt:formatNumber type="currency" value="<%=book.getPrice()%>" />
 				</div>
-				<div class="column">
-					Published On
-					<%=book.getPublishedDate()%>
-				</div>
-
 			</div>
-		</div>
-		<div class="medium-6 large-5 columns">
-			<h3><%=book.getTitle()%></h3>
-			<h4>
-				By:
-				<%=book.getBookauthor()%></h4>
-			<p><%=book.getDescription()%></p>
+			<div class="medium-6 large-5 columns">
+				<h3><%=book.getTitle()%></h3>
+				<h4>
+					By:
+					<%=book.getBookauthor()%></h4>
+				<p><%=book.getDescription()%></p>
 
 
-			<form action="/addToCart" method="post">
+				<form action="/addToCart" method="post">
 
-				<label>Select the format <select required>
-						<option value="">-- Select --</option>
-						<option value="print">Paperback</option>
-						<option value="eBook">eBook</option>
-						<option value="printAndeBook">PrintBook & eBook</option>
-				</select>
-				</label>
-				<%-- <a href="/addToCart?bookId=<%=book.getBookId()%>" class="button large expanded">Add to Cart</a> --%>
-				<input type="hidden" name="bookId" value="<%=book.getBookId()%>" />
-				<button id="addToCart" class="button large expanded">Add to
-					Cart</button>
-			</form>
+					<label>Select the format <select required>
+							<option value="">-- Select --</option>
+							<option value="print">Paperback</option>
+							<option value="eBook">eBook</option>
+							<option value="printAndeBook">PrintBook & eBook</option>
+					</select>
+					</label>
+					<%-- <a href="/addToCart?bookId=<%=book.getBookId()%>" class="button large expanded">Add to Cart</a> --%>
+					<input type="hidden" name="bookId" value="<%=book.getBookId()%>" />
+					<button id="addToCart" class="button large expanded">Add
+						to Cart</button>
+				</form>
 
-			<!-- <div class="small secondary expanded button-group">
+				<!-- <div class="small secondary expanded button-group">
             <a class="button">Facebook</a>
             <a class="button">Twitter</a>
             <a class="button">Yo</a>
           </div> -->
+			</div>
 		</div>
 	</div>
 	<!--  

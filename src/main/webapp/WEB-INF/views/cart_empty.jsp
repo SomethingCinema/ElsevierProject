@@ -35,7 +35,7 @@
 
 	<div id="body">
 		<div class="callout large">
-			<div class="row column text-center">
+			<div class="row column text-center" style="text-align: center">
 				<h1>Your cart is now empty</h1>
 
 				<a href="/" class="button large"> Continue shopping </a>
