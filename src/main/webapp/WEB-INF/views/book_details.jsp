@@ -53,14 +53,14 @@
 	<br>
 	<!-- You can now combine a row and column if you just need a 12 column row -->
 <div id="body">
-	<div class="row columns">
+	<!--  <div class="row columns">
 		<nav aria-label="You are here:" role="navigation">
 			<ul class="breadcrumbs">
 				<li><a href="/">Home</a></li>
 				<li><span class="show-for-sr">Current: </span> Book Details</li>
 			</ul>
 		</nav>
-	</div>
+	</div> -->
 	
 		<div class="row">
 			<div class="medium-6 columns">

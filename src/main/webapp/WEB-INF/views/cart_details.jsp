@@ -70,6 +70,7 @@
     <!-- You can now combine a row and column if you just need a 12 column row -->
     <div id="body">
     <div class="row columns">
+    <!--  
       <nav aria-label="You are here:" role="navigation">
         <ul class="breadcrumbs">
          
@@ -78,7 +79,7 @@
             <span class="show-for-sr">Current: </span> Cart Details
           </li>
         </ul>
-      </nav>
+      </nav> -->
     </div>
 
     <div class="row">
