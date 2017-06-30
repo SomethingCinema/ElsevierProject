@@ -24,7 +24,7 @@
 			</form>
 	</div>
 	<ul id="navigation">
-		<li><a href="/all_books">All Books</a></li>
+		<li><a href="/allBooks">All Books</a></li>
 		<li><a href="/about_us">About Us</a>
 			<ul>
 				<li><a href="/contact">Contact</a></li>

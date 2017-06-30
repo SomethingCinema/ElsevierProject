@@ -169,7 +169,8 @@
       $(document).foundation();
     </script>
     
-    <jsp:include page="footer_loggedin.jsp"/>
+<%--     <jsp:include page="footer_loggedin.jsp"/> --%>
+	<jsp:include page="temp_foot_in.jsp" />
   </body>
 </html>
 

@@ -2,17 +2,17 @@
 	pageEncoding="ISO-8859-1"%>
 <!doctype html>
 <html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Online Shopping </title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/form.css" type="text/css">
-  </head>
-  <body>
-    
-    <!-- Start Top Bar -->
-    <!--  
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Online Shopping</title>
+<link rel="stylesheet" href="css/temp.css">
+<link rel="stylesheet" href="css/form.css" type="text/css">
+</head>
+<body>
+
+	<!-- Start Top Bar -->
+	<!--  
     <div class="top-bar">
       <div class="top-bar-left">
         <ul class="menu">
@@ -38,31 +38,33 @@
           
       </div>
     </div> -->
-    <!-- End Top Bar -->
-    
-    <jsp:include page="nav_bar_loggedout.jsp" />
+	<!-- End Top Bar -->
 
-   <% request.getSession().invalidate();
+	<%--     <jsp:include page="nav_bar_loggedout.jsp" /> --%>
+	<jsp:include page="new_temp_head.jsp" />
 
-		if(session!=null){
-   			session=null;
+	<%
+		request.getSession().invalidate();
+
+		if (session != null) {
+			session = null;
 		}
 
-		 request.getSession().setAttribute("name", null); //it just assigns null to attribute
+		request.getSession().setAttribute("name", null); //it just assigns null to attribute
 
- 			response.sendRedirect("/");
- 	%>
-    
-   
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="js/elsevier.js"></script>
-    <script>
-      $(document).foundation();
-    </script>
-    
-  <jsp:include page="footer.jsp"/>
-  </body>
+		response.sendRedirect("/");
+	%>
+
+
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="js/elsevier.js"></script>
+	<script>
+		$(document).foundation();
+	</script>
+
+	<%--   <jsp:include page="footer.jsp"/> --%>
+	<jsp:include page="new_temp_footer.jsp" />
+</body>
 </html>
 
 
-    

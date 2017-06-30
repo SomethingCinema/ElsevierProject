@@ -16,7 +16,8 @@
 		c = (Customer) session.getAttribute("logged_in_customer");
 		if (c.getFirstName() != null) {
 	%>
-	<jsp:include page="nav_bar_loggedin.jsp" />
+<%-- 	<jsp:include page="nav_bar_loggedin.jsp" /> --%>
+	<jsp:include page="temp_head_in.jsp" />
 	<%
 		} else {
 	%>
@@ -78,7 +79,8 @@
 		c = (Customer) session.getAttribute("logged_in_customer");
 		if (c.getFirstName() != null) {
 	%>
-	<jsp:include page="footer_loggedin.jsp" />
+	<%--  	 	<jsp:include page="footer_loggedin.jsp" /> --%>
+		<jsp:include page="temp_foot_in.jsp" />
 	<%
 		} else {
 	%>
