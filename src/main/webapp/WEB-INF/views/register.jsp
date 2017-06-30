@@ -19,7 +19,8 @@
 		c = (Customer) session.getAttribute("logged_in_customer");
 		if (c.getFirstName() != null) {
 	%>
-	<jsp:include page="nav_bar_loggedin.jsp" />
+<%-- 	<jsp:include page="nav_bar_loggedin.jsp" /> --%>
+	<jsp:include page="temp_head_in.jsp" />
 	<%
 		} else {
 	%>

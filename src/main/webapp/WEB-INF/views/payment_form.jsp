@@ -12,7 +12,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Shopping Cart | Week 3</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/temp.css">
 
 
 </head>
@@ -30,18 +30,20 @@
 		c = (Customer) session.getAttribute("logged_in_customer");
 		if (c.getFirstName() != null) {
 	%>
-	<jsp:include page="nav_bar_loggedin.jsp" />
+	<%-- 	<jsp:include page="nav_bar_loggedin.jsp" /> --%>
+	<jsp:include page="temp_head_in.jsp" />
 	<%
 		} else {
 	%>
-	<jsp:include page="nav_bar_loggedout.jsp" />
+	<%-- 	<jsp:include page="nav_bar_loggedout.jsp" /> --%>
+	<jsp:include page="new_temp_head.jsp" />
 	<%
 		}
 	%>
 
 	<br>
 	<!-- You can now combine a row and column if you just need a 12 column row -->
-	<div class="row columns">
+	<div class="row columns" id="body">
 		<nav aria-label="You are here:" role="navigation">
 			<ul class="breadcrumbs">
 
@@ -162,7 +164,8 @@
 
 
 
-	<jsp:include page="footer_loggedin.jsp" />
+	<%-- 	<jsp:include page="footer_loggedin.jsp" /> --%>
+	<jsp:include page="temp_foot_in.jsp" />
 </body>
 
 </html>

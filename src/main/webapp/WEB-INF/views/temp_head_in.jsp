@@ -24,14 +24,16 @@
 			</form>
 	</div>
 	<ul id="navigation">
-		<li><a href="/about_us">About Us</a></li>
-		<li><a href="/contact">Contact</a></li>
+		<li><a href="/allBooks">All Books</a></li>
+		<li><a href="/about_us">About Us</a>
+			<ul>
+				<li><a href="/contact">Contact</a></li>
+			</ul>
+		</li>
 		<li><a href="/viewCart">Shopping Cart</a></li>
 		<li><a href="/profile">Profile</a>
 			<ul>
-				<li>
-					<a href="/changePassword">Change Password</a>
-				</li>
+				<li><a href="/changePassword">Password</a>
 			</ul>
 		</li>
 		<li><a href="/logout">Logout</a></li>

@@ -13,7 +13,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Online Shopping</title>
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/temp.css" />
 </head>
 <body>
 
@@ -55,16 +55,13 @@
 		<div class="row small-up-2 medium-up-3 large-up-4">
 
 			<%
-    
-				  int i = 0;
-     				for(Book book: books)
-     				{
-    				if(i >= 4){ //load max 4 books for index page
-    			break; 
-    			}   
-    
-     		%>
-     		
+				int i = 0;
+				for (Book book : books) {
+					if (i >= 4) { //load max 4 books for index page
+						break;
+					}
+			%>
+
 			<div class="column">
 				<fmt:setLocale value="en_US" scope="session" />
 
@@ -81,9 +78,9 @@
 			</div>
 		</div>
 		<%
-				i++;
-		}
-			%>
+			i++;
+			}
+		%>
 	</div>
 
 	<hr>
@@ -98,7 +95,8 @@
 		c = (Customer) session.getAttribute("logged_in_customer");
 		if (c.getFirstName() != null) {
 	%>
-	<jsp:include page="footer_loggedin.jsp" />
+	<%--  	 	<jsp:include page="footer_loggedin.jsp" /> --%>
+	<jsp:include page="temp_foot_in.jsp" />
 	<%
 		} else {
 	%>
