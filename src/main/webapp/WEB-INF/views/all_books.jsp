@@ -53,12 +53,12 @@
 
 
 
-
+			<div class="row small-up-2 medium-up-3 large-up-4">
 			<%
 				for (Book book : books) {
 			%>
-			<div class="row small-up-2 medium-up-3 large-up-4">
-				<div class="column">
+			
+				<div class="column " >
 					<fmt:setLocale value="en_US" scope="session" />
 
 					<a href="/bookDetails?bookId=<%=book.getBookId()%>"><img
@@ -73,11 +73,12 @@
 						class="button expanded">View book details</a>
 					<!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
 				</div>
-			</div>
+			
 			<hr>
 			<%
 				}
 			%>
+			</div>
 		</div>
 	</div>
 	<hr>
