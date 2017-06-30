@@ -33,7 +33,7 @@
  	
 
  <h2 class="intro">Meet our highly talented team of developers who bring their unique skills 
-		to allow us to meet the needs of our customers while staying ahead of our Competitors!!!</h3>
+		that allow us to meet the needs of our customers while staying ahead of our Competitors!!!</h3>
 	<div class="team-content">
 	 <div class="mem1">
 	  <h3><b>Alexa Hojczyk :</b><i>Scrum Master/Designer/Developer</i></h3>
@@ -56,7 +56,7 @@
 	  <a href="mailto:r.poch@elsevier.com">r.poch@elsevier.com</a>
 	 </div>
 	 <div class="mem6">
-	  <h3><b>Samantha Rogers :</b><i>Content Developer/Project Manager</i></h3>
+	  <h3><b>Samantha Rogers :</b><i>Content Developer/Developer/Project Manager</i></h3>
 	  <a href="mailto:s.rogers.1@elsevier.com">s.rogers.1@elsevier.com</a>
 	 </div>
 	</div>	
