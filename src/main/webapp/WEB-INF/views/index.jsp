@@ -36,7 +36,6 @@
 	%>
 
 
-
 <div id="body">
 	<div class="row column text-center">
 		
