@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Shopping </title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/temp.css">
   </head>
   <body>
     
@@ -29,12 +29,13 @@
   		else
   		{
  	 %>
-		<jsp:include page="nav_bar_loggedout.jsp" />
+<%-- 		<jsp:include page="nav_bar_loggedout.jsp" /> --%>
+			<jsp:include page="new_temp_head.jsp" />
 	<%
   		}
 	%>
 
-
+<div id="body">
     <div class="callout large">
       <div class="row column text-center">
         <h1>Item added to cart </h1>
@@ -44,7 +45,7 @@
       
       </div>
     </div>
-    
+    </div>
    
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier.js"></script>
@@ -64,7 +65,8 @@
   		else
   		{
  	 %>
-		<jsp:include page="footer.jsp" />
+<%-- 		<jsp:include page="footer.jsp" /> --%>
+			<jsp:include page="new_temp_footer.jsp" />
 	<%
   		}
 	%>

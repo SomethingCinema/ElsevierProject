@@ -6,6 +6,7 @@ import="com.qa.models.Customer"
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="css/temp.css"/>
 <title>Contact</title>
 </head>
 <body>
@@ -24,14 +25,15 @@ import="com.qa.models.Customer"
   		else
   		{
  	 %>
-		<jsp:include page="nav_bar_loggedout.jsp" />
+<%-- 		<jsp:include page="nav_bar_loggedout.jsp" /> --%>
+		<jsp:include page="new_temp_head.jsp" />
 	<%
   		}
 	%>
 
 
 	
-
+<div id="body">
 <div style="text-align: center">
 	<h1>Contact Something Books</h1>
 	
@@ -41,6 +43,7 @@ import="com.qa.models.Customer"
 		<b>Address:</b>	1600 John F. Kennedy Boulevard <br>
 		Philadelphia PA <br>
 		19103 <br>
+	</div>
 	</div>
 			
 		
@@ -64,7 +67,8 @@ import="com.qa.models.Customer"
   		else
   		{
  	 %>
-		<jsp:include page="footer.jsp" />
+<%-- 		<jsp:include page="footer.jsp" /> --%>
+		<jsp:include page="new_temp_footer.jsp"/>
 	<%
   		}
 	%>	

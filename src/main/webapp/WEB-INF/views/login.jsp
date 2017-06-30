@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Shopping </title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/temp.css">
     <link rel="stylesheet" href="css/form.css">
   </head>
   <body>
@@ -27,12 +27,13 @@
   		else
   		{
  	 %>
-		<jsp:include page="nav_bar_loggedout.jsp" />
+<%-- 		<jsp:include page="nav_bar_loggedout.jsp" /> --%>
+			<jsp:include page="new_temp_head.jsp" />
 	<%
   		}
 	%>
 
-	<div class="callout large">
+	<div class="callout large" id="body">
 		<div class="row column">
 
 
@@ -68,7 +69,8 @@
 	<script>
 		$(document).foundation();
 	</script>
-  <jsp:include page="footer.jsp"/>
+<%--   <jsp:include page="footer.jsp"/> --%>
+		<jsp:include page="new_temp_footer.jsp" />
 </body>
 </html>
 
