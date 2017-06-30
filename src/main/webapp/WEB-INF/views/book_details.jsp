@@ -85,6 +85,7 @@
             Print book ISBN <%=book.getPaperISBN()%>
           </div>
           <div class="column">
+          <fmt:setLocale value="en_US" scope="session"/>
            Price : <fmt:formatNumber type="currency" value="<%=book.getPrice()%>"/>
           </div>
           <div class="column">
