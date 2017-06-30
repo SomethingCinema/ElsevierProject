@@ -33,6 +33,7 @@
            	
             <li id="cart_items"></li>
             
+            <li><a id="hover-link" href="/allBooks">Browse</a></li>
             <li><a href="/profile">Personal Details</a></li>
             <li><a href="/addressBook">Address Book</a></li>
             <li><a href="/changePassword">Change Password </a></li>

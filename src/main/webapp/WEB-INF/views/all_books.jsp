@@ -41,7 +41,7 @@
     
     
     <div class="row column text-center">
-      <h2>Our Newest Books
+      <h2>All books
       
       
       <%
@@ -57,12 +57,8 @@
     <div class="row small-up-2 medium-up-3 large-up-4">
     
     <%
-   	int i = 0;
     for(Book book: books)
     {
-    	if(i >= 4){ //load max 4 books for index page
-    		break; 
-    	}
       
    
     %>
@@ -77,7 +73,6 @@
       </div>
     
     <%
-    i++;
     }
     %>  
     </div>

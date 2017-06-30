@@ -86,7 +86,7 @@ public class HomeController {
 
 		return modelAndView;
 	}
-	
+
 	@RequestMapping("/register")
 	public ModelAndView register() {
 		ModelAndView modelAndView = new ModelAndView("register");
@@ -115,6 +115,30 @@ public class HomeController {
 		return modelAndView;
 	}
 
+	@RequestMapping("/allBooks")
+	public ModelAndView allBooks(HttpServletRequest request) {
+
+		ArrayList<Book> cartItems = null;
+
+		HttpSession session = request.getSession();
+
+		Object items = session.getAttribute("cart_items");
+
+		if (items != null) {
+			cartItems = (ArrayList<Book>) items;
+		} else {
+			cartItems = new ArrayList<Book>();
+		}
+
+		Iterable<Book> books = bookService.getAllBooks();
+
+		ModelAndView modelAndView = new ModelAndView("all_books", "books", books);
+
+		modelAndView.addObject("cart_items", cartItems);
+
+		return modelAndView;
+	}
+
 	@RequestMapping("/registerProcess")
 	public ModelAndView registerProcess(@ModelAttribute("Customer") Customer customer,
 			@RequestParam(value = "agreement", required = false) String agreement) {
@@ -136,16 +160,13 @@ public class HomeController {
 
 		if (c != null) {
 			return new ModelAndView("registration_success");
-		} 
-		else {
+		} else {
 			msg = "Registration failed - email taken";
 			return new ModelAndView("register", "alert", msg);
 		}
 
 		// return modelAndView;
 	}
-
-	
 
 	@RequestMapping("/loginProcess")
 	public ModelAndView loginProcess(@RequestParam("email") String email, @RequestParam("password") String password) {
@@ -175,8 +196,6 @@ public class HomeController {
 
 		// return modelAndView;
 	}
-
-	
 
 	@RequestMapping("/profile")
 	public ModelAndView profile(@ModelAttribute("logged_in_customer") Customer loggedInCustomer) {
@@ -246,8 +265,7 @@ public class HomeController {
 			System.out.println("Password" + c.getPassword());
 
 			modelAndView = new ModelAndView("password_change", "logged_in_customer", c);
-		} 
-		else {
+		} else {
 			modelAndView = new ModelAndView("password_change", "logged_in_customer", loggedInCustomer);
 		}
 
