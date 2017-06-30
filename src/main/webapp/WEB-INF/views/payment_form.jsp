@@ -43,18 +43,18 @@
 
 	<br>
 	<!-- You can now combine a row and column if you just need a 12 column row -->
-	<div class="row columns" id="body">
-		<nav aria-label="You are here:" role="navigation">
+	<div class="row columns">
+		<!--  <nav aria-label="You are here:" role="navigation">
 			<ul class="breadcrumbs">
 
 				<li><a href="/">Home</a></li>
 				<li><span class="show-for-sr">Current: </span> Payment Details
 				</li>
 			</ul>
-		</nav>
+		</nav> -->
 	</div>
 	<form action="/completePayment" method="post">
-
+	<div id="body">
 		<div class="row">
 
 			<div class="medium-6 columns">
@@ -151,6 +151,7 @@
 			</div>
 
 
+		</div>
 		</div>
 	</form>
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

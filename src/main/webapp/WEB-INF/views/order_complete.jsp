@@ -27,10 +27,11 @@
 	<%
 		}
 	%>
+	<div id="body">
 
-
-	<h1>Order completed</h1>
-	<p>Thank you for your order!</p>
+		<h1>Order completed</h1>
+		<p>Thank you for your order!</p>
+	</div>
 
 	<%-- 	<jsp:include page="footer_loggedin.jsp"/> --%>
 	<jsp:include page="temp_foot_in.jsp" />
