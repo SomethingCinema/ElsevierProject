@@ -18,7 +18,7 @@
 	</h1>
 	<div id="search">
 			<form action="/search" method="get" style="float:right;">
-				<input type="hidden" name="type" value="title" /> 
+				
 				
 				<input type="text" name="search" id="search" placeholder="Search.." /> 
 				<br>

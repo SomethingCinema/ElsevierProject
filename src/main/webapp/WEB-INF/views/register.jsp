@@ -8,8 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Online Shopping</title>
 <link rel="stylesheet" href="css/temp.css">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
 <link rel="stylesheet" href="css/form.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
 
@@ -34,7 +35,7 @@
 		<div class="row column">
 
 			<form action="/registerProcess" method="post" class="val"
-				style="text-align: center">
+				style="text-align: center; ">
 				<div class="medium-6">
 					<h3>Create an account</h3>
 
