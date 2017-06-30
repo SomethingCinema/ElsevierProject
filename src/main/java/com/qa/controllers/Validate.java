@@ -71,14 +71,14 @@ public class Validate {
 
 	public static String validateAddress(Address address) {
 
-		Pattern addressPattern = Pattern.compile("[a-zA-Z0-9.]+");
+		Pattern addressPattern = Pattern.compile("[a-zA-Z0-9. ]+");
 		Matcher addressMatcher1 = addressPattern.matcher(address.getAddressLine1());
 		Matcher addressMatcher2 = addressPattern.matcher(address.getAddressLine2());
 		if (!addressMatcher1.matches() || !addressMatcher2.matches()) {
 			return "Please enter a valid address";
 		}
 
-		Pattern cityPattern = Pattern.compile("[a-zA-Z]+");
+		Pattern cityPattern = Pattern.compile("[a-zA-Z ]+");
 		Matcher cityMatcher = cityPattern.matcher(address.getCity());
 		Matcher stateMatcher = cityPattern.matcher(address.getState());
 		Matcher countryMatcher = cityPattern.matcher(address.getCountry());
@@ -116,7 +116,7 @@ public class Validate {
 			return "Please enter a valid last name";
 		}
 
-		Pattern addressPattern = Pattern.compile("[a-zA-Z0-9.]+");
+		Pattern addressPattern = Pattern.compile("[a-zA-Z0-9. ]+");
 		Matcher addressMatcher1 = addressPattern.matcher(address.getAddressLine1());
 		Matcher addressMatcher2 = addressPattern.matcher(address.getAddressLine2());
 		if (!addressMatcher1.matches() || !addressMatcher2.matches()) {
