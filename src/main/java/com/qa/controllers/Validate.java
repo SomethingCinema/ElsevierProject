@@ -99,8 +99,8 @@ public class Validate {
 			msg = "Please enter a valid zipcode";
 		}
 
-		Pattern phonePattern = Pattern.compile("\\d{3}[-]\\d{3}[-]\\d{4}");
-		Matcher phoneMatcher = phonePattern.matcher(address.getPostcode());
+		Pattern phonePattern = Pattern.compile("\\d{3}-\\d{3}-\\d{4}");
+		Matcher phoneMatcher = phonePattern.matcher(address.getPhoneNumber());
 		if (!phoneMatcher.matches()) {
 			msg = "Please enter a valid phone number";
 		}
@@ -143,8 +143,8 @@ public class Validate {
 			msg = "Please enter a valid zipcode";
 		}
 
-		Pattern phonePattern = Pattern.compile("\\d{3}[-]\\d{3}[-]\\d{4}");
-		Matcher phoneMatcher = phonePattern.matcher(address.getPostcode());
+		Pattern phonePattern = Pattern.compile("\\d{3}-\\d{3}-\\d{4}");
+		Matcher phoneMatcher = phonePattern.matcher(address.getPhone());
 		if (!phoneMatcher.matches()) {
 			msg = "Please enter a valid phone number";
 		}
