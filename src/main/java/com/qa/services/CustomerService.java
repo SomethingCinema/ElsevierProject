@@ -1,7 +1,6 @@
 package com.qa.services;
 
-import java.sql.SQLException;
-
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,12 +25,27 @@ public class CustomerService {
 				return null; // email already exists
 			}
 		}
+		// Hash a password for the first time
+		String hashed = BCrypt.hashpw(c.getPassword(), BCrypt.gensalt());
+		c.setPassword(hashed);
+		
 		return customerRepository.save(c);
 
 	}
 
 	public Customer loginProcess(String email, String password) {
-		return customerRepository.loginProcess(email, password);
+		// Check that the unencypted password matches one that has
+		// previously been hashed
+		String hashedpw = customerRepository.getHashedPassword(email);
+		if (BCrypt.checkpw(password, hashedpw)){
+			System.out.println("Password matches!");
+			return customerRepository.loginProcess(email, hashedpw);
+		}
+		else{
+			System.out.println("Password does not match");
+			return null;
+		}
+		
 	}
 
 	public int updateCustomer(String firstName, String lastName, String email, int customerId) {

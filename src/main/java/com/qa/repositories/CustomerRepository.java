@@ -15,6 +15,9 @@ import com.qa.models.Customer;
 public interface CustomerRepository extends CrudRepository<Customer, Integer>{
 	@Query("select c from Customer c where c.email = :email and c.password = :password")
 	public Customer loginProcess(@Param("email") String email,@Param("password") String password);
+	
+	@Query("select c.password from Customer c where c.email = :email")
+	public String getHashedPassword(@Param("email") String email);
 
 	@Modifying
 	@Transactional
