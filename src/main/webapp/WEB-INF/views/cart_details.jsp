@@ -10,7 +10,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping Cart | Week 3</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/temp.css">
     <link rel="stylesheet" type="text/css" href="css/buttons.css">  
     <script src="js/buttons.js"></script>
   </head>
@@ -33,7 +33,8 @@
   		else
   		{
  	 %>
-		<jsp:include page="nav_bar_loggedout.jsp" />
+<%-- 		<jsp:include page="nav_bar_loggedout.jsp" /> --%>
+		<jsp:include page="new_temp_head.jsp" />
 	<%
   		}
 	%>
@@ -66,6 +67,7 @@
     
     <br>
     <!-- You can now combine a row and column if you just need a 12 column row -->
+    <div id="body">
     <div class="row columns">
       <nav aria-label="You are here:" role="navigation">
         <ul class="breadcrumbs">
@@ -198,6 +200,7 @@
         </form> 
       </div>  
  </div>
+ </div>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier.js"></script>
     <script src="js/update_cart.js"></script>
@@ -218,7 +221,8 @@
   		else
   		{
  	 %>
-		<jsp:include page="footer.jsp" />
+	<%-- 		<jsp:include page="footer.jsp" /> --%>
+	<jsp:include page="new_temp_footer.jsp" />
 	<%
   		}
 	%>

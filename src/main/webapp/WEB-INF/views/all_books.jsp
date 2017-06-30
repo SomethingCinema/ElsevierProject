@@ -13,7 +13,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Shopping</title>
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/temp.css"/>
   </head>
   <body>
 
@@ -32,7 +32,8 @@
   		else
   		{
  	 %>
-		<jsp:include page="nav_bar_loggedout.jsp" />
+<%-- 		<jsp:include page="nav_bar_loggedout.jsp" /> --%>
+			<jsp:include page="new_temp_head.jsp" />
 	<%
   		}
 	%>
@@ -40,7 +41,7 @@
 
     
     
-    <div class="row column text-center">
+    <div class="row column text-center" id="body">
       <h2>All books
       
       
@@ -95,7 +96,8 @@
   		else
   		{
  	 %>
-		<jsp:include page="footer.jsp" />
+<%-- 		<jsp:include page="footer.jsp" /> --%>
+			<jsp:include page="new_temp_footer.jsp" />
 	<%
   		}
 	%>

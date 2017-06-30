@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> Shopping Cart | Elsevier </title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/temp.css">
   </head>
   <body>
   
@@ -26,7 +26,8 @@
   		else
   		{
  	 %>
-		<jsp:include page="nav_bar_loggedout.jsp" />
+<%-- 		<jsp:include page="nav_bar_loggedout.jsp" /> --%>
+			<jsp:include page="new_temp_head.jsp" />
 	<%
   		}
 	%>
@@ -36,7 +37,7 @@
     
     
   
-
+<div id="body">
     <div class="callout large">
       <div class="row column text-center">
         <h1>Your cart is now empty </h1>
@@ -44,6 +45,7 @@
         <a href="/" class="button large"> Continue shopping </a>
       
       </div>
+    </div>
     </div>
     
    
@@ -63,7 +65,8 @@
   		else
   		{
  	 %>
-		<jsp:include page="footer.jsp" />
+<%-- 		<jsp:include page="footer.jsp" /> --%>
+			<jsp:include page="new_temp_footer.jsp" />
 	<%
   		}
 	%>
