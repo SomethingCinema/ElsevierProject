@@ -50,9 +50,9 @@
 
 			</h2>
 			<hr>
-		</div>
 
-		<div class="row small-up-2 medium-up-3 large-up-4">
+
+
 
 			<%
 				int i = 0;
@@ -61,26 +61,30 @@
 						break;
 					}
 			%>
+			<div class="row small-up-2 medium-up-3 large-up-4">
 
-			<div class="column">
-				<fmt:setLocale value="en_US" scope="session" />
+				<div class="column">
+					<fmt:setLocale value="en_US" scope="session" />
 
-				<a href="/bookDetails?bookId=<%=book.getBookId()%>"><img
-					class="thumbnail" src="<%=book.getBookImage()%>"
-					style="height: 250px; width: auto;"></a>
-				<h5 style="height: 50px; overflow: hidden; text-overflow: ellipses;"><%=book.getTitle()%></h5>
-				<p>
-					<fmt:formatNumber type="currency" value="<%=book.getPrice()%>"></fmt:formatNumber>
-				</p>
-				<a href="/bookDetails?bookId=<%=book.getBookId()%>"
-					class="button expanded">View book details</a>
-				<!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
+					<a href="/bookDetails?bookId=<%=book.getBookId()%>"><img
+						class="thumbnail" src="<%=book.getBookImage()%>"
+						style="height: 250px; width: auto;"></a>
+					<h5
+						style=" overflow: hidden; text-overflow: ellipses;"><%=book.getTitle()%></h5>
+					<p>
+						<fmt:formatNumber type="currency" value="<%=book.getPrice()%>"></fmt:formatNumber>
+					</p>
+					<a href="/bookDetails?bookId=<%=book.getBookId()%>"
+						class="button expanded">View book details</a>
+					<!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
+				</div>
 			</div>
-		</div>
-		<%
+			<hr>
+			<%
 			i++;
 			}
 		%>
+		</div>
 	</div>
 
 	<hr>
