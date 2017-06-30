@@ -64,7 +64,7 @@
 	
 		<div class="row">
 			<div class="medium-6 columns">
-				<img class="thumbnail" src="<%=book.getBookImage()%>" />
+				<img class="thumbnail" src="<%=book.getBookImage()%>" style="width: 250px; height:auto" />
 				<div class="row small-up-4">
 					<div class="column">
 						eBook ISBN :
