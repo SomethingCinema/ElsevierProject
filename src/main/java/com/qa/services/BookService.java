@@ -23,4 +23,17 @@ public class BookService {
 	public Iterable<Book> findBookByISBN(String isbn){
 		return bookRepository.findBookByISBN(isbn);
 	}
+	public Book addBook(Book book) {
+		
+		return bookRepository.save(book);		
+		
+	}
+	
+	public void removeBook(Book book) {
+		 bookRepository.delete(book);
+	}
+	
+	public Book bookFind(int id) {
+		return bookRepository.findOne(id);
+	}
 } 
