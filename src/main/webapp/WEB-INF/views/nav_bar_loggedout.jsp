@@ -51,6 +51,7 @@
 	           	</form>
 	           	</li>
            	
+           	<li><a id="hover-link" href="/allBooks">Browse</a></li>
             <li><a id="hover-link" href="/about_us">About Us</a></li>
             <li><a id="hover-link" href="/contact">Contact</a></li>
             <li><a href="/viewCart"><img src="images/cart.png" width="50" height="50"/></a></li>
