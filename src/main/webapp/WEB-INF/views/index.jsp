@@ -24,7 +24,7 @@
 		c = (Customer) session.getAttribute("logged_in_customer");
 		if (c.getFirstName() != null) {
 	%>
-<%-- 	<jsp:include page="nav_bar_loggedin.jsp" /> --%>
+	<%-- 	<jsp:include page="nav_bar_loggedin.jsp" /> --%>
 	<jsp:include page="temp_head_in.jsp" />
 	<%
 		} else {
@@ -36,9 +36,9 @@
 	%>
 
 
-<div id="body">
-	<div class="row column text-center">
-		
+	<div id="body">
+		<div class="row column text-center">
+
 			<h2>
 				Our Newest Books
 
@@ -55,8 +55,16 @@
 		<div class="row small-up-2 medium-up-3 large-up-4">
 
 			<%
-				for (Book book : books) {
-			%>
+    
+				  int i = 0;
+     				for(Book book: books)
+     				{
+    				if(i >= 4){ //load max 4 books for index page
+    			break; 
+    			}   
+    
+     		%>
+     		
 			<div class="column">
 				<fmt:setLocale value="en_US" scope="session" />
 
@@ -71,11 +79,12 @@
 					class="button expanded">View book details</a>
 				<!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
 			</div>
-	</div>
-			<%
-				}
-			%>
 		</div>
+		<%
+				i++;
+		}
+			%>
+	</div>
 
 	<hr>
 
