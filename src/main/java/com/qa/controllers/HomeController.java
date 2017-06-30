@@ -1,8 +1,6 @@
 package com.qa.controllers;
 
 import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -21,6 +19,7 @@ import com.qa.models.Book;
 import com.qa.models.Customer;
 import com.qa.services.BookService;
 import com.qa.services.CustomerService;
+import com.qa.services.OrderService;
 
 @Controller
 @SessionAttributes(names = { "books", "cart_items", "logged_in_customer", "address" })
@@ -31,6 +30,9 @@ public class HomeController {
 
 	@Autowired
 	CustomerService customerService;
+	
+	@Autowired
+	OrderService orderService;
 
 	// Initialize default object here so that
 	// there are no null pointer exceptions
@@ -114,6 +116,22 @@ public class HomeController {
 
 		return modelAndView;
 	}
+	
+	@RequestMapping("/orderHistory")
+	public ModelAndView orderhistory(@ModelAttribute("logged_in_customer") Customer loggedInCustomer,
+			@ModelAttribute("Customer") Customer customer) {
+		
+		ModelAndView modelAndView = new ModelAndView("order_history");
+		//OrderService.findCustomerOrderHistory();
+		int c = customer.getCustomerId();
+		
+		System.out.println("Order History");
+		orderService.findCustomerOrderHistory(c).toString();
+
+		return modelAndView;
+	}
+	
+
 
 	@RequestMapping("/registerProcess")
 	public ModelAndView registerProcess(@ModelAttribute("Customer") Customer customer,

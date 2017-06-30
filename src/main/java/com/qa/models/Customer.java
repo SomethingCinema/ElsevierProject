@@ -1,9 +1,12 @@
 package com.qa.models;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Customer {
@@ -20,6 +23,9 @@ public class Customer {
 	private String email;
 	
 	private String password;
+	
+	@OneToMany
+	private List<Order> orders;
   
 
 	public int getCustomerId() {
