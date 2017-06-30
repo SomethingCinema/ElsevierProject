@@ -7,6 +7,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -33,7 +34,10 @@ public class CustomerTest {
 		customer.setLastName("a");
 //		customer.setCustomerId(20);
 		customer.setEmail("a@gmail.com");
-		customer.setPassword("aaa");
+		String password = "aaa";
+		// Hash a password for the first time
+		String hashed = BCrypt.hashpw(password, BCrypt.gensalt());
+		customer.setPassword(hashed);
 		
 		customer2 = new Customer();
 		customer2.setFirstName("Bobby");
@@ -108,8 +112,8 @@ public class CustomerTest {
 	
 	@Test
 	public void loginCustomerServiceTest(){
-		Customer result = new Customer();
-		result = customerService.loginProcess("bob@gmail.com", "123");
+//		Customer result = new Customer();
+		Customer result = customerService.loginProcess("bob@gmail.com", "123");
 		assertNotNull(result);
 	}
 	

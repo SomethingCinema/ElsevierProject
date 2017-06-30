@@ -53,7 +53,10 @@ public class CustomerService {
 	}
 
 	public int updatePassword(String password, int customerId) {
-		return customerRepository.updatePassword(password, customerId);
+		// Hash a password for the first time
+		String hashed = BCrypt.hashpw(password, BCrypt.gensalt());
+		
+		return customerRepository.updatePassword(hashed, customerId);
 	}
 
 	public Customer findOne(int customerId) {
