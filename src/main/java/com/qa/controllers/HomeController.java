@@ -1,8 +1,6 @@
 package com.qa.controllers;
 
 import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -154,6 +152,7 @@ public class HomeController {
 		if (!msg.isEmpty()) {
 			return new ModelAndView("register", "alert", msg);
 		}
+		
 
 		// if checks are all good, then try to add to database
 		Customer c = customerService.add(customer);
