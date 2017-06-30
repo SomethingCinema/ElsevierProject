@@ -7,7 +7,6 @@ body {
 	margin: 0;
 	padding: 0;
 }
-
 a {
 	outline: none;
 }
@@ -46,6 +45,11 @@ p a:hover {
 	font-family: 'Palatino Linotype';
 	font-size: 26px;
 	text-transform: uppercase;
+}
+#header li#drop li{
+	background: #090f80;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
 }
 #header ul#navigation {
 	list-style: none;

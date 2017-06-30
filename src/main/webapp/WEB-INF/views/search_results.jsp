@@ -29,51 +29,52 @@
 	<%
 		}
 	%>
+	<div id="body">
+
+		<div class="row column text-center">
+			<h2>
+				Search results
 
 
-	<div class="row column text-center" id="body">
-		<h2>
-			Search results
+				<%
+				Iterable<Book> results = (Iterable<Book>) request.getAttribute("results");
+			%>
 
 
-			<%
-			Iterable<Book> results = (Iterable<Book>) request.getAttribute("results");
-		%>
-
-
-		</h2>
-		<hr>
-	</div>
-
-	<div class="row small-up-2 medium-up-3 large-up-4">
-
-		<%
-			if (!results.iterator().hasNext()) {
-		%>
-		<h3>No search results</h3>
-		<h3>${alert}</h3>
-		<%
-			} else {
-				for (Book book : results) {
-		%>
-		<div class="column">
-
-			<a href="/bookDetails?bookId=<%=book.getBookId()%>"><img
-				class="thumbnail" src="<%=book.getBookImage()%>"
-				style="height: 250px; width: auto;"></a>
-			<h5 style="height: 50px; overflow: hidden; text-overflow: ellipses;"><%=book.getTitle()%></h5>
-			<p>
-				<fmt:formatNumber type="currency" value="<%=book.getPrice()%>"></fmt:formatNumber>
-			</p>
-			<a href="/bookDetails?bookId=<%=book.getBookId()%>"
-				class="button expanded">View book details</a>
-			<!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
+			</h2>
+			<hr>
 		</div>
 
-		<%
-			}
-			}
-		%>
+		<div class="row small-up-2 medium-up-3 large-up-4">
+
+			<%
+				if (!results.iterator().hasNext()) {
+			%>
+			<h3>No search results</h3>
+			<h3>${alert}</h3>
+			<%
+				} else {
+					for (Book book : results) {
+			%>
+			<div class="column">
+
+				<a href="/bookDetails?bookId=<%=book.getBookId()%>"><img
+					class="thumbnail" src="<%=book.getBookImage()%>"
+					style="height: 250px; width: auto;"></a>
+				<h5 style="height: 50px; overflow: hidden; text-overflow: ellipses;"><%=book.getTitle()%></h5>
+				<p>
+					<fmt:formatNumber type="currency" value="<%=book.getPrice()%>"></fmt:formatNumber>
+				</p>
+				<a href="/bookDetails?bookId=<%=book.getBookId()%>"
+					class="button expanded">View book details</a>
+				<!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
+			</div>
+
+			<%
+				}
+				}
+			%>
+		</div>
 	</div>
 
 	<hr>
