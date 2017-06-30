@@ -18,11 +18,19 @@
 	</h1>
 	<div id="search">
 			<form action="/search" method="get" style="float:right;">
-				<input type="hidden" name="type" value="title" /> <input type="text"
-					name="search" id="search" placeholder="Search.." /> <input
-					type="submit" value="Search" />
+				<input type="hidden" name="type" value="title" /> 
+				
+				<input type="text" name="search" id="search" placeholder="Search.." /> 
+				<br>
+				<select name="type" style="width:119px; height:20px">
+			        <option value="title">Title</option>
+			        <option value="author">Author</option>
+			        <option value="isbn">ISBN</option>
+			     </select>
+				<input type="submit" value="Search" />
 			</form>
 	</div>
+	<br>
 	<ul id="navigation">
 		<li><a href="/allBooks">All Books</a></li>
 		<li id="drop"><a href="/about_us">About Us</a>
