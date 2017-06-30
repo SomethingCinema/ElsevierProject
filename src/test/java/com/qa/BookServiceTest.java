@@ -42,12 +42,14 @@ public class BookServiceTest {
 		book.setTableOfContents("ToC");
 		book.setBookImage("BookImage");
 		
-		System.out.println(book);	
+		book = bookservice.addBook(book);
+		//System.out.println(book);	
 		System.out.println("Setup method is called");
 	}
 	
 	@After
 	public void tearDown() throws Exception {
+		bookservice.removeBook(book);
 		System.out.println("Tear down method is called");
 	}
 	
