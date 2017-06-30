@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Shopping </title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/temp.css">
     <link rel="stylesheet" href="css/form.css">
   </head>
   <body>
@@ -56,7 +56,8 @@
     </div>  -->
     <!-- End Top Bar -->
     
-    <jsp:include page="nav_bar_loggedin.jsp" />
+<%--     <jsp:include page="nav_bar_loggedin.jsp" /> --%>
+    <jsp:include page="temp_head_in.jsp" />
     
     <%
  	 }
@@ -64,7 +65,8 @@
  	 {
     %> 
     
-    <jsp:include page="nav_bar_loggedout.jsp" />
+<%--     <jsp:include page="nav_bar_loggedout.jsp" /> --%>
+    <jsp:include page="new_temp_head.jsp" />
     
     <%
     }
@@ -74,7 +76,7 @@
  	 if (c.getFirstName() != null) {
   	%>
        
-       <div class="row">
+       <div class="row" id="body">
         
        
         <div class="large-6 columns">

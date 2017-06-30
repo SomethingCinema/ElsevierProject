@@ -369,3 +369,13 @@ p a:hover {
 	display: block;
 	float: left;
 }
+.show-for-sr,
+.show-on-focus {
+    position: absolute!important;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    list-style-type: none;
+    clip: rect(0, 0, 0, 0)
+    
+}

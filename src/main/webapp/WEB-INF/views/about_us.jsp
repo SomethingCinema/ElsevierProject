@@ -34,7 +34,7 @@
 			skills to allow us to meet the needs of our customers while staying
 			ahead of our Competitors!!!
 			</h3>
-			<div class="team-content">
+			<div class="team-content" style="text-align: center">
 				<div class="mem1">
 					<h3>
 						<b>Alexa Hojczyk :</b><i>Scrum Master/Designer/Developer</i>

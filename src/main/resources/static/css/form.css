@@ -1,3 +1,12 @@
+form.val input[type="text"],
+form.val input[type="email"],
+form.val input[type="password"],
+form.val textarea:focus,
+form.val select:focus { 
+    width: 90%;
+  
+}
+
 form.val input[type="text"]:focus,
 form.val input[type="email"]:focus,
 form.val input[type="password"]:focus,

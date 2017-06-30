@@ -34,6 +34,7 @@
 		<li id="drop"><a href="/profile">Profile</a>
 			<ul>
 				<li><a href="/changePassword">Password</a>
+				<li><a href="/addressBook">Address</a>
 			</ul>
 		</li>
 		<li><a href="/logout">Logout</a></li>

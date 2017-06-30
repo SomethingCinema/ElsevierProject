@@ -40,10 +40,13 @@
 			</div>
 		</div>
 
-
-		<iframe width="600" height="450" frameborder="0" style="border: 0"
-			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyACjIrMt05daQAw5oEbeEYQUaDF-Jy2pEc&q=1600+John+F+Kennedy+Boulevard,Philadelphia,Pennsylvania">
-		</iframe>
+		<br> <br>
+		<center>
+			<iframe width="600" height="450" align="middle" frameborder="0"
+				style="border: 0; float: center;"
+				src="https://www.google.com/maps/embed/v1/place?key=AIzaSyACjIrMt05daQAw5oEbeEYQUaDF-Jy2pEc&q=1600+John+F+Kennedy+Boulevard,Philadelphia,Pennsylvania">
+			</iframe>
+		</center>
 	</div>
 
 
