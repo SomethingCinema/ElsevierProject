@@ -39,13 +39,24 @@ public class ValidationTest {
 		addr.setState("PA");
 		
 		
-//		ship = new Shipping();
-		
+		ship = new Shipping();
+		addr.setAddressId(100);
+		ship.setAddressLine1("1200 Market St");
+		ship.setAddressLine2("Room 1001");
+		ship.setCity("Philadelphia");
+		ship.setCountry("USA");
+		ship.setPostcode("10101");
+		ship.setState("PA");
+		ship.setEmail("hello@world.com");
+		ship.setFirstName("First");
+		ship.setLastName("Last");
+		ship.setPhone("123-452-1234");
+		ship.setShippingId(12);
 	}
-//
-//	@After
-//	public void tearDown() throws Exception {
-//	}
+
+	/**
+	 * Login validation tests
+	 */
 
 	@Test
 	public void validateLoginEmailEmptyTest() {
@@ -75,6 +86,10 @@ public class ValidationTest {
 		String result = Validate.validateLogin(email, password);
 		assertThat(result, is(""));
 	}
+	
+	/**
+	 * Registration validation tests
+	 */
 	
 	@Test
 	public void validateRegistrationFirstNameEmpty(){
@@ -138,6 +153,9 @@ public class ValidationTest {
 		assertThat(result, is(""));
 	}
 	
+	/**
+	 * Address validation tests
+	 */
 	
 	@Test
 	public void validateAddressLine1Fail(){
@@ -191,6 +209,83 @@ public class ValidationTest {
 	@Test
 	public void validateAddressSuccess(){
 		String result = Validate.validateAddress(addr);
+		assertThat(result, is(""));
+	}
+	
+	/**
+	 * Shipping validation tests
+	 */
+	
+	@Test
+	public void validateShippingFirstNameFail(){
+		ship.setFirstName("1111");
+		String result = Validate.validateShipping(ship);
+		assertThat(result, is("Please enter a valid first name"));
+	}
+	@Test
+	public void validateShippingLastNameFail(){
+		ship.setFirstName("1111");
+		String result = Validate.validateShipping(ship);
+		assertThat(result, is("Please enter a valid first name"));
+	}
+	@Test
+	public void validateShippingLine1Fail(){
+		ship.setAddressLine1("");
+		String result = Validate.validateShipping(ship);
+		assertThat(result, is("Please enter a valid address"));
+	}
+	@Test
+	public void validateShippingLine2Fail(){
+		ship.setAddressLine2("");
+		String result = Validate.validateShipping(ship);
+		assertThat(result, is("Please enter a valid address"));
+	}
+	@Test
+	public void validateShippingCityFail(){
+		ship.setCity("");
+		String result = Validate.validateShipping(ship);
+		assertThat(result, is("Please enter a valid city"));
+	}
+	@Test
+	public void validateShippingStateFail(){
+		ship.setState("");
+		String result = Validate.validateShipping(ship);
+		assertThat(result, is("Please enter a valid state"));
+	}
+	@Test
+	public void validateShippingCountryFail(){
+		ship.setCountry("");
+		String result = Validate.validateShipping(ship);
+		assertThat(result, is("Please enter a valid country"));
+	}
+	@Test
+	public void validateShippingZipcodeFail(){
+		ship.setPostcode("2222-1");
+		String result = Validate.validateShipping(ship);
+		assertThat(result, is("Please enter a valid zipcode"));
+	}
+	@Test
+	public void validateShippingPhoneFail(){
+		ship.setPhone("2343");
+		String result = Validate.validateShipping(ship);
+		assertThat(result, is("Please enter a valid phone number"));
+	}
+	@Test
+	public void validateShippingEmailFail(){
+		ship.setEmail("emailtest");
+		String result = Validate.validateShipping(ship);
+		assertThat(result, is("Please enter a valid email"));
+	}
+	
+	@Test
+	public void validateShippingZipcodeSuccess(){
+		ship.setPostcode("22221-1234");
+		String result = Validate.validateShipping(ship);
+		assertThat(result, is(""));
+	}
+	@Test
+	public void validateShippingSuccess(){
+		String result = Validate.validateShipping(ship);
 		assertThat(result, is(""));
 	}
 
