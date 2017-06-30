@@ -27,7 +27,7 @@ public class CustomerService {
 		}
 		// Hash a password for the first time
 		String hashed = BCrypt.hashpw(c.getPassword(), BCrypt.gensalt());
-//		c.setPassword(hashed);
+		c.setPassword(hashed);
 		
 		return customerRepository.save(c);
 
